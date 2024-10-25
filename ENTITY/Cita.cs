@@ -36,7 +36,7 @@ namespace ENTITY
         }
         public override string ToString()
         {
-            return $"{Codigo};{CodigoOrtodoncista};{CodigoPaciente};{Fecha_Creacion};{Fecha_Cita};{Hora_Cita};{Razon_Cita};{Estado}";
+            return $"{Codigo};{CodigoOrtodoncista};{CodigoPaciente};{Fecha_Creacion:dd/MM/yyyy};{Fecha_Cita:dd/MM/yyyy};{Hora_Cita};{Razon_Cita};{Estado}";
         }
     }
 }

@@ -44,7 +44,7 @@ namespace Clinica
         {
             var f = new FrmAcceso();
             f.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BtnMinimizar_Click(object sender, EventArgs e)

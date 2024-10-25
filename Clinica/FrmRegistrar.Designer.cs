@@ -36,11 +36,8 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.PictureBox();
-            this.BtnMinimizar = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -49,10 +46,13 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.PictureBox();
+            this.BtnMinimizar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -157,16 +157,6 @@
             this.panel1.TabIndex = 31;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(229, 234);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -189,28 +179,6 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Registrar";
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Image = global::Clinica.Properties.Resources.Volver;
-            this.btnVolver.Location = new System.Drawing.Point(715, 12);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(20, 20);
-            this.btnVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnVolver.TabIndex = 33;
-            this.btnVolver.TabStop = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // BtnMinimizar
-            // 
-            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
-            this.BtnMinimizar.Location = new System.Drawing.Point(689, 12);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnMinimizar.TabIndex = 32;
-            this.BtnMinimizar.TabStop = false;
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
-            // 
             // shapeContainer1
             // 
             this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
@@ -229,6 +197,7 @@
             // lineShape5
             // 
             this.lineShape5.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape5.Enabled = false;
             this.lineShape5.Name = "lineShape5";
             this.lineShape5.X1 = 520;
             this.lineShape5.X2 = 692;
@@ -238,6 +207,7 @@
             // lineShape4
             // 
             this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape4.Enabled = false;
             this.lineShape4.Name = "lineShape4";
             this.lineShape4.X1 = 521;
             this.lineShape4.X2 = 693;
@@ -247,6 +217,7 @@
             // lineShape3
             // 
             this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Enabled = false;
             this.lineShape3.Name = "lineShape3";
             this.lineShape3.X1 = 274;
             this.lineShape3.X2 = 477;
@@ -256,6 +227,7 @@
             // lineShape2
             // 
             this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape2.Enabled = false;
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 274;
             this.lineShape2.X2 = 477;
@@ -265,6 +237,7 @@
             // lineShape1
             // 
             this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape1.Enabled = false;
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 274;
             this.lineShape1.X2 = 477;
@@ -296,6 +269,38 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "FECHA DE NACIMIENTO";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Image = global::Clinica.Properties.Resources.Volver;
+            this.btnVolver.Location = new System.Drawing.Point(715, 12);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(20, 20);
+            this.btnVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnVolver.TabIndex = 33;
+            this.btnVolver.TabStop = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
+            this.BtnMinimizar.Location = new System.Drawing.Point(689, 12);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnMinimizar.TabIndex = 32;
+            this.BtnMinimizar.TabStop = false;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(229, 234);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,9 +328,9 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmRegistrar_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

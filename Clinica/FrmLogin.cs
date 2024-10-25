@@ -17,7 +17,6 @@ namespace Clinica
 {
     public partial class FrmLogin : Form
     {
-        FrmPaciente frmPaciente = new FrmPaciente();
         ServicioPaciente servispaciente = new ServicioPaciente();
         Validaciones vali = new Validaciones();
         public FrmLogin()
@@ -48,7 +47,8 @@ namespace Clinica
             if (paciente != null)
             {
                 MessageBox.Show("Inicio de sesion exitoso");
-                var F = new FrmPaciente();
+
+                var F = new FrmPaciente(paciente);
                 F.ShowDialog();
             }
             else

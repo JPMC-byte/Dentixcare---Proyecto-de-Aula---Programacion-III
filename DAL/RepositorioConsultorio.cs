@@ -44,6 +44,8 @@ namespace DAL
             consulto.Nombre = line.Split(';')[1];
             consulto.Telefono = line.Split(';')[2];
             consulto.Direccion = line.Split(';')[3];
+            consulto.Hora_Apertura = TimeSpan.Parse(line.Split(';')[4]);
+            consulto.Hora_Cierre = TimeSpan.Parse(line.Split(';')[5]);
 
             return consulto;
         }
@@ -60,7 +62,10 @@ namespace DAL
                 string Nombre = "DentixCare";
                 string telefono = "+57 3053274924";
                 string direccion = "Calle 45A #12-34, Barrio San Carlos";
-                Consultorio consultorio = new Consultorio(Codigo, Nombre, telefono, direccion);
+                TimeSpan Hora_Apertura = new TimeSpan(8, 0, 0); 
+                TimeSpan Hora_Cierre = new TimeSpan(18, 0, 0);  
+
+                Consultorio consultorio = new Consultorio(Codigo, Nombre, telefono, direccion,Hora_Apertura,Hora_Cierre);
                 SaveData(consultorio);
             }
         }

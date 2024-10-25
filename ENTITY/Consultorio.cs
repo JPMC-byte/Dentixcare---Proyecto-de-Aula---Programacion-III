@@ -12,20 +12,24 @@ namespace ENTITY
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+        public TimeSpan Hora_Apertura { get; set; }
+        public TimeSpan Hora_Cierre { get; set; }
 
         public Consultorio() { }
 
         public Consultorio(string codigo) { }
-        public Consultorio(string codigo, string nombre, string telefono, string direccion)
+        public Consultorio(string codigo, string nombre, string telefono, string direccion, TimeSpan hora_Apertura, TimeSpan hora_Cierre)
         {
             Codigo = codigo;
             Nombre = nombre;
             Telefono = telefono;
             Direccion = direccion;
+            Hora_Apertura = hora_Apertura;
+            Hora_Cierre = hora_Cierre;
         }
         public override string ToString()
         {
-            return $"{Codigo};{Nombre};{Telefono};{Direccion}";
+            return $"{Codigo};{Nombre};{Telefono};{Direccion};{Hora_Apertura};{Hora_Cierre}";
         }
     }
 }

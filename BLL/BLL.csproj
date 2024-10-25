@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioCita.cs" />
     <Compile Include="ServicioConsultorio.cs" />
     <Compile Include="ServicioOrtodoncista.cs" />
     <Compile Include="ServicioPaciente.cs" />

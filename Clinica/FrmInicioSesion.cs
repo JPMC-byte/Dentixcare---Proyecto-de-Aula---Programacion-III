@@ -44,7 +44,7 @@ namespace Clinica
         {
             var F = new FrmLoginOrtodoncista();
             F.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BtnMinimizar_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Clinica
         {
             var f = new FrmIngreso();
             f.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void FrmInicioSesion_MouseDown(object sender, MouseEventArgs e)

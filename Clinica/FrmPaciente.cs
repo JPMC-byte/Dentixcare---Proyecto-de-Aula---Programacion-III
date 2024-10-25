@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ENTITY;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,14 +14,110 @@ namespace Clinica
 {
     public partial class FrmPaciente : Form
     {
-        public FrmPaciente()
+        Persona paciente = new Paciente();
+        Form FormularioActivo = null;
+        public FrmPaciente(Persona persona)
         {
             InitializeComponent();
+            paciente = persona;
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        private void FrmPaciente_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnCerrar1_Click(object sender, EventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            this.Hide();
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Advertencia",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void OcultarSubmenu()
+        {
+            if (PanelSubmenuDatos.Visible == true)
+                PanelSubmenuDatos.Visible = false;
+            if (PanelSubmenuCitas.Visible == true)
+                PanelSubmenuCitas.Visible = false;
+        }
+        private void MostrarSubmenu(Panel submenu)
+        {
+            if (submenu.Visible == false)
+            {
+                OcultarSubmenu();
+                submenu.Visible = true;
+            }else
+            {
+                submenu.Visible = false;
+            }
+        }
+        private void btnDatosUsuario_Click(object sender, EventArgs e)
+        {
+            MostrarSubmenu(PanelSubmenuDatos);
+        }
+        private void btnGestionCitas_Click(object sender, EventArgs e)
+        {
+            MostrarSubmenu(PanelSubmenuCitas);
+        }
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmPerfil(paciente));
+            OcultarSubmenu();
+        }
+
+        private void btnAntecedentes_Click(object sender, EventArgs e)
+        {
+
+
+            OcultarSubmenu();
+        }
+
+        private void btnAgendarCita_Click(object sender, EventArgs e)
+        {
+
+
+            OcultarSubmenu();
+        }
+        private void btnRegistroCitas_Click(object sender, EventArgs e)
+        {
+
+
+            OcultarSubmenu();
+        }
+        private void btnCancelarCita_Click(object sender, EventArgs e)
+        {
+
+
+            OcultarSubmenu();
+        }
+
+        private void AbrirFormulario(Form FormularioHijo)
+        {
+            if (FormularioActivo != null)
+            {
+                FormularioActivo.Close();
+            }
+            FormularioActivo = FormularioHijo;
+            FormularioHijo.TopLevel = false;
+            FormularioHijo.FormBorderStyle = FormBorderStyle.None;
+            FormularioHijo.Dock = DockStyle.Fill;
+            PanelHijo.Controls.Add(FormularioHijo);
+            PanelHijo.Tag = FormularioHijo;
+            FormularioHijo.BringToFront();
+            FormularioHijo.Show();
         }
     }
 }

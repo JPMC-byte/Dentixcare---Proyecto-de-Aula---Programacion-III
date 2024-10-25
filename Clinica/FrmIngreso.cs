@@ -15,7 +15,6 @@ namespace Clinica
    
     public partial class FrmIngreso : Form
     {
-        FrmAcceso frmAcceso = new FrmAcceso();
         public FrmIngreso()
         {
             InitializeComponent();
@@ -34,7 +33,8 @@ namespace Clinica
 
         private void EntrarAlRegistro()
         {
-            frmAcceso.Show();
+            var F = new FrmAcceso();
+            F.Show();
             this.Hide();
         }
 

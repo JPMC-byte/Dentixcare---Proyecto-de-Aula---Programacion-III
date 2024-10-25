@@ -33,7 +33,7 @@ namespace Clinica
         private void IngresoMedico()
         {
             frmContraseña.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnPaciente_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace Clinica
         private void IngresoPaciente()
         {
             frmRegistrar.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BtnMinimizar_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace Clinica
         {
             var f = new FrmIngreso();
             f.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void FrmAcceso_MouseDown(object sender, MouseEventArgs e)

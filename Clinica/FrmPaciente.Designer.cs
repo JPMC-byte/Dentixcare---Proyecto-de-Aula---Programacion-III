@@ -28,65 +28,372 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbnTitulo = new System.Windows.Forms.Label();
-            this.btnCerrar1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelSubmenuCitas = new System.Windows.Forms.Panel();
+            this.btnModificarCita = new System.Windows.Forms.Button();
+            this.btnCancelarCita = new System.Windows.Forms.Button();
+            this.btnRegistroCitas = new System.Windows.Forms.Button();
+            this.btnAgendarCita = new System.Windows.Forms.Button();
+            this.btnGestionCitas = new System.Windows.Forms.Button();
+            this.PanelSubmenuDatos = new System.Windows.Forms.Panel();
+            this.btnAntecedentes = new System.Windows.Forms.Button();
+            this.btnPerfil = new System.Windows.Forms.Button();
+            this.btnDatosUsuario = new System.Windows.Forms.Button();
+            this.Panellogo = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnMinimizar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.PanelDia = new System.Windows.Forms.Panel();
+            this.PanelHijo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            this.PanelSubmenuCitas.SuspendLayout();
+            this.PanelSubmenuDatos.SuspendLayout();
+            this.Panellogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PanelHijo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbnTitulo
+            // panel1
             // 
-            this.lbnTitulo.AutoSize = true;
-            this.lbnTitulo.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbnTitulo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbnTitulo.Location = new System.Drawing.Point(126, 28);
-            this.lbnTitulo.Name = "lbnTitulo";
-            this.lbnTitulo.Size = new System.Drawing.Size(166, 36);
-            this.lbnTitulo.TabIndex = 8;
-            this.lbnTitulo.Text = "DentixCare";
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.PanelSubmenuCitas);
+            this.panel1.Controls.Add(this.btnGestionCitas);
+            this.panel1.Controls.Add(this.PanelSubmenuDatos);
+            this.panel1.Controls.Add(this.btnDatosUsuario);
+            this.panel1.Controls.Add(this.Panellogo);
+            this.panel1.Controls.Add(this.btnCerrarSesion);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 799);
+            this.panel1.TabIndex = 33;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // btnCerrar1
+            // PanelSubmenuCitas
             // 
-            this.btnCerrar1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCerrar1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCerrar1.Location = new System.Drawing.Point(325, 166);
-            this.btnCerrar1.Name = "btnCerrar1";
-            this.btnCerrar1.Size = new System.Drawing.Size(131, 36);
-            this.btnCerrar1.TabIndex = 0;
-            this.btnCerrar1.Text = "Cerrar";
-            this.btnCerrar1.UseVisualStyleBackColor = false;
-            this.btnCerrar1.Click += new System.EventHandler(this.btnCerrar1_Click);
+            this.PanelSubmenuCitas.Controls.Add(this.btnModificarCita);
+            this.PanelSubmenuCitas.Controls.Add(this.btnCancelarCita);
+            this.PanelSubmenuCitas.Controls.Add(this.btnRegistroCitas);
+            this.PanelSubmenuCitas.Controls.Add(this.btnAgendarCita);
+            this.PanelSubmenuCitas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSubmenuCitas.Location = new System.Drawing.Point(0, 475);
+            this.PanelSubmenuCitas.Name = "PanelSubmenuCitas";
+            this.PanelSubmenuCitas.Size = new System.Drawing.Size(250, 178);
+            this.PanelSubmenuCitas.TabIndex = 36;
+            this.PanelSubmenuCitas.Visible = false;
             // 
-            // groupBox1
+            // btnModificarCita
             // 
-            this.groupBox1.Controls.Add(this.btnCerrar1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(83, 92);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 225);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "En Mantenimiento";
+            this.btnModificarCita.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnModificarCita.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarCita.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModificarCita.FlatAppearance.BorderSize = 0;
+            this.btnModificarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarCita.ForeColor = System.Drawing.Color.Black;
+            this.btnModificarCita.Location = new System.Drawing.Point(0, 120);
+            this.btnModificarCita.Name = "btnModificarCita";
+            this.btnModificarCita.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnModificarCita.Size = new System.Drawing.Size(250, 40);
+            this.btnModificarCita.TabIndex = 37;
+            this.btnModificarCita.Text = "Modificar razon de cita";
+            this.btnModificarCita.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarCita.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarCita
+            // 
+            this.btnCancelarCita.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCancelarCita.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarCita.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCancelarCita.FlatAppearance.BorderSize = 0;
+            this.btnCancelarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCita.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelarCita.Location = new System.Drawing.Point(0, 80);
+            this.btnCancelarCita.Name = "btnCancelarCita";
+            this.btnCancelarCita.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnCancelarCita.Size = new System.Drawing.Size(250, 40);
+            this.btnCancelarCita.TabIndex = 36;
+            this.btnCancelarCita.Text = "Cancelar cita";
+            this.btnCancelarCita.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarCita.UseVisualStyleBackColor = false;
+            this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
+            // 
+            // btnRegistroCitas
+            // 
+            this.btnRegistroCitas.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRegistroCitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistroCitas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistroCitas.FlatAppearance.BorderSize = 0;
+            this.btnRegistroCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistroCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistroCitas.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistroCitas.Location = new System.Drawing.Point(0, 40);
+            this.btnRegistroCitas.Name = "btnRegistroCitas";
+            this.btnRegistroCitas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRegistroCitas.Size = new System.Drawing.Size(250, 40);
+            this.btnRegistroCitas.TabIndex = 35;
+            this.btnRegistroCitas.Text = "Registro de citas";
+            this.btnRegistroCitas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistroCitas.UseVisualStyleBackColor = false;
+            this.btnRegistroCitas.Click += new System.EventHandler(this.btnRegistroCitas_Click);
+            // 
+            // btnAgendarCita
+            // 
+            this.btnAgendarCita.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAgendarCita.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgendarCita.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgendarCita.FlatAppearance.BorderSize = 0;
+            this.btnAgendarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgendarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgendarCita.ForeColor = System.Drawing.Color.Black;
+            this.btnAgendarCita.Location = new System.Drawing.Point(0, 0);
+            this.btnAgendarCita.Name = "btnAgendarCita";
+            this.btnAgendarCita.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAgendarCita.Size = new System.Drawing.Size(250, 40);
+            this.btnAgendarCita.TabIndex = 34;
+            this.btnAgendarCita.Text = "Agendar cita";
+            this.btnAgendarCita.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgendarCita.UseVisualStyleBackColor = false;
+            this.btnAgendarCita.Click += new System.EventHandler(this.btnAgendarCita_Click);
+            // 
+            // btnGestionCitas
+            // 
+            this.btnGestionCitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionCitas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionCitas.FlatAppearance.BorderSize = 0;
+            this.btnGestionCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionCitas.ForeColor = System.Drawing.Color.White;
+            this.btnGestionCitas.Location = new System.Drawing.Point(0, 434);
+            this.btnGestionCitas.Name = "btnGestionCitas";
+            this.btnGestionCitas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGestionCitas.Size = new System.Drawing.Size(250, 41);
+            this.btnGestionCitas.TabIndex = 35;
+            this.btnGestionCitas.Text = "Gestión de citas";
+            this.btnGestionCitas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionCitas.UseVisualStyleBackColor = false;
+            this.btnGestionCitas.Click += new System.EventHandler(this.btnGestionCitas_Click);
+            // 
+            // PanelSubmenuDatos
+            // 
+            this.PanelSubmenuDatos.Controls.Add(this.btnAntecedentes);
+            this.PanelSubmenuDatos.Controls.Add(this.btnPerfil);
+            this.PanelSubmenuDatos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSubmenuDatos.Location = new System.Drawing.Point(0, 348);
+            this.PanelSubmenuDatos.Name = "PanelSubmenuDatos";
+            this.PanelSubmenuDatos.Size = new System.Drawing.Size(250, 86);
+            this.PanelSubmenuDatos.TabIndex = 34;
+            this.PanelSubmenuDatos.Visible = false;
+            // 
+            // btnAntecedentes
+            // 
+            this.btnAntecedentes.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAntecedentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAntecedentes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAntecedentes.FlatAppearance.BorderSize = 0;
+            this.btnAntecedentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAntecedentes.ForeColor = System.Drawing.Color.Black;
+            this.btnAntecedentes.Location = new System.Drawing.Point(0, 40);
+            this.btnAntecedentes.Name = "btnAntecedentes";
+            this.btnAntecedentes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAntecedentes.Size = new System.Drawing.Size(250, 40);
+            this.btnAntecedentes.TabIndex = 35;
+            this.btnAntecedentes.Text = "Antecedentes";
+            this.btnAntecedentes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAntecedentes.UseVisualStyleBackColor = false;
+            this.btnAntecedentes.Click += new System.EventHandler(this.btnAntecedentes_Click);
+            // 
+            // btnPerfil
+            // 
+            this.btnPerfil.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPerfil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPerfil.FlatAppearance.BorderSize = 0;
+            this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.ForeColor = System.Drawing.Color.Black;
+            this.btnPerfil.Location = new System.Drawing.Point(0, 0);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnPerfil.Size = new System.Drawing.Size(250, 40);
+            this.btnPerfil.TabIndex = 34;
+            this.btnPerfil.Text = "Perfil";
+            this.btnPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPerfil.UseVisualStyleBackColor = false;
+            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
+            // 
+            // btnDatosUsuario
+            // 
+            this.btnDatosUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDatosUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDatosUsuario.FlatAppearance.BorderSize = 0;
+            this.btnDatosUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatosUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnDatosUsuario.Location = new System.Drawing.Point(0, 307);
+            this.btnDatosUsuario.Name = "btnDatosUsuario";
+            this.btnDatosUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnDatosUsuario.Size = new System.Drawing.Size(250, 41);
+            this.btnDatosUsuario.TabIndex = 5;
+            this.btnDatosUsuario.Text = "Datos de usuario";
+            this.btnDatosUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDatosUsuario.UseVisualStyleBackColor = false;
+            this.btnDatosUsuario.Click += new System.EventHandler(this.btnDatosUsuario_Click);
+            // 
+            // Panellogo
+            // 
+            this.Panellogo.Controls.Add(this.panel2);
+            this.Panellogo.Controls.Add(this.BtnMinimizar);
+            this.Panellogo.Controls.Add(this.pictureBox1);
+            this.Panellogo.Controls.Add(this.label4);
+            this.Panellogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panellogo.Location = new System.Drawing.Point(0, 0);
+            this.Panellogo.Name = "Panellogo";
+            this.Panellogo.Size = new System.Drawing.Size(250, 307);
+            this.Panellogo.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(256, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 34;
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
+            this.BtnMinimizar.Location = new System.Drawing.Point(12, 12);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnMinimizar.TabIndex = 7;
+            this.BtnMinimizar.TabStop = false;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
+            this.pictureBox1.Location = new System.Drawing.Point(50, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(35, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 36);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "DentixCare";
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Black;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(18, 729);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(212, 41);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.Text = "Cerrar sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // PanelDia
+            // 
+            this.PanelDia.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.PanelDia.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelDia.Location = new System.Drawing.Point(250, 699);
+            this.PanelDia.Name = "PanelDia";
+            this.PanelDia.Size = new System.Drawing.Size(777, 100);
+            this.PanelDia.TabIndex = 34;
+            // 
+            // PanelHijo
+            // 
+            this.PanelHijo.Controls.Add(this.pictureBox2);
+            this.PanelHijo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelHijo.Location = new System.Drawing.Point(250, 0);
+            this.PanelHijo.Name = "PanelHijo";
+            this.PanelHijo.Size = new System.Drawing.Size(777, 699);
+            this.PanelHijo.TabIndex = 35;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::Clinica.Properties.Resources.Fondo;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(777, 699);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(672, 357);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbnTitulo);
+            this.ClientSize = new System.Drawing.Size(1027, 799);
+            this.Controls.Add(this.PanelHijo);
+            this.Controls.Add(this.PanelDia);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPaciente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPaciente";
-            this.groupBox1.ResumeLayout(false);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmPaciente_MouseDown);
+            this.panel1.ResumeLayout(false);
+            this.PanelSubmenuCitas.ResumeLayout(false);
+            this.PanelSubmenuDatos.ResumeLayout(false);
+            this.Panellogo.ResumeLayout(false);
+            this.Panellogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PanelHijo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lbnTitulo;
-        private System.Windows.Forms.Button btnCerrar1;
-        private System.Windows.Forms.GroupBox groupBox1;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.PictureBox BtnMinimizar;
+        private System.Windows.Forms.Panel Panellogo;
+        private System.Windows.Forms.Button btnDatosUsuario;
+        private System.Windows.Forms.Panel PanelSubmenuDatos;
+        private System.Windows.Forms.Button btnPerfil;
+        private System.Windows.Forms.Button btnAntecedentes;
+        private System.Windows.Forms.Button btnGestionCitas;
+        private System.Windows.Forms.Panel PanelSubmenuCitas;
+        private System.Windows.Forms.Button btnCancelarCita;
+        private System.Windows.Forms.Button btnRegistroCitas;
+        private System.Windows.Forms.Button btnAgendarCita;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelDia;
+        private System.Windows.Forms.Panel PanelHijo;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnModificarCita;
     }
 }

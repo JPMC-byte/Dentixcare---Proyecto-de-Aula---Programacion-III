@@ -7,7 +7,7 @@
     <ProjectGuid>{2B08358B-A408-436D-9D3B-B80E0D01D942}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Clinica</RootNamespace>
-    <AssemblyName>Clinica</AssemblyName>
+    <AssemblyName>Proyecto de Aula - Programacion III</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAgendarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgendarCita.Designer.cs">
+      <DependentUpon>FrmAgendarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     <Compile Include="FrmMedico.Designer.cs">
       <DependentUpon>FrmMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerfil.Designer.cs">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistrarOrtodoncista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,9 @@
     <Compile Include="FrmRegistrar.Designer.cs">
       <DependentUpon>FrmRegistrar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAgendarCita.resx">
+      <DependentUpon>FrmAgendarCita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmContraseña.resx">
       <DependentUpon>FrmContraseña.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPaciente.resx">
       <DependentUpon>FrmPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerfil.resx">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrar.resx">
       <DependentUpon>FrmRegistrar.cs</DependentUpon>
@@ -193,6 +211,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\Icon Ortodoncista.png" />
     <EmbeddedResource Include="Images\Icon Paciente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\IconPapeles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
