@@ -32,7 +32,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return null;
+                return new List<Cita>();
             }
 
         }
@@ -53,6 +53,11 @@ namespace DAL
         public Cita GetById(string id)
         {
             return LoadData().FirstOrDefault<Cita>(x => x.Codigo == id);
+        }
+
+        public Cita GetByDay(DateTime date)
+        {
+            return LoadData().FirstOrDefault<Cita>(x => x.Fecha_Cita.Date == date.Date);
         }
     }
 }

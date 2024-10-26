@@ -10,6 +10,7 @@ namespace Logica
     {
         string Add(T value);
         T IniciarSesion(string id, string Password);
+        T GetByID(string ID);
         List<T> GetAll();
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.IconPerson = new System.Windows.Forms.PictureBox();
             this.LBPerfil = new System.Windows.Forms.Label();
             this.LBNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -46,23 +45,13 @@
             this.LBCategoria = new System.Windows.Forms.Label();
             this.LBID = new System.Windows.Forms.Label();
             this.txtIDConsultorio = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GBPerfil = new System.Windows.Forms.GroupBox();
+            this.IconPerson = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.GBPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.GBPerfil.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // IconPerson
-            // 
-            this.IconPerson.BackColor = System.Drawing.Color.Transparent;
-            this.IconPerson.Image = global::Clinica.Properties.Resources.IconPerson;
-            this.IconPerson.Location = new System.Drawing.Point(13, 71);
-            this.IconPerson.Name = "IconPerson";
-            this.IconPerson.Size = new System.Drawing.Size(251, 329);
-            this.IconPerson.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.IconPerson.TabIndex = 0;
-            this.IconPerson.TabStop = false;
             // 
             // LBPerfil
             // 
@@ -254,20 +243,9 @@
             this.txtIDConsultorio.TabIndex = 41;
             this.txtIDConsultorio.Text = "ID DE CONSULTORIO";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.Fondo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(777, 699);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
-            // 
             // GBPerfil
             // 
-            this.GBPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.GBPerfil.BackColor = System.Drawing.Color.White;
             this.GBPerfil.Controls.Add(this.txtIDConsultorio);
             this.GBPerfil.Controls.Add(this.txtFechaNacimiento);
             this.GBPerfil.Controls.Add(this.LBID);
@@ -292,6 +270,28 @@
             this.GBPerfil.TabIndex = 42;
             this.GBPerfil.TabStop = false;
             // 
+            // IconPerson
+            // 
+            this.IconPerson.BackColor = System.Drawing.Color.Transparent;
+            this.IconPerson.Image = global::Clinica.Properties.Resources.IconPerson;
+            this.IconPerson.Location = new System.Drawing.Point(13, 71);
+            this.IconPerson.Name = "IconPerson";
+            this.IconPerson.Size = new System.Drawing.Size(251, 329);
+            this.IconPerson.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconPerson.TabIndex = 0;
+            this.IconPerson.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Clinica.Properties.Resources.Fondo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(777, 699);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,10 +304,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPerfil";
             this.Text = "FrmPerfil";
-            ((System.ComponentModel.ISupportInitialize)(this.IconPerson)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.GBPerfil.ResumeLayout(false);
             this.GBPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconPerson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

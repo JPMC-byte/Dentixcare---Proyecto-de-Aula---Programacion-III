@@ -37,7 +37,7 @@ namespace Clinica
 
         private void Registrar()
         {
-            if (!Verificar() || !Validar())
+            if (!Verificar() || !ValidarLetras() || !ValidarNumeros() || !ValidarExistente())
             {
                 return; 
             }
@@ -67,14 +67,18 @@ namespace Clinica
             return true;
         }
 
-        bool Validar()
+        bool ValidarLetras()
         {
             if (!vali.ValidarLetras(txtNombre.Text) || !vali.ValidarLetras(txtApellido.Text))
             {
                 MessageBox.Show("El nombre y apellido solo pueden contener letras.");
                 return false;
             }
+            return true;
+        }
 
+        bool ValidarNumeros()
+        {
             if (!vali.ValidarNumeros(txtTelefono.Text) || !vali.ValidarNumeros(txtCedula.Text))
             {
                 MessageBox.Show("El teléfono y la cédula solo pueden contener números.");
@@ -83,15 +87,23 @@ namespace Clinica
             return true;
         }
 
+        bool ValidarExistente()
+        {
+            if (!vali.ValidarExistentePaciente(txtCedula.Text))
+            {
+                MessageBox.Show("Error - Esté paciente ya se encuentra registrado.");
+                return false;
+            }
+            return true;
+        }
+
         private void Limpiar()
         {
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtNombre.Clear();
-            txtTelefono.Clear();
-            txtApellido.Clear();
-            txtCedula.Clear();
-            txtContraseña.Clear();
+            txtNombre.Text = "NOMBRE";
+            txtApellido.Text = "APELLIDO";
+            txtTelefono.Text = "TELEFONO";
+            txtCedula.Text = "CEDULA";
+            txtContraseña.Text = "CONTRASEÑA";
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

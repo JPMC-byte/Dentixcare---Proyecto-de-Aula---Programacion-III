@@ -26,6 +26,11 @@ namespace Logica
             return RepsPaciente.LoadData();
         }
 
+        public Paciente GetByID(string ID)
+        {
+            return RepsPaciente.getByID(ID);
+        }
+
         public Paciente IniciarSesion(string id, string Password)
         {
             return RepsPaciente.GetByUser(id, Password);

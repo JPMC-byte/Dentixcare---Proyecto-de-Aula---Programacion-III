@@ -53,7 +53,6 @@ namespace DAL
         {
             return LoadData().FirstOrDefault<Consultorio>(x => x.Codigo == id);
         }
-
         private void ConsultorioCreado()
         {
             if (!File.Exists(_fileName))

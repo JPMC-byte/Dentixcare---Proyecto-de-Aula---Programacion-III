@@ -27,6 +27,11 @@ namespace BLL
             return RepsOrto.LoadData();
         }
 
+        public Ortodoncista GetByID(string ID)
+        {
+            return RepsOrto.getByID(ID);
+        }
+
         public Ortodoncista IniciarSesion(string id, string Password)
         {
             return RepsOrto.GetByUser(id, Password);

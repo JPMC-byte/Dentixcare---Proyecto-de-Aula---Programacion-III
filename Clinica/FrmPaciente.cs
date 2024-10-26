@@ -87,8 +87,7 @@ namespace Clinica
 
         private void btnAgendarCita_Click(object sender, EventArgs e)
         {
-
-
+            AbrirFormulario(new FrmAgendarCita(paciente));
             OcultarSubmenu();
         }
         private void btnRegistroCitas_Click(object sender, EventArgs e)

@@ -32,7 +32,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return null;
+                return new List<Ortodoncista>();
             }
 
         }
