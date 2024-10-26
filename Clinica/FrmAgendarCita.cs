@@ -16,6 +16,7 @@ namespace Clinica
     {
         Persona UsuarioActual;
         ServicioCita servisCita = new ServicioCita();
+        ServicioConsultorio servisconsulto = new ServicioConsultorio();
         Validaciones vali = new Validaciones();
         public FrmAgendarCita(Persona persona)
         {
@@ -25,16 +26,20 @@ namespace Clinica
 
         private void btnRegistrado_Click(object sender, EventArgs e)
         {
+            if (!Verificar() || !ValidarFecha() || !ValidarFechaFutura() || !ValidarHoraDisponible())
+            {
+                return;
+            }
             Registrar();
         }
         private void Registrar()
         {
-            if (!Verificar() || !ValidarFecha())
-            {
-                return;
-            }
             Cita cita = new Cita();
+            Consultorio consultorio = new Consultorio();
+            consultorio = servisconsulto.CargarConsultorio("P101");
+
             cita.Codigo = GenerarCodigo();
+            cita.CodigoConsultorio = consultorio.Codigo;
             cita.CodigoPaciente = UsuarioActual.Cedula;
             cita.CodigoOrtodoncista = "No asignado";
             cita.Fecha_Cita = DTFecha_Nacimiento.Value.Date;
@@ -48,20 +53,7 @@ namespace Clinica
         }
         private string GenerarCodigo()
         {
-            List<Cita> citasExistentes = servisCita.GetAll();
-            string nuevoCodigo;
-
-            if (citasExistentes.Count == 0 ||citasExistentes == null)
-            {
-                nuevoCodigo = "001";
-            }
-            else
-            {
-                Cita ultimaCita = citasExistentes.Last();
-                int ultimoCodigoNumerico = int.Parse(ultimaCita.Codigo); 
-                nuevoCodigo = (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0'); 
-            }
-            return nuevoCodigo;
+            return servisCita.GenerarCodigo();
         }
         bool Verificar()
         {
@@ -79,6 +71,26 @@ namespace Clinica
             if (!vali.ValidarHorario(horaCita, fechaCita))
             {
                 MessageBox.Show("Error - Ya hay una cita existente en el horario establecido.");
+                return false;
+            }
+            return true;
+        }
+        bool ValidarFechaFutura()
+        {
+            DateTime fechaCita = DTFecha_Nacimiento.Value.Date;
+            if (!vali.ValidarFechaFutura(fechaCita))
+            {
+                MessageBox.Show("Error - No es posible agendar una cita en días pasados.");
+                return false;
+            }
+            return true;
+        }
+        bool ValidarHoraDisponible()
+        {
+            TimeSpan horaCita = DTHora.Value.TimeOfDay;
+            if (!vali.ValidarAperturaCierre(horaCita))
+            {
+                MessageBox.Show("Error - No es posible agendar una cita en un horario no correspondiente.");
                 return false;
             }
             return true;
@@ -108,6 +120,15 @@ namespace Clinica
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            cerrar();
+        }
+        void cerrar()
+        {
+            this.Close();
         }
     }
 }

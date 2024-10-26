@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Entidadeds;
 using ENTITY;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,10 @@ namespace BLL
         public Consultorio CargarConsultorio(string ID)
         {
             return reposConsul.GetById(ID);
+        }
+        public List<Consultorio> GetAll()
+        {
+            return reposConsul.LoadData();
         }
     }
 }

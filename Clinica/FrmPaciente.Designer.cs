@@ -30,8 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelSubmenuCitas = new System.Windows.Forms.Panel();
-            this.btnModificarCita = new System.Windows.Forms.Button();
-            this.btnCancelarCita = new System.Windows.Forms.Button();
             this.btnRegistroCitas = new System.Windows.Forms.Button();
             this.btnAgendarCita = new System.Windows.Forms.Button();
             this.btnGestionCitas = new System.Windows.Forms.Button();
@@ -77,53 +75,14 @@
             // 
             // PanelSubmenuCitas
             // 
-            this.PanelSubmenuCitas.Controls.Add(this.btnModificarCita);
-            this.PanelSubmenuCitas.Controls.Add(this.btnCancelarCita);
             this.PanelSubmenuCitas.Controls.Add(this.btnRegistroCitas);
             this.PanelSubmenuCitas.Controls.Add(this.btnAgendarCita);
             this.PanelSubmenuCitas.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSubmenuCitas.Location = new System.Drawing.Point(0, 475);
             this.PanelSubmenuCitas.Name = "PanelSubmenuCitas";
-            this.PanelSubmenuCitas.Size = new System.Drawing.Size(250, 178);
+            this.PanelSubmenuCitas.Size = new System.Drawing.Size(250, 87);
             this.PanelSubmenuCitas.TabIndex = 36;
             this.PanelSubmenuCitas.Visible = false;
-            // 
-            // btnModificarCita
-            // 
-            this.btnModificarCita.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnModificarCita.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarCita.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnModificarCita.FlatAppearance.BorderSize = 0;
-            this.btnModificarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCita.ForeColor = System.Drawing.Color.Black;
-            this.btnModificarCita.Location = new System.Drawing.Point(0, 120);
-            this.btnModificarCita.Name = "btnModificarCita";
-            this.btnModificarCita.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnModificarCita.Size = new System.Drawing.Size(250, 40);
-            this.btnModificarCita.TabIndex = 37;
-            this.btnModificarCita.Text = "Modificar razon de cita";
-            this.btnModificarCita.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarCita.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarCita
-            // 
-            this.btnCancelarCita.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCancelarCita.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarCita.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCancelarCita.FlatAppearance.BorderSize = 0;
-            this.btnCancelarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCita.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelarCita.Location = new System.Drawing.Point(0, 80);
-            this.btnCancelarCita.Name = "btnCancelarCita";
-            this.btnCancelarCita.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCancelarCita.Size = new System.Drawing.Size(250, 40);
-            this.btnCancelarCita.TabIndex = 36;
-            this.btnCancelarCita.Text = "Cancelar cita";
-            this.btnCancelarCita.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarCita.UseVisualStyleBackColor = false;
-            this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
             // 
             // btnRegistroCitas
             // 
@@ -259,6 +218,7 @@
             this.Panellogo.Name = "Panellogo";
             this.Panellogo.Size = new System.Drawing.Size(250, 307);
             this.Panellogo.TabIndex = 4;
+            this.Panellogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // panel2
             // 
@@ -387,13 +347,11 @@
         private System.Windows.Forms.Button btnAntecedentes;
         private System.Windows.Forms.Button btnGestionCitas;
         private System.Windows.Forms.Panel PanelSubmenuCitas;
-        private System.Windows.Forms.Button btnCancelarCita;
         private System.Windows.Forms.Button btnRegistroCitas;
         private System.Windows.Forms.Button btnAgendarCita;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PanelDia;
         private System.Windows.Forms.Panel PanelHijo;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnModificarCita;
     }
 }

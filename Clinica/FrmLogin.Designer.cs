@@ -110,7 +110,7 @@
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCedula.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCedula.Location = new System.Drawing.Point(351, 148);
+            this.txtCedula.Location = new System.Drawing.Point(352, 141);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(173, 20);
             this.txtCedula.TabIndex = 34;
@@ -125,8 +125,8 @@
             this.lineShape4.Name = "lineShape4";
             this.lineShape4.X1 = 352;
             this.lineShape4.X2 = 524;
-            this.lineShape4.Y1 = 173;
-            this.lineShape4.Y2 = 173;
+            this.lineShape4.Y1 = 167;
+            this.lineShape4.Y2 = 167;
             // 
             // lineShape5
             // 
@@ -210,10 +210,10 @@
             this.Controls.Add(this.BtnMinimizar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.shapeContainer1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

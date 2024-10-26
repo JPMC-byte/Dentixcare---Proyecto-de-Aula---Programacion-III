@@ -29,6 +29,35 @@ namespace BLL
         {
             return reposCita.GetById(id);
         }
+        public List<Cita> LoadByID(string id)
+        {
+            return reposCita.LoadByID(id);
+        }
+        public string GenerarCodigo()
+        {
+            List<Cita> citasExistentes = GetAll();
+            string nuevoCodigo;
+
+            if (citasExistentes.Count == 0 || citasExistentes == null)
+            {
+                nuevoCodigo = "001";
+            }
+            else
+            {
+                Cita ultimaCita = citasExistentes.Last();
+                int ultimoCodigoNumerico = int.Parse(ultimaCita.Codigo);
+                nuevoCodigo = (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
+            }
+            return nuevoCodigo;
+        }
+
+        public string Update(Cita cita, string RazonCita)
+        {
+            List<Cita> Citas = GetAll();
+            Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
+            CitaAModificar.Razon_Cita = RazonCita;
+            return reposCita.SaveData(Citas);
+        }
 
     }
 }

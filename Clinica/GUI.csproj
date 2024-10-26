@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmActualizarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmActualizarCita.Designer.cs">
+      <DependentUpon>FrmActualizarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgendarCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="FrmAcceso.Designer.cs">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInformacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInformacion.Designer.cs">
+      <DependentUpon>FrmInformacion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInicioSesion.cs">
       <SubType>Form</SubType>
@@ -116,6 +128,12 @@
     <Compile Include="FrmRegistrarOrtodoncista.Designer.cs">
       <DependentUpon>FrmRegistrarOrtodoncista.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegistroCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroCita.Designer.cs">
+      <DependentUpon>FrmRegistroCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmRegistrar.cs">
@@ -124,6 +142,9 @@
     <Compile Include="FrmRegistrar.Designer.cs">
       <DependentUpon>FrmRegistrar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmActualizarCita.resx">
+      <DependentUpon>FrmActualizarCita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgendarCita.resx">
       <DependentUpon>FrmAgendarCita.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAcceso.resx">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInformacion.resx">
+      <DependentUpon>FrmInformacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngreso.resx">
       <DependentUpon>FrmIngreso.cs</DependentUpon>
@@ -159,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrarOrtodoncista.resx">
       <DependentUpon>FrmRegistrarOrtodoncista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistroCita.resx">
+      <DependentUpon>FrmRegistroCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

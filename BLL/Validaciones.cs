@@ -15,6 +15,7 @@ namespace BLL
         ServicioPaciente servicioPaciente = new ServicioPaciente();
         ServicioOrtodoncista servicioOrtodoncista = new ServicioOrtodoncista();
         ServicioCita servicioCita = new ServicioCita();
+        ServicioConsultorio servicioConsultorio = new ServicioConsultorio();
         public Validaciones() { }
         public bool ValidarLetras(string Texto)
         {
@@ -74,6 +75,23 @@ namespace BLL
                         return false;
                     }
                 }
+            }
+            return true;
+        }
+        public bool ValidarFechaFutura(DateTime fechaCita)
+        {
+            return fechaCita.Date > DateTime.Now.Date;
+        }
+
+        public bool ValidarAperturaCierre(TimeSpan Hora)
+        {
+            Consultorio consul = new Consultorio();
+            consul = servicioConsultorio.CargarConsultorio("P101");
+
+            bool horaNoDisponibilidad = (Hora < consul.Hora_Apertura) || (Hora > consul.Hora_Cierre);
+            if (horaNoDisponibilidad)
+            {
+                return false;
             }
             return true;
         }

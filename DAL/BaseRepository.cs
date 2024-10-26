@@ -29,7 +29,25 @@ namespace DAL
             {
                 return ("error al guardar " + ex.Message);
             }
-
+        }
+        public string SaveData(List<T> List)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(_fileName, false))
+                {
+                    foreach (var T in List)
+                    {
+                        writer.WriteLine(T.ToString());
+                    }
+                    writer.Close();
+                    return "Datos modificados correctamente";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Error al sobrescribir el archivo: " + ex.Message;
+            }
         }
         public abstract List<T> LoadData();
     }

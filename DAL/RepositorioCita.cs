@@ -40,13 +40,14 @@ namespace DAL
         {
             var cita = new Cita();
             cita.Codigo = line.Split(';')[0];
-            cita.CodigoOrtodoncista = line.Split(';')[1];
-            cita.CodigoPaciente = line.Split(';')[2];
-            cita.Fecha_Cita = DateTime.Parse(line.Split(';')[3]);
-            cita.Fecha_Creacion = DateTime.Parse(line.Split(';')[4]);
-            cita.Hora_Cita = TimeSpan.Parse(line.Split(';')[5]);
-            cita.Razon_Cita = line.Split(';')[6];
-            cita.Estado = line.Split(';')[7];
+            cita.CodigoConsultorio = line.Split(';')[1];
+            cita.CodigoOrtodoncista = line.Split(';')[2];
+            cita.CodigoPaciente = line.Split(';')[3];
+            cita.Fecha_Cita = DateTime.Parse(line.Split(';')[4]);
+            cita.Fecha_Creacion = DateTime.Parse(line.Split(';')[5]);
+            cita.Hora_Cita = TimeSpan.Parse(line.Split(';')[6]);
+            cita.Razon_Cita = line.Split(';')[7];
+            cita.Estado = line.Split(';')[8];
 
             return cita;
         }
@@ -55,9 +56,9 @@ namespace DAL
             return LoadData().FirstOrDefault<Cita>(x => x.Codigo == id);
         }
 
-        public Cita GetByDay(DateTime date)
+        public List<Cita> LoadByID(string id)
         {
-            return LoadData().FirstOrDefault<Cita>(x => x.Fecha_Cita.Date == date.Date);
+            return LoadData().Where(cita => cita.CodigoPaciente == id).ToList();
         }
     }
 }

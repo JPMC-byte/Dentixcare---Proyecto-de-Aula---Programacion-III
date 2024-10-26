@@ -19,7 +19,6 @@ namespace Clinica
             InitializeComponent();
             UsuarioActual = persona;
             CargarDatos(UsuarioActual);
-            Sobreponer();
         }
         private void CargarDatos(Persona persona)
         {
@@ -40,28 +39,14 @@ namespace Clinica
                 txtCategoria.Text = "Ortodoncista";
             }
         }
-        private void Sobreponer()
-        {
-            LBPerfil.BringToFront();
-            LBNombre.BringToFront();
-            LBApellido.BringToFront();
-            LBTelefono.BringToFront();
-            LBCedula.BringToFront();
-            LBFecha.BringToFront();
-            LBEdad.BringToFront();
-            LBCategoria.BringToFront();
-            LBID.BringToFront();
-            IconPerson.BringToFront();
-            txtNombre.BringToFront();
-            txtApellido.BringToFront();
-            txtTelefono.BringToFront();
-            txtCedula.BringToFront();
-            txtEdad.BringToFront();
-            txtFechaNacimiento.BringToFront();
-            txtEdad.BringToFront();
-            txtCategoria.BringToFront();
-            txtIDConsultorio.BringToFront();
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            cerrar();
+        }
+        void cerrar()
+        {
+            this.Close();
         }
     }
 }
