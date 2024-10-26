@@ -19,11 +19,11 @@ namespace ENTITY
 
         public Cita() { }
 
-        public Cita(string codigo, Paciente paciente, DateTime fecha_creacion, DateTime fecha_Cita, TimeSpan hora_Cita, string razon_Cita, string estado)
+        public Cita(string codigo, string codigoPaciente, DateTime fecha_creacion, DateTime fecha_Cita, TimeSpan hora_Cita, string razon_Cita, string estado)
         {
             Codigo = codigo;
             CodigoOrtodoncista = null;
-            CodigoPaciente = paciente.Cedula;
+            CodigoPaciente = codigoPaciente;
             Fecha_Creacion = fecha_creacion;
             Fecha_Cita = fecha_Cita;
             Hora_Cita = hora_Cita;
@@ -36,7 +36,7 @@ namespace ENTITY
         }
         public override string ToString()
         {
-            return $"{Codigo};{CodigoOrtodoncista};{CodigoPaciente};{Fecha_Creacion:dd/MM/yyyy};{Fecha_Cita:dd/MM/yyyy};{Hora_Cita};{Razon_Cita};{Estado}";
+            return $"{Codigo};{CodigoOrtodoncista};{CodigoPaciente};{Fecha_Cita:dd/MM/yyyy};{Fecha_Creacion:dd/MM/yyyy};{Hora_Cita};{Razon_Cita};{Estado}";
         }
     }
 }

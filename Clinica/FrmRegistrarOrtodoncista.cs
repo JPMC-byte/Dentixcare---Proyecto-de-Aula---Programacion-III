@@ -100,6 +100,11 @@ namespace Clinica
             txtTelefono.Text = "TELEFONO";
             txtCedula.Text = "CEDULA";
             txtContraseña.Text = "CONTRASEÑA";
+            txtNombre.ForeColor = Color.DimGray;
+            txtApellido.ForeColor = Color.DimGray;
+            txtTelefono.ForeColor = Color.DimGray;
+            txtCedula.ForeColor = Color.DimGray;
+            txtContraseña.ForeColor = Color.DimGray;
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {

@@ -40,7 +40,7 @@ namespace DAL
         private Diagnostico Map(string line)
         {
             var diag = new Diagnostico();
-            diag.Codigo = line.Split(',')[0];
+            diag.Codigo = line.Split(';')[0];
             diag.Descripcion = line.Split(';')[1];
             diag.Fecha_Diagnostico = DateTime.Parse(line.Split(';')[2]);
             diag.CodigoCita = line.Split(';')[3];

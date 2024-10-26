@@ -239,6 +239,7 @@
             // lineShape1
             // 
             this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape1.Enabled = false;
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 275;
             this.lineShape1.X2 = 478;
@@ -248,6 +249,7 @@
             // lineShape2
             // 
             this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape2.Enabled = false;
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 275;
             this.lineShape2.X2 = 478;
@@ -257,6 +259,7 @@
             // lineShape3
             // 
             this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape3.Enabled = false;
             this.lineShape3.Name = "lineShape3";
             this.lineShape3.X1 = 275;
             this.lineShape3.X2 = 478;
@@ -266,6 +269,7 @@
             // lineShape5
             // 
             this.lineShape5.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape5.Enabled = false;
             this.lineShape5.Name = "lineShape5";
             this.lineShape5.X1 = 521;
             this.lineShape5.X2 = 693;
@@ -275,6 +279,7 @@
             // lineShape4
             // 
             this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape4.Enabled = false;
             this.lineShape4.Name = "lineShape4";
             this.lineShape4.X1 = 522;
             this.lineShape4.X2 = 694;

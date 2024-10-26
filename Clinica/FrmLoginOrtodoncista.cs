@@ -73,8 +73,10 @@ namespace Clinica
         }
         private void Limpiar()
         {
-            txtCedula.Clear();
-            txtContraseña.Clear();
+            txtCedula.Text = "CEDULA";
+            txtContraseña.Text = "CONTRASEÑA";
+            txtCedula.ForeColor = Color.DimGray;
+            txtContraseña.ForeColor = Color.DimGray;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

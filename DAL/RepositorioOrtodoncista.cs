@@ -39,7 +39,7 @@ namespace DAL
         private Ortodoncista Map(string line)
         {
             var ortodon = new Ortodoncista();
-            ortodon.CodigoConsultorio = line.Split(',')[0];
+            ortodon.CodigoConsultorio = line.Split(';')[0];
             ortodon.Nombre = line.Split(';')[1];
             ortodon.Apellido = line.Split(';')[2];
             ortodon.Cedula = line.Split(';')[3];

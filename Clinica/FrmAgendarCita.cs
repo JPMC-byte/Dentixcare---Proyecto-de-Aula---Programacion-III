@@ -74,7 +74,9 @@ namespace Clinica
         }
         bool ValidarFecha()
         {
-            if (!vali.ValidarHorario(DTHora.Value.TimeOfDay, DTFecha_Nacimiento.Value.Date))
+            DateTime fechaCita = DTFecha_Nacimiento.Value.Date;
+            TimeSpan horaCita = DTHora.Value.TimeOfDay;
+            if (!vali.ValidarHorario(horaCita, fechaCita))
             {
                 MessageBox.Show("Error - Ya hay una cita existente en el horario establecido.");
                 return false;
@@ -84,6 +86,7 @@ namespace Clinica
         private void Limpiar()
         {
             txtRazonCita.Text = "RAZON DE CITA";
+            txtRazonCita.ForeColor = Color.DimGray;
         }
         private void txtRazonCita_Enter(object sender, EventArgs e)
         {

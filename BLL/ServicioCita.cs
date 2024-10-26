@@ -25,5 +25,10 @@ namespace BLL
         {
             return reposCita.LoadData();
         }
+        public Cita GetByID(string id) 
+        {
+            return reposCita.GetById(id);
+        }
+
     }
 }

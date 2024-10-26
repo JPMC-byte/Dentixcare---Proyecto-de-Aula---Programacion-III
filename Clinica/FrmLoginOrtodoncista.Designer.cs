@@ -143,6 +143,7 @@
             // lineShape4
             // 
             this.lineShape4.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape4.Enabled = false;
             this.lineShape4.Name = "lineShape4";
             this.lineShape4.X1 = 352;
             this.lineShape4.X2 = 524;
@@ -152,6 +153,7 @@
             // lineShape5
             // 
             this.lineShape5.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape5.Enabled = false;
             this.lineShape5.Name = "lineShape5";
             this.lineShape5.X1 = 351;
             this.lineShape5.X2 = 523;

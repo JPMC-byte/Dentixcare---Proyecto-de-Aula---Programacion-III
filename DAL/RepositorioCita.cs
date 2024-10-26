@@ -39,7 +39,7 @@ namespace DAL
         private Cita Map(string line)
         {
             var cita = new Cita();
-            cita.Codigo = line.Split(',')[0];
+            cita.Codigo = line.Split(';')[0];
             cita.CodigoOrtodoncista = line.Split(';')[1];
             cita.CodigoPaciente = line.Split(';')[2];
             cita.Fecha_Cita = DateTime.Parse(line.Split(';')[3]);

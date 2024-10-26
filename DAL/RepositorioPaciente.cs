@@ -38,7 +38,7 @@ namespace DAL
         private Paciente Map(string line)
         {
             var paciente = new Paciente();
-            paciente.CodigoConsultorio = line.Split(',')[0];
+            paciente.CodigoConsultorio = line.Split(';')[0];
             paciente.Nombre = line.Split(';')[1];
             paciente.Apellido = line.Split(';')[2];
             paciente.Cedula = line.Split(';')[3];
