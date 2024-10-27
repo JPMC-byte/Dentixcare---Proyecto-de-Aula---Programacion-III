@@ -176,5 +176,10 @@ namespace Clinica
         {
             Limpiar();
         }
+
+        private void FrmRegistrar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

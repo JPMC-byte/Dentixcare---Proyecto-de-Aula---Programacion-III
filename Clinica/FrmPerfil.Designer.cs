@@ -59,7 +59,6 @@
             // 
             this.LBPerfil.AutoSize = true;
             this.LBPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.LBPerfil.Enabled = false;
             this.LBPerfil.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBPerfil.Location = new System.Drawing.Point(12, 103);
             this.LBPerfil.Name = "LBPerfil";
@@ -70,7 +69,6 @@
             // LBSegundoNombre
             // 
             this.LBSegundoNombre.AutoSize = true;
-            this.LBSegundoNombre.Enabled = false;
             this.LBSegundoNombre.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBSegundoNombre.Location = new System.Drawing.Point(535, 149);
             this.LBSegundoNombre.Name = "LBSegundoNombre";
@@ -94,7 +92,6 @@
             // LBSegundoApellido
             // 
             this.LBSegundoApellido.AutoSize = true;
-            this.LBSegundoApellido.Enabled = false;
             this.LBSegundoApellido.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBSegundoApellido.Location = new System.Drawing.Point(536, 239);
             this.LBSegundoApellido.Name = "LBSegundoApellido";
@@ -117,7 +114,6 @@
             // LBTelefono
             // 
             this.LBTelefono.AutoSize = true;
-            this.LBTelefono.Enabled = false;
             this.LBTelefono.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTelefono.Location = new System.Drawing.Point(297, 327);
             this.LBTelefono.Name = "LBTelefono";
@@ -152,7 +148,6 @@
             // LBCedula
             // 
             this.LBCedula.AutoSize = true;
-            this.LBCedula.Enabled = false;
             this.LBCedula.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBCedula.Location = new System.Drawing.Point(536, 327);
             this.LBCedula.Name = "LBCedula";
@@ -163,7 +158,6 @@
             // LBFecha
             // 
             this.LBFecha.AutoSize = true;
-            this.LBFecha.Enabled = false;
             this.LBFecha.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBFecha.Location = new System.Drawing.Point(536, 423);
             this.LBFecha.Name = "LBFecha";
@@ -198,7 +192,6 @@
             // LBEdad
             // 
             this.LBEdad.AutoSize = true;
-            this.LBEdad.Enabled = false;
             this.LBEdad.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBEdad.Location = new System.Drawing.Point(297, 423);
             this.LBEdad.Name = "LBEdad";
@@ -222,7 +215,6 @@
             // LBCategoria
             // 
             this.LBCategoria.AutoSize = true;
-            this.LBCategoria.Enabled = false;
             this.LBCategoria.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBCategoria.Location = new System.Drawing.Point(297, 509);
             this.LBCategoria.Name = "LBCategoria";
@@ -233,7 +225,6 @@
             // LBID
             // 
             this.LBID.AutoSize = true;
-            this.LBID.Enabled = false;
             this.LBID.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBID.Location = new System.Drawing.Point(536, 509);
             this.LBID.Name = "LBID";
@@ -257,6 +248,7 @@
             // IconPerson
             // 
             this.IconPerson.BackColor = System.Drawing.Color.Transparent;
+            this.IconPerson.Enabled = false;
             this.IconPerson.Image = global::Clinica.Properties.Resources.IconPerson;
             this.IconPerson.Location = new System.Drawing.Point(19, 149);
             this.IconPerson.Name = "IconPerson";
@@ -267,6 +259,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(745, 12);
             this.btnCerrar.Name = "btnCerrar";
@@ -279,7 +272,6 @@
             // LBPrimerApellido
             // 
             this.LBPrimerApellido.AutoSize = true;
-            this.LBPrimerApellido.Enabled = false;
             this.LBPrimerApellido.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBPrimerApellido.Location = new System.Drawing.Point(297, 239);
             this.LBPrimerApellido.Name = "LBPrimerApellido";
@@ -302,7 +294,6 @@
             // LBPrimerNombre
             // 
             this.LBPrimerNombre.AutoSize = true;
-            this.LBPrimerNombre.Enabled = false;
             this.LBPrimerNombre.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBPrimerNombre.Location = new System.Drawing.Point(297, 149);
             this.LBPrimerNombre.Name = "LBPrimerNombre";

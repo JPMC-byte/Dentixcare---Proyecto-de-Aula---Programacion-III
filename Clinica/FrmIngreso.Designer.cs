@@ -49,6 +49,7 @@
             // btnIngreso
             // 
             this.btnIngreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngreso.FlatAppearance.BorderSize = 0;
             this.btnIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -64,6 +65,7 @@
             // btnResgistrar
             // 
             this.btnResgistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnResgistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResgistrar.FlatAppearance.BorderSize = 0;
             this.btnResgistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResgistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,6 +104,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
             this.pictureBox1.Location = new System.Drawing.Point(12, 77);
             this.pictureBox1.Name = "pictureBox1";
@@ -142,6 +146,8 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = global::Clinica.Properties.Resources.IconPerson;
             this.pictureBox3.Location = new System.Drawing.Point(332, 62);
             this.pictureBox3.Name = "pictureBox3";
@@ -152,6 +158,7 @@
             // 
             // BtnMinimizar
             // 
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(592, 9);
             this.BtnMinimizar.Name = "BtnMinimizar";
@@ -163,6 +170,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(618, 9);
             this.btnCerrar.Name = "btnCerrar";
@@ -187,6 +195,7 @@
             this.Controls.Add(this.btnResgistrar);
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmIngreso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

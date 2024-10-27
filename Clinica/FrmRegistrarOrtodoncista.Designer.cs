@@ -73,6 +73,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
             this.pictureBox1.Location = new System.Drawing.Point(12, 77);
             this.pictureBox1.Name = "pictureBox1";
@@ -105,6 +106,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Image = global::Clinica.Properties.Resources.Volver;
             this.btnVolver.Location = new System.Drawing.Point(715, 12);
             this.btnVolver.Name = "btnVolver";
@@ -116,6 +118,7 @@
             // 
             // BtnMinimizar
             // 
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(689, 12);
             this.BtnMinimizar.Name = "BtnMinimizar";
@@ -139,6 +142,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,6 +180,7 @@
             // btnRegistrado
             // 
             this.btnRegistrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegistrado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrado.FlatAppearance.BorderSize = 0;
             this.btnRegistrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrado.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

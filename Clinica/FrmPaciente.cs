@@ -28,10 +28,13 @@ namespace Clinica
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void PCFondo_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            MoverPestaña();
         }
         private void Panellogo_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverPestaña();
+        }
+        void MoverPestaña()
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
@@ -46,6 +49,10 @@ namespace Clinica
                 this.Close(); 
         }
         private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            Minimizar();
+        }
+        void Minimizar()
         {
             this.WindowState = FormWindowState.Minimized;
         }

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDatosConsultorio = new System.Windows.Forms.Button();
-            this.PanelSubmenuPagos = new System.Windows.Forms.Panel();
+            this.PanelSubmenuTratamientos = new System.Windows.Forms.Panel();
             this.btnRegistroPagos = new System.Windows.Forms.Button();
             this.btnRealizarPago = new System.Windows.Forms.Button();
             this.btnGestionPagos = new System.Windows.Forms.Button();
@@ -45,9 +46,8 @@
             this.PanelDia = new System.Windows.Forms.Panel();
             this.PanelHijo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.PanelSubmenuPagos.SuspendLayout();
+            this.PanelSubmenuTratamientos.SuspendLayout();
             this.Panellogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +61,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnDatosConsultorio);
-            this.panel1.Controls.Add(this.PanelSubmenuPagos);
+            this.panel1.Controls.Add(this.PanelSubmenuTratamientos);
             this.panel1.Controls.Add(this.btnGestionPagos);
             this.panel1.Controls.Add(this.btnGestionCitas);
             this.panel1.Controls.Add(this.btnDatosUsuario);
@@ -72,6 +72,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 799);
             this.panel1.TabIndex = 34;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 462);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(250, 41);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Gestión de pacientes";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnDatosConsultorio
             // 
@@ -90,16 +107,16 @@
             this.btnDatosConsultorio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosConsultorio.UseVisualStyleBackColor = false;
             // 
-            // PanelSubmenuPagos
+            // PanelSubmenuTratamientos
             // 
-            this.PanelSubmenuPagos.Controls.Add(this.btnRegistroPagos);
-            this.PanelSubmenuPagos.Controls.Add(this.btnRealizarPago);
-            this.PanelSubmenuPagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSubmenuPagos.Location = new System.Drawing.Point(0, 334);
-            this.PanelSubmenuPagos.Name = "PanelSubmenuPagos";
-            this.PanelSubmenuPagos.Size = new System.Drawing.Size(250, 87);
-            this.PanelSubmenuPagos.TabIndex = 38;
-            this.PanelSubmenuPagos.Visible = false;
+            this.PanelSubmenuTratamientos.Controls.Add(this.btnRegistroPagos);
+            this.PanelSubmenuTratamientos.Controls.Add(this.btnRealizarPago);
+            this.PanelSubmenuTratamientos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSubmenuTratamientos.Location = new System.Drawing.Point(0, 334);
+            this.PanelSubmenuTratamientos.Name = "PanelSubmenuTratamientos";
+            this.PanelSubmenuTratamientos.Size = new System.Drawing.Size(250, 87);
+            this.PanelSubmenuTratamientos.TabIndex = 38;
+            this.PanelSubmenuTratamientos.Visible = false;
             // 
             // btnRegistroPagos
             // 
@@ -187,6 +204,7 @@
             this.btnDatosUsuario.Text = "Datos de usuario";
             this.btnDatosUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosUsuario.UseVisualStyleBackColor = false;
+            this.btnDatosUsuario.Click += new System.EventHandler(this.btnDatosUsuario_Click);
             // 
             // Panellogo
             // 
@@ -199,6 +217,7 @@
             this.Panellogo.Name = "Panellogo";
             this.Panellogo.Size = new System.Drawing.Size(250, 211);
             this.Panellogo.TabIndex = 4;
+            this.Panellogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panellogo_MouseDown);
             // 
             // panel2
             // 
@@ -217,9 +236,11 @@
             this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnMinimizar.TabIndex = 7;
             this.BtnMinimizar.TabStop = false;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
             this.pictureBox1.Location = new System.Drawing.Point(50, 61);
             this.pictureBox1.Name = "pictureBox1";
@@ -254,6 +275,7 @@
             this.btnCerrarSesion.TabIndex = 3;
             this.btnCerrarSesion.Text = "Cerrar sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // PanelDia
             // 
@@ -283,23 +305,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 462);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(250, 41);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Gestión de pacientes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
             // 
             // FrmMedico
             // 
@@ -311,9 +317,10 @@
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medico";
             this.panel1.ResumeLayout(false);
-            this.PanelSubmenuPagos.ResumeLayout(false);
+            this.PanelSubmenuTratamientos.ResumeLayout(false);
             this.Panellogo.ResumeLayout(false);
             this.Panellogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
@@ -328,7 +335,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDatosConsultorio;
-        private System.Windows.Forms.Panel PanelSubmenuPagos;
+        private System.Windows.Forms.Panel PanelSubmenuTratamientos;
         private System.Windows.Forms.Button btnRegistroPagos;
         private System.Windows.Forms.Button btnRealizarPago;
         private System.Windows.Forms.Button btnGestionPagos;

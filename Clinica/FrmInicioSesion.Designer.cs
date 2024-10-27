@@ -50,6 +50,7 @@
             // btnPaciente
             // 
             this.btnPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPaciente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPaciente.FlatAppearance.BorderSize = 0;
             this.btnPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -64,6 +65,7 @@
             // btnMedico
             // 
             this.btnMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMedico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedico.FlatAppearance.BorderSize = 0;
             this.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,6 +91,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
             this.pictureBox1.Location = new System.Drawing.Point(12, 77);
             this.pictureBox1.Name = "pictureBox1";
@@ -131,6 +135,7 @@
             // 
             // BtnMinimizar
             // 
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(596, 9);
             this.BtnMinimizar.Name = "BtnMinimizar";
@@ -142,6 +147,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Image = global::Clinica.Properties.Resources.Volver;
             this.btnVolver.Location = new System.Drawing.Point(622, 9);
             this.btnVolver.Name = "btnVolver";
@@ -153,6 +159,8 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = global::Clinica.Properties.Resources.Icon_Ortodoncista;
             this.pictureBox2.Location = new System.Drawing.Point(256, 132);
             this.pictureBox2.Name = "pictureBox2";
@@ -163,6 +171,8 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = global::Clinica.Properties.Resources.Icon_Paciente;
             this.pictureBox3.Location = new System.Drawing.Point(452, 132);
             this.pictureBox3.Name = "pictureBox3";
@@ -186,6 +196,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnMedico);
             this.Controls.Add(this.btnPaciente);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

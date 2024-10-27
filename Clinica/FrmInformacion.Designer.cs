@@ -261,6 +261,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Clinica.Properties.Resources.IconPapeles;
             this.pictureBox1.Location = new System.Drawing.Point(4, 254);
             this.pictureBox1.Name = "pictureBox1";
@@ -271,6 +272,7 @@
             // 
             // BtnMinimizar
             // 
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(709, 12);
             this.BtnMinimizar.Name = "BtnMinimizar";
@@ -282,6 +284,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(735, 12);
             this.btnCerrar.Name = "btnCerrar";
@@ -395,6 +398,7 @@
             this.Controls.Add(this.txtFechaDeCreacion);
             this.Controls.Add(this.LBRazon);
             this.Controls.Add(this.txtCodigo);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForeColor = System.Drawing.Color.DodgerBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInformacion";

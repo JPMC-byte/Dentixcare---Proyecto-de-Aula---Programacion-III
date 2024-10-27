@@ -44,7 +44,7 @@ namespace Clinica
             if (ortodoncista != null)
             {
                 MessageBox.Show("Inicio de sesion exitoso");
-                var F = new FrmMedico();
+                var F = new FrmMedico(ortodoncista);
                 F.ShowDialog();
             }
             else

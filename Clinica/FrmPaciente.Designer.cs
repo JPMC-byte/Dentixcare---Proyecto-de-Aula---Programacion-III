@@ -279,6 +279,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
             this.pictureBox1.Location = new System.Drawing.Point(50, 61);
             this.pictureBox1.Name = "pictureBox1";
