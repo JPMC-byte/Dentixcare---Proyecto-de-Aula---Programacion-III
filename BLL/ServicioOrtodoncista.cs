@@ -1,5 +1,4 @@
 ﻿using DAL;
-using Entidadeds;
 using ENTITY;
 using Logica;
 using System;
@@ -29,7 +28,7 @@ namespace BLL
 
         public Ortodoncista GetByID(string ID)
         {
-            return RepsOrto.getByID(ID);
+            return RepsOrto.GetByID(ID);
         }
 
         public Ortodoncista IniciarSesion(string id, string Password)

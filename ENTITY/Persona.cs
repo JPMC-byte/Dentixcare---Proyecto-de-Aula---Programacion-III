@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ENTITY
 {
     public abstract class Persona
     {
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public string PrimerNombre { get; set; }
+        public string SegundoNombre { get; set; }
+        public string PrimerApellido { get; set; }
+        public string SegundoApellido { get; set; }
         public string Cedula { get; set; }
         public string CodigoConsultorio { get; set; }
         public string Telefono { get; set; }
@@ -19,19 +17,20 @@ namespace ENTITY
 
         public Persona()
         {
-
         }
 
-        public Persona(Consultorio consultorio, string nombre, string apellido, string cedula, string telefono,int edad, DateTime fecha_De_Nacimiento, string contraseña)
+        public Persona(Consultorio consultorio, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string cedula, string telefono, int edad, DateTime fecha_De_Nacimiento, string contrasena)
         {
             CodigoConsultorio = consultorio.Codigo;
-            Nombre = nombre;
-            Apellido = apellido;
+            PrimerNombre = primerNombre;
+            SegundoNombre = segundoNombre;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
             Cedula = cedula;
             Telefono = telefono;
             Edad = edad;
             Fecha_De_Nacimiento = fecha_De_Nacimiento;
-            Contrasena = contraseña;
+            Contrasena = contrasena;
         }
         public int CalcularEdad(DateTime Fecha_Nacimiento)
         {
@@ -42,7 +41,7 @@ namespace ENTITY
         }
         public override string ToString()
         {
-            return $"{CodigoConsultorio};{Nombre};{Apellido};{Cedula};{Telefono};{Fecha_De_Nacimiento:dd/MM/yyyy};{Edad};{Contrasena}";
+            return $"{CodigoConsultorio};{PrimerNombre};{SegundoNombre};{PrimerApellido};{SegundoApellido};{Cedula};{Telefono};{Fecha_De_Nacimiento:dd/MM/yyyy};{Edad};{Contrasena}";
         }
     }
 }

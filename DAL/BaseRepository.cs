@@ -49,6 +49,7 @@ namespace DAL
                 return "Error al sobrescribir el archivo: " + ex.Message;
             }
         }
+
         public abstract List<T> LoadData();
     }
 }

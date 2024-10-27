@@ -22,8 +22,10 @@ namespace Clinica
         }
         private void CargarDatos(Persona persona)
         {
-            txtNombre.Text = persona.Nombre;
-            txtApellido.Text = persona.Apellido;
+            txtPrimerNombre.Text = persona.PrimerNombre;
+            txtSegundoNombre.Text = persona.SegundoNombre;
+            txtPrimerApellido.Text = persona.PrimerApellido;
+            txtSegundoApellido.Text = persona.SegundoNombre;
             txtTelefono.Text = persona.Telefono;
             txtCedula.Text = persona.Cedula;
             txtEdad.Text = persona.Edad.ToString();

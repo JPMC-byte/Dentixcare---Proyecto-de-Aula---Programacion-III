@@ -35,7 +35,10 @@ namespace Clinica
             {
                 return;
             }
-            Actualizar();
+            if (Confirmar())
+            {
+                Actualizar();
+            }
         }
         void Actualizar()
         {
@@ -43,6 +46,10 @@ namespace Clinica
             serviscita.Update(CitaActual, RazonCita);
             MessageBox.Show("Proceso de modificación exitoso");
             Limpiar();
+        }
+        bool Confirmar()
+        {
+            return MessageBox.Show("¿Está seguro que desea actualizar dicha cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
         }
         bool Verificar()
         {

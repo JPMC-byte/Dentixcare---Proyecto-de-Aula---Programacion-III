@@ -38,6 +38,8 @@
             this.btnActualizarRazon = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.CBEstado = new System.Windows.Forms.ComboBox();
+            this.LBFiltro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -153,7 +155,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(504, 12);
+            this.btnActualizar.Location = new System.Drawing.Point(280, 12);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(187, 50);
             this.btnActualizar.TabIndex = 65;
@@ -161,12 +163,39 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
+            // CBEstado
+            // 
+            this.CBEstado.FormattingEnabled = true;
+            this.CBEstado.Items.AddRange(new object[] {
+            "N/A",
+            "Solicitada",
+            "Pendiente",
+            "Finalizada"});
+            this.CBEstado.Location = new System.Drawing.Point(504, 35);
+            this.CBEstado.Name = "CBEstado";
+            this.CBEstado.Size = new System.Drawing.Size(121, 21);
+            this.CBEstado.TabIndex = 66;
+            this.CBEstado.Text = "N/A";
+            // 
+            // LBFiltro
+            // 
+            this.LBFiltro.AutoSize = true;
+            this.LBFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.LBFiltro.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBFiltro.Location = new System.Drawing.Point(500, 13);
+            this.LBFiltro.Name = "LBFiltro";
+            this.LBFiltro.Size = new System.Drawing.Size(137, 19);
+            this.LBFiltro.TabIndex = 67;
+            this.LBFiltro.Text = "Filtrar por estado";
+            // 
             // FrmRegistroCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.LBFiltro);
+            this.Controls.Add(this.CBEstado);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnActualizarRazon);
             this.Controls.Add(this.btnCancelar);
@@ -194,5 +223,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnActualizarRazon;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.ComboBox CBEstado;
+        private System.Windows.Forms.Label LBFiltro;
     }
 }

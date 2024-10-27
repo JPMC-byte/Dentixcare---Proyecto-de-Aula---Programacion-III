@@ -1,5 +1,4 @@
 ﻿using BLL;
-using Entidadeds;
 using ENTITY;
 using Logica;
 using System;
@@ -40,24 +39,30 @@ namespace Clinica
             {
                 return;
             }
+
             Ortodoncista ortodoncista = new Ortodoncista();
-            Consultorio consultorio = new Consultorio();
-            consultorio = servisconsulto.CargarConsultorio("P101");
+            Consultorio consultorio = servisconsulto.CargarConsultorio("P101");
+
             ortodoncista.CodigoConsultorio = consultorio.Codigo;
-            ortodoncista.Nombre = txtNombre.Text;
-            ortodoncista.Apellido = txtApellido.Text;
+            ortodoncista.PrimerNombre = txtPrimerNombre.Text;
+            ortodoncista.SegundoNombre = txtSegundoNombre.Text;
+            ortodoncista.PrimerApellido = txtPrimerApellido.Text;
+            ortodoncista.SegundoApellido = txtSegundoApellido.Text;
             ortodoncista.Telefono = txtTelefono.Text;
             ortodoncista.Cedula = txtCedula.Text;
             ortodoncista.Fecha_De_Nacimiento = DTFecha_Nacimiento.Value;
             ortodoncista.Edad = ortodoncista.CalcularEdad(DTFecha_Nacimiento.Value);
             ortodoncista.Contrasena = txtContraseña.Text;
+
             servispaciente.Add(ortodoncista);
             MessageBox.Show("Proceso de registro exitoso");
             Limpiar();
         }
         bool Verificar()
         {
-            if (txtNombre.Text == "NOMBRE" || txtApellido.Text == "APELLIDO" || txtTelefono.Text == "TELEFONO" || txtCedula.Text == "CEDULA" || txtContraseña.Text == "CONTRASEÑA")
+            if (txtPrimerNombre.Text == "PRIMER NOMBRE" || txtSegundoNombre.Text == "SEGUNDO NOMBRE" ||
+                txtPrimerApellido.Text == "PRIMER APELLIDO" || txtSegundoApellido.Text == "SEGUNDO APELLIDO" ||
+                txtTelefono.Text == "TELEFONO" || txtCedula.Text == "CEDULA" || txtContraseña.Text == "CONTRASEÑA")
             {
                 MessageBox.Show("Por favor, rellene/complete los campos vacios");
                 return false;
@@ -66,9 +71,10 @@ namespace Clinica
         }
         bool ValidarLetras()
         {
-            if (!vali.ValidarLetras(txtNombre.Text) || !vali.ValidarLetras(txtApellido.Text))
+            if (!vali.ValidarLetras(txtPrimerNombre.Text) || !vali.ValidarLetras(txtSegundoNombre.Text) ||
+                !vali.ValidarLetras(txtPrimerApellido.Text) || !vali.ValidarLetras(txtSegundoApellido.Text))
             {
-                MessageBox.Show("El nombre y apellido solo pueden contener letras.");
+                MessageBox.Show("Los nombres y apellidos solo pueden contener letras.");
                 return false;
             }
             return true;
@@ -92,19 +98,20 @@ namespace Clinica
             }
             return true;
         }
-
         private void Limpiar()
         {
-            txtNombre.Text = "NOMBRE";
-            txtApellido.Text = "APELLIDO";
-            txtTelefono.Text = "TELEFONO";
-            txtCedula.Text = "CEDULA";
-            txtContraseña.Text = "CONTRASEÑA";
-            txtNombre.ForeColor = Color.DimGray;
-            txtApellido.ForeColor = Color.DimGray;
-            txtTelefono.ForeColor = Color.DimGray;
-            txtCedula.ForeColor = Color.DimGray;
-            txtContraseña.ForeColor = Color.DimGray;
+            BaseTextbox(txtPrimerNombre, "NOMBRE");
+            BaseTextbox(txtSegundoNombre, "NOMBRE");
+            BaseTextbox(txtPrimerApellido, "APELLIDO");
+            BaseTextbox(txtSegundoApellido, "APELLIDO");
+            BaseTextbox(txtTelefono, "TELEFONO");
+            BaseTextbox(txtCedula, "CEDULA");
+            BaseTextbox(txtContraseña, "CONTRASEÑA");
+        }
+        void BaseTextbox(TextBox textBox, string nombre)
+        {
+            textBox.Text = nombre;
+            textBox.ForeColor = Color.DimGray;
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -124,87 +131,36 @@ namespace Clinica
         {
             Limpiar();
         }
-        private void txtNombre_Enter(object sender, EventArgs e)
+        void EventoEntrarTextbox(TextBox textBox, string nombre)
         {
-            if (txtNombre.Text == "NOMBRE")
+            if (textBox.Text == nombre)
             {
-                txtNombre.Text = "";
-                txtNombre.ForeColor = Color.Black;
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black;
             }
         }
-
-        private void txtNombre_Leave(object sender, EventArgs e)
+        void EventoDejarTextbox(TextBox textBox, string nombre)
         {
-            if (txtNombre.Text == "")
+            if (textBox.Text == "")
             {
-                txtNombre.Text = "NOMBRE";
-                txtNombre.ForeColor = Color.DimGray;
+                textBox.Text = nombre;
+                textBox.ForeColor = Color.DimGray;
             }
         }
-        private void txtApellido_Enter(object sender, EventArgs e)
-        {
-            if (txtApellido.Text == "APELLIDO")
-            {
-                txtApellido.Text = "";
-                txtApellido.ForeColor = Color.Black;
-            }
-        }
-        private void txtApellido_Leave(object sender, EventArgs e)
-        {
-            if (txtApellido.Text == "")
-            {
-                txtApellido.Text = "APELLIDO";
-                txtApellido.ForeColor = Color.DimGray;
-            }
-        }
-        private void txtTelefono_Enter(object sender, EventArgs e)
-        {
-            if (txtTelefono.Text == "TELEFONO")
-            {
-                txtTelefono.Text = "";
-                txtTelefono.ForeColor = Color.Black;
-            }
-        }
-        private void txtTelefono_Leave(object sender, EventArgs e)
-        {
-            if (txtTelefono.Text == "")
-            {
-                txtTelefono.Text = "TELEFONO";
-                txtTelefono.ForeColor = Color.DimGray;
-            }
-        }
-        private void txtCedula_Enter(object sender, EventArgs e)
-        {
-            if (txtCedula.Text == "CEDULA")
-            {
-                txtCedula.Text = "";
-                txtCedula.ForeColor = Color.Black;
-            }
-        }
-        private void txtCedula_Leave(object sender, EventArgs e)
-        {
-            if (txtCedula.Text == "")
-            {
-                txtCedula.Text = "CEDULA";
-                txtCedula.ForeColor = Color.DimGray;
-            }
-        }
-        private void txtContrasena_Enter(object sender, EventArgs e)
-        {
-            if (txtContraseña.Text == "CONTRASEÑA")
-            {
-                txtContraseña.Text = "";
-                txtContraseña.ForeColor = Color.Black;
-            }
-        }
-        private void txtContrasena_Leave(object sender, EventArgs e)
-        {
-            if (txtContraseña.Text == "")
-            {
-                txtContraseña.Text = "CONTRASEÑA";
-                txtContraseña.ForeColor = Color.DimGray;
-            }
-        }
+        private void txtPrimerNombre_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtPrimerNombre, "PRIMER NOMBRE");
+        private void txtPrimerNombre_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtPrimerNombre, "PRIMER NOMBRE");
+        private void txtSegundoNombre_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtSegundoNombre, "SEGUNDO NOMBRE");
+        private void txtSegundoNombre_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtSegundoNombre, "SEGUNDO NOMBRE");
+        private void txtPrimerApellido_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtPrimerApellido, "PRIMER APELLIDO");
+        private void txtPrimerApellido_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtPrimerApellido, "PRIMER APELLIDO");
+        private void txtSegundoApellido_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtSegundoApellido, "SEGUNDO APELLIDO");
+        private void txtSegundoApellido_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtSegundoApellido, "SEGUNDO APELLIDO");
+        private void txtTelefono_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtTelefono, "TELEFONO");
+        private void txtTelefono_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtTelefono, "TELEFONO");
+        private void txtCedula_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtCedula, "CEDULA");
+        private void txtCedula_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtCedula, "CEDULA");
+        private void txtContraseña_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtContraseña, "CONTRASEÑA");
+        private void txtContraseña_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtContraseña, "CONTRASEÑA");
 
         private void FrmRegistrarOrtodoncista_MouseDown(object sender, MouseEventArgs e)
         {

@@ -1,9 +1,4 @@
-﻿using ENTITY;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace ENTITY
 {
@@ -11,9 +6,11 @@ namespace ENTITY
     {
         public Paciente() { }
 
-        public Paciente(Consultorio consultorio, string nombre, string apellido, string cedula, string telefono, int Edad, DateTime fecha_De_Nacimiento, string Contraseña) : base(consultorio, nombre, apellido, cedula, telefono, Edad,fecha_De_Nacimiento, Contraseña)
+        public Paciente(Consultorio consultorio, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string cedula, string telefono, int edad, DateTime fecha_De_Nacimiento, string contrasena)
+            : base(consultorio, primerNombre, segundoNombre, primerApellido, segundoApellido, cedula, telefono, edad, fecha_De_Nacimiento, contrasena)
         {
         }
+
         public override string ToString()
         {
             return base.ToString();

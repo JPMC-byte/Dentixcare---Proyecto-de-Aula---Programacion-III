@@ -54,6 +54,10 @@ namespace Clinica
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            volver();
+        }
+        void volver()
+        {
             var f = new FrmIngreso();
             f.Show();
             this.Close();

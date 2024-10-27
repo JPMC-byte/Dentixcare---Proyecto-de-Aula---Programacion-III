@@ -21,26 +21,29 @@ namespace Clinica
             InitializeComponent();
             paciente = persona;
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        private void FrmPaciente_MouseDown(object sender, MouseEventArgs e)
+        private void PCFondo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void Panellogo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Advertencia",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                this.Close();
+            cerrarSesion();
+        }
+        void cerrarSesion()
+        {
+            if (MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close(); 
         }
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
@@ -71,6 +74,12 @@ namespace Clinica
         private void btnGestionCitas_Click(object sender, EventArgs e)
         {
             MostrarSubmenu(PanelSubmenuCitas);
+        }
+        private void btnGestionPagos_Click(object sender, EventArgs e)
+        {
+
+
+            OcultarSubmenu();
         }
         private void btnPerfil_Click(object sender, EventArgs e)
         {

@@ -1,5 +1,4 @@
 ﻿using DAL;
-using Entidadeds;
 using ENTITY;
 using System;
 using System.Collections.Generic;
@@ -59,5 +58,11 @@ namespace BLL
             return reposCita.SaveData(Citas);
         }
 
+        public string Delete(Cita cita)
+        {
+            List<Cita> Citas = GetAll();
+            Citas.RemoveAll(CitaAEliminar => CitaAEliminar.Codigo == cita.Codigo);
+            return reposCita.SaveData(Citas);
+        }
     }
 }

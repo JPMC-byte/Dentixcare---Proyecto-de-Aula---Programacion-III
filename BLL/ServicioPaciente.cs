@@ -28,7 +28,7 @@ namespace Logica
 
         public Paciente GetByID(string ID)
         {
-            return RepsPaciente.getByID(ID);
+            return RepsPaciente.GetByID(ID);
         }
 
         public Paciente IniciarSesion(string id, string Password)

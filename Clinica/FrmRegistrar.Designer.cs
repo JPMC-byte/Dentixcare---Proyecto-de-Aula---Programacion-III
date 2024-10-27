@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtSegundoNombre = new System.Windows.Forms.TextBox();
+            this.txtPrimerApellido = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.btnRegistrado = new System.Windows.Forms.Button();
             this.DTFecha_Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -48,39 +51,40 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.PictureBox();
             this.BtnMinimizar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtPrimerNombre = new System.Windows.Forms.TextBox();
+            this.txtSegundoApellido = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtNombre
+            // txtSegundoNombre
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombre.Location = new System.Drawing.Point(277, 111);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(198, 20);
-            this.txtNombre.TabIndex = 18;
-            this.txtNombre.Text = "NOMBRE";
-            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
-            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
+            this.txtSegundoNombre.BackColor = System.Drawing.Color.White;
+            this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSegundoNombre.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSegundoNombre.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSegundoNombre.Location = new System.Drawing.Point(272, 125);
+            this.txtSegundoNombre.Name = "txtSegundoNombre";
+            this.txtSegundoNombre.Size = new System.Drawing.Size(198, 20);
+            this.txtSegundoNombre.TabIndex = 18;
+            this.txtSegundoNombre.Text = "SEGUNDO NOMBRE";
+            this.txtSegundoNombre.Enter += new System.EventHandler(this.txtSegundoNombre_Enter);
+            this.txtSegundoNombre.Leave += new System.EventHandler(this.txtSegundoNombre_Leave);
             // 
-            // txtApellido
+            // txtPrimerApellido
             // 
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.ForeColor = System.Drawing.Color.DimGray;
-            this.txtApellido.Location = new System.Drawing.Point(277, 155);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(198, 20);
-            this.txtApellido.TabIndex = 20;
-            this.txtApellido.Text = "APELLIDO";
-            this.txtApellido.Enter += new System.EventHandler(this.txtApellido_Enter);
-            this.txtApellido.Leave += new System.EventHandler(this.txtApellido_Leave);
+            this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrimerApellido.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrimerApellido.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPrimerApellido.Location = new System.Drawing.Point(272, 172);
+            this.txtPrimerApellido.Name = "txtPrimerApellido";
+            this.txtPrimerApellido.Size = new System.Drawing.Size(198, 20);
+            this.txtPrimerApellido.TabIndex = 20;
+            this.txtPrimerApellido.Text = "PRIMER APELLIDO";
+            this.txtPrimerApellido.Enter += new System.EventHandler(this.txtPrimerApellido_Enter);
+            this.txtPrimerApellido.Leave += new System.EventHandler(this.txtPrimerApellido_Leave);
             // 
             // txtCedula
             // 
@@ -101,7 +105,7 @@
             this.btnRegistrado.FlatAppearance.BorderSize = 0;
             this.btnRegistrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrado.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrado.Location = new System.Drawing.Point(522, 300);
+            this.btnRegistrado.Location = new System.Drawing.Point(519, 342);
             this.btnRegistrado.Name = "btnRegistrado";
             this.btnRegistrado.Size = new System.Drawing.Size(213, 50);
             this.btnRegistrado.TabIndex = 23;
@@ -137,7 +141,7 @@
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTelefono.Location = new System.Drawing.Point(276, 196);
+            this.txtTelefono.Location = new System.Drawing.Point(272, 273);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(199, 20);
             this.txtTelefono.TabIndex = 30;
@@ -156,6 +160,16 @@
             this.panel1.Size = new System.Drawing.Size(250, 437);
             this.panel1.TabIndex = 31;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(229, 234);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -185,6 +199,8 @@
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape7,
+            this.lineShape6,
             this.lineShape5,
             this.lineShape4,
             this.lineShape3,
@@ -193,6 +209,26 @@
             this.shapeContainer1.Size = new System.Drawing.Size(747, 437);
             this.shapeContainer1.TabIndex = 34;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape7
+            // 
+            this.lineShape7.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape7.Enabled = false;
+            this.lineShape7.Name = "lineShape7";
+            this.lineShape7.X1 = 271;
+            this.lineShape7.X2 = 474;
+            this.lineShape7.Y1 = 301;
+            this.lineShape7.Y2 = 301;
+            // 
+            // lineShape6
+            // 
+            this.lineShape6.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape6.Enabled = false;
+            this.lineShape6.Name = "lineShape6";
+            this.lineShape6.X1 = 271;
+            this.lineShape6.X2 = 474;
+            this.lineShape6.Y1 = 247;
+            this.lineShape6.Y2 = 247;
             // 
             // lineShape5
             // 
@@ -219,30 +255,30 @@
             this.lineShape3.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape3.Enabled = false;
             this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 274;
-            this.lineShape3.X2 = 477;
-            this.lineShape3.Y1 = 219;
-            this.lineShape3.Y2 = 219;
+            this.lineShape3.X1 = 272;
+            this.lineShape3.X2 = 475;
+            this.lineShape3.Y1 = 197;
+            this.lineShape3.Y2 = 197;
             // 
             // lineShape2
             // 
             this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape2.Enabled = false;
             this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 274;
-            this.lineShape2.X2 = 477;
-            this.lineShape2.Y1 = 179;
-            this.lineShape2.Y2 = 179;
+            this.lineShape2.X1 = 271;
+            this.lineShape2.X2 = 474;
+            this.lineShape2.Y1 = 151;
+            this.lineShape2.Y2 = 151;
             // 
             // lineShape1
             // 
             this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
             this.lineShape1.Enabled = false;
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 274;
-            this.lineShape1.X2 = 477;
-            this.lineShape1.Y1 = 135;
-            this.lineShape1.Y2 = 135;
+            this.lineShape1.X1 = 271;
+            this.lineShape1.X2 = 474;
+            this.lineShape1.Y1 = 103;
+            this.lineShape1.Y2 = 103;
             // 
             // btnLimpiar
             // 
@@ -250,7 +286,7 @@
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(274, 300);
+            this.btnLimpiar.Location = new System.Drawing.Point(271, 342);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(204, 50);
             this.btnLimpiar.TabIndex = 35;
@@ -291,15 +327,32 @@
             this.BtnMinimizar.TabStop = false;
             this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
-            // pictureBox1
+            // txtPrimerNombre
             // 
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(229, 234);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.txtPrimerNombre.BackColor = System.Drawing.Color.White;
+            this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrimerNombre.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrimerNombre.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPrimerNombre.Location = new System.Drawing.Point(272, 77);
+            this.txtPrimerNombre.Name = "txtPrimerNombre";
+            this.txtPrimerNombre.Size = new System.Drawing.Size(203, 20);
+            this.txtPrimerNombre.TabIndex = 37;
+            this.txtPrimerNombre.Text = "PRIMER NOMBRE";
+            this.txtPrimerNombre.Enter += new System.EventHandler(this.txtPrimerNombre_Enter);
+            this.txtPrimerNombre.Leave += new System.EventHandler(this.txtPrimerNombre_Leave);
+            // 
+            // txtSegundoApellido
+            // 
+            this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSegundoApellido.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSegundoApellido.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSegundoApellido.Location = new System.Drawing.Point(272, 222);
+            this.txtSegundoApellido.Name = "txtSegundoApellido";
+            this.txtSegundoApellido.Size = new System.Drawing.Size(198, 20);
+            this.txtSegundoApellido.TabIndex = 38;
+            this.txtSegundoApellido.Text = "SEGUNDO APELLIDO";
+            this.txtSegundoApellido.Enter += new System.EventHandler(this.txtSegundoApellido_Enter);
+            this.txtSegundoApellido.Leave += new System.EventHandler(this.txtSegundoApellido_Leave);
             // 
             // FrmRegistrar
             // 
@@ -307,6 +360,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(747, 437);
+            this.Controls.Add(this.txtSegundoApellido);
+            this.Controls.Add(this.txtPrimerNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnVolver);
@@ -318,8 +373,8 @@
             this.Controls.Add(this.DTFecha_Nacimiento);
             this.Controls.Add(this.btnRegistrado);
             this.Controls.Add(this.txtCedula);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtPrimerApellido);
+            this.Controls.Add(this.txtSegundoNombre);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegistrar";
@@ -328,17 +383,17 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmRegistrar_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtSegundoNombre;
+        private System.Windows.Forms.TextBox txtPrimerApellido;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Button btnRegistrado;
         private System.Windows.Forms.DateTimePicker DTFecha_Nacimiento;
@@ -358,5 +413,9 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPrimerNombre;
+        private System.Windows.Forms.TextBox txtSegundoApellido;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
     }
 }
