@@ -36,7 +36,7 @@ namespace Clinica
 
         private void Registrar()
         {
-            if (!Verificar() || !ValidarLetras() || !ValidarNumeros() || !ValidarExistente())
+            if (!Verificar() || !ValidarLetras() || !ValidarNumeros() || !ValidarExistente() || !VerificarCamposOpcionales())
             {
                 return;
             }
@@ -45,23 +45,48 @@ namespace Clinica
             consultorio = servisconsulto.CargarConsultorio("P101");
             paciente.CodigoConsultorio = consultorio.Codigo;
             paciente.PrimerNombre = txtPrimerNombre.Text;
-            paciente.SegundoNombre = txtSegundoNombre.Text;
+            paciente.SegundoNombre = (txtSegundoNombre.Text == "SEGUNDO NOMBRE") ? "N/A" : txtSegundoNombre.Text;
             paciente.PrimerApellido = txtPrimerApellido.Text;
-            paciente.SegundoApellido = txtSegundoApellido.Text;
+            paciente.SegundoApellido = (txtSegundoApellido.Text == "SEGUNDO APELLIDO") ? "N/A" : txtSegundoApellido.Text;
             paciente.Telefono = txtTelefono.Text;
             paciente.Cedula = txtCedula.Text;
             paciente.Fecha_De_Nacimiento = DTFecha_Nacimiento.Value.Date;
-            paciente.Edad = paciente.CalcularEdad(paciente.Fecha_De_Nacimiento);
             paciente.Contrasena = txtContraseña.Text;
             servispaciente.Add(paciente);
             MessageBox.Show("Proceso de registro exitoso");
             Limpiar();
         }
-
+        private bool VerificarCamposOpcionales()
+        {
+            if (!vali.ValidarSegundos(txtSegundoNombre.Text))
+            {
+                DialogResult result = MessageBox.Show("El campo 'Segundo Nombre' está vacío. ¿Desea continuar y dejarlo como 'N/A'?", "Confirmación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+                if (result == DialogResult.No)
+                {
+                    txtSegundoNombre.Focus();
+                    return false;
+                }
+            }
+            if (!vali.ValidarSegundos(txtSegundoApellido.Text))
+            {
+                DialogResult result = MessageBox.Show("El campo 'Segundo Apellido' está vacío. ¿Desea continuar y dejarlo como 'N/A'?", "Confirmación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+                if (result == DialogResult.No)
+                {
+                    txtSegundoApellido.Focus();
+                    return false;
+                }
+            }
+            return true; 
+        }
         bool Verificar()
         {
-            if (txtPrimerNombre.Text == "PRIMER NOMBRE" || txtSegundoNombre.Text == "SEGUNDO NOMBRE" ||
-                txtPrimerApellido.Text == "PRIMER APELLIDO" || txtSegundoApellido.Text == "SEGUNDO APELLIDO" ||
+            if (txtPrimerNombre.Text == "PRIMER NOMBRE" || txtPrimerApellido.Text == "PRIMER APELLIDO" || 
                 txtTelefono.Text == "TELEFONO" || txtCedula.Text == "CEDULA" || txtContraseña.Text == "CONTRASEÑA")
             {
                 MessageBox.Show("Por favor, rellene/complete los campos vacios");

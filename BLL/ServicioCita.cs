@@ -50,11 +50,19 @@ namespace BLL
             return nuevoCodigo;
         }
 
-        public string Update(Cita cita, string RazonCita)
+        public string UpdateRazon(Cita cita, string RazonCita)
         {
             List<Cita> Citas = GetAll();
             Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
             CitaAModificar.Razon_Cita = RazonCita;
+            return reposCita.SaveData(Citas);
+        }
+        public string UpdateAtendida(Cita cita, string CodigoOrtodoncista, string estado)
+        {
+            List<Cita> Citas = GetAll();
+            Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
+            CitaAModificar.CodigoOrtodoncista = CodigoOrtodoncista;
+            CitaAModificar.Estado = estado;
             return reposCita.SaveData(Citas);
         }
 

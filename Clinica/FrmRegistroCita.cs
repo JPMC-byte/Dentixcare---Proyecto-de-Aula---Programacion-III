@@ -37,12 +37,6 @@ namespace Clinica
             Cita citaSeleccionada = servicioCita.GetByID(codigoCita);
             return citaSeleccionada;
         }
-        public Consultorio ConsultorioSeleccionado()
-        {
-            var codigoConsultorio = DGVCitas.SelectedRows[0].Cells["CodigoConsultorio"].Value.ToString();
-            Consultorio Consultorio = servisconsulto.CargarConsultorio(codigoConsultorio);
-            return Consultorio;
-        }
         private void btnInformacion_Click(object sender, EventArgs e)
         {
             if (!Verificar())
@@ -54,8 +48,7 @@ namespace Clinica
         void AbrirInformacion()
         {
             Cita cita = CitaSeleccionada();
-            Consultorio consultorio = ConsultorioSeleccionado();
-            FrmInformacion F = new FrmInformacion(cita,consultorio);
+            FrmInformacion F = new FrmInformacion(cita);
             F.Show();
         }
 
@@ -99,7 +92,7 @@ namespace Clinica
         }
         bool Confirmar()
         {
-            return MessageBox.Show("¿Está seguro que desea actualizar dicha cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+            return MessageBox.Show("¿Está seguro que desea eliminar dicha cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
         }
         void CancelarCita()
         {

@@ -51,7 +51,6 @@ namespace Clinica
             ortodoncista.Telefono = txtTelefono.Text;
             ortodoncista.Cedula = txtCedula.Text;
             ortodoncista.Fecha_De_Nacimiento = DTFecha_Nacimiento.Value;
-            ortodoncista.Edad = ortodoncista.CalcularEdad(DTFecha_Nacimiento.Value);
             ortodoncista.Contrasena = txtContraseña.Text;
 
             servispaciente.Add(ortodoncista);

@@ -88,9 +88,20 @@ namespace Clinica
         }
         private void btnDatosConsultorio_Click(object sender, EventArgs e)
         {
+            VerConsultorio();
+        }
+        void VerConsultorio()
+        {
             Consultorio consultorio = servisConsul.CargarConsultorio("P101");
             AbrirFormulario(new FrmConsultorio(consultorio));
             OcultarSubmenu();
         }
+
+        private void btnGestionCitas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmGestionCita(ortodoncista));
+            OcultarSubmenu();
+        }
+
     }
 }

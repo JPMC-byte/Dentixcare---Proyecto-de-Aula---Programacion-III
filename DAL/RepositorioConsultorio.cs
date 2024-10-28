@@ -42,9 +42,12 @@ namespace DAL
             consulto.Codigo = line.Split(';')[0];
             consulto.Nombre = line.Split(';')[1];
             consulto.Telefono = line.Split(';')[2];
-            consulto.Direccion = line.Split(';')[3];
-            consulto.Hora_Apertura = TimeSpan.Parse(line.Split(';')[4]);
-            consulto.Hora_Cierre = TimeSpan.Parse(line.Split(';')[5]);
+            consulto.Barrio = line.Split(';')[3];
+            consulto.Etapa = line.Split(';')[4];
+            consulto.Manzana = line.Split(';')[5];
+            consulto.Calle = line.Split(';')[6];
+            consulto.Hora_Apertura = TimeSpan.Parse(line.Split(';')[7]);
+            consulto.Hora_Cierre = TimeSpan.Parse(line.Split(';')[8]);
 
             return consulto;
         }
@@ -59,11 +62,14 @@ namespace DAL
                 string Codigo = "P101";
                 string Nombre = "DentixCare";
                 string telefono = "+57 3053274924";
-                string direccion = "Calle 45A #12-34, Barrio San Carlos";
-                TimeSpan Hora_Apertura = new TimeSpan(8, 0, 0); 
-                TimeSpan Hora_Cierre = new TimeSpan(18, 0, 0);  
+                string Barrio = "San Carlos";
+                string Etapa = "Etapa 2"; 
+                string Manzana = "Manzana 12"; 
+                string Calle = "Calle 45A #12-34";
+                TimeSpan Hora_Apertura = new TimeSpan(8, 0, 0);
+                TimeSpan Hora_Cierre = new TimeSpan(18, 0, 0);
 
-                Consultorio consultorio = new Consultorio(Codigo, Nombre, telefono, direccion,Hora_Apertura,Hora_Cierre);
+                Consultorio consultorio = new Consultorio(Codigo, Nombre, telefono, Barrio, Etapa, Manzana, Calle, Hora_Apertura, Hora_Cierre);
                 SaveData(consultorio);
             }
         }

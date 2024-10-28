@@ -42,8 +42,7 @@ namespace DAL
             ortodon.Cedula = line.Split(';')[5];
             ortodon.Telefono = line.Split(';')[6];
             ortodon.Fecha_De_Nacimiento = DateTime.Parse(line.Split(';')[7]);
-            ortodon.Edad = int.Parse(line.Split(';')[8]);
-            ortodon.Contrasena = line.Split(';')[9];
+            ortodon.Contrasena = line.Split(';')[8];
 
             return ortodon;
         }

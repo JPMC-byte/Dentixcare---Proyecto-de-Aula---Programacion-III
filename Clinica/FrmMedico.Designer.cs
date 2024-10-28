@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnDatosConsultorio = new System.Windows.Forms.Button();
+            this.btnGestionPaciente = new System.Windows.Forms.Button();
+            this.btnGestionDiagnostico = new System.Windows.Forms.Button();
             this.PanelSubmenuTratamientos = new System.Windows.Forms.Panel();
             this.btnRegistroPagos = new System.Windows.Forms.Button();
             this.btnRealizarPago = new System.Windows.Forms.Button();
@@ -59,8 +60,9 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnDatosConsultorio);
+            this.panel1.Controls.Add(this.btnGestionPaciente);
+            this.panel1.Controls.Add(this.btnGestionDiagnostico);
             this.panel1.Controls.Add(this.PanelSubmenuTratamientos);
             this.panel1.Controls.Add(this.btnGestionPagos);
             this.panel1.Controls.Add(this.btnGestionCitas);
@@ -73,23 +75,6 @@
             this.panel1.Size = new System.Drawing.Size(250, 799);
             this.panel1.TabIndex = 34;
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 462);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(250, 41);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Gestión de pacientes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // btnDatosConsultorio
             // 
             this.btnDatosConsultorio.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -98,15 +83,49 @@
             this.btnDatosConsultorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatosConsultorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatosConsultorio.ForeColor = System.Drawing.Color.White;
-            this.btnDatosConsultorio.Location = new System.Drawing.Point(0, 421);
+            this.btnDatosConsultorio.Location = new System.Drawing.Point(0, 503);
             this.btnDatosConsultorio.Name = "btnDatosConsultorio";
             this.btnDatosConsultorio.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDatosConsultorio.Size = new System.Drawing.Size(250, 41);
-            this.btnDatosConsultorio.TabIndex = 39;
+            this.btnDatosConsultorio.TabIndex = 42;
             this.btnDatosConsultorio.Text = "Datos de consultorio";
             this.btnDatosConsultorio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosConsultorio.UseVisualStyleBackColor = false;
             this.btnDatosConsultorio.Click += new System.EventHandler(this.btnDatosConsultorio_Click);
+            // 
+            // btnGestionPaciente
+            // 
+            this.btnGestionPaciente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionPaciente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionPaciente.FlatAppearance.BorderSize = 0;
+            this.btnGestionPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionPaciente.ForeColor = System.Drawing.Color.White;
+            this.btnGestionPaciente.Location = new System.Drawing.Point(0, 462);
+            this.btnGestionPaciente.Name = "btnGestionPaciente";
+            this.btnGestionPaciente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGestionPaciente.Size = new System.Drawing.Size(250, 41);
+            this.btnGestionPaciente.TabIndex = 41;
+            this.btnGestionPaciente.Text = "Gestión de pacientes";
+            this.btnGestionPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionPaciente.UseVisualStyleBackColor = false;
+            // 
+            // btnGestionDiagnostico
+            // 
+            this.btnGestionDiagnostico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionDiagnostico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionDiagnostico.FlatAppearance.BorderSize = 0;
+            this.btnGestionDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionDiagnostico.ForeColor = System.Drawing.Color.White;
+            this.btnGestionDiagnostico.Location = new System.Drawing.Point(0, 421);
+            this.btnGestionDiagnostico.Name = "btnGestionDiagnostico";
+            this.btnGestionDiagnostico.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGestionDiagnostico.Size = new System.Drawing.Size(250, 41);
+            this.btnGestionDiagnostico.TabIndex = 40;
+            this.btnGestionDiagnostico.Text = "Gestión de diagnosticos";
+            this.btnGestionDiagnostico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionDiagnostico.UseVisualStyleBackColor = false;
             // 
             // PanelSubmenuTratamientos
             // 
@@ -188,6 +207,7 @@
             this.btnGestionCitas.Text = "Gestión de citas";
             this.btnGestionCitas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionCitas.UseVisualStyleBackColor = false;
+            this.btnGestionCitas.Click += new System.EventHandler(this.btnGestionCitas_Click);
             // 
             // btnDatosUsuario
             // 
@@ -335,7 +355,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDatosConsultorio;
         private System.Windows.Forms.Panel PanelSubmenuTratamientos;
         private System.Windows.Forms.Button btnRegistroPagos;
         private System.Windows.Forms.Button btnRealizarPago;
@@ -350,7 +369,9 @@
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Panel PanelDia;
         private System.Windows.Forms.Panel PanelHijo;
+        private System.Windows.Forms.Button btnGestionDiagnostico;
+        private System.Windows.Forms.Button btnGestionPaciente;
+        private System.Windows.Forms.Button btnDatosConsultorio;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
     }
 }

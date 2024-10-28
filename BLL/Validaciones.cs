@@ -94,5 +94,25 @@ namespace BLL
             }
             return true;
         }
+        public bool ValidarSegundos(string Texto)
+        {
+            if (Texto == "SEGUNDO NOMBRE")
+            {
+                return false;
+            }
+            if (Texto == "SEGUNDO APELLIDO")
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarAtendida(Cita cita)
+        {
+            if (cita.Estado == "Pendiente" || cita.CodigoOrtodoncista != "No asignado")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

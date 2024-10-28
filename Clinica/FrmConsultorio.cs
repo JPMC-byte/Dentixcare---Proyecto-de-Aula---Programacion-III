@@ -26,7 +26,10 @@ namespace Clinica
             txtCodigo.Text = consultorio.Codigo;
             txtNombre.Text = consultorio.Nombre;
             txtTelefono.Text = consultorio.Telefono;
-            txtDireccion.Text = consultorio.Direccion;
+            txtBarrio.Text = consultorio.Barrio;
+            txtEtapa.Text = consultorio.Etapa;
+            txtManzana.Text = consultorio.Manzana;
+            txtCalle.Text = consultorio.Calle;
             txtHoraApertura.Text = consultorio.Hora_Apertura.ToString();
             txtHoraCierre.Text = consultorio.Hora_Cierre.ToString();
         }
@@ -39,5 +42,6 @@ namespace Clinica
         {
             this.Close();
         }
+
     }
 }

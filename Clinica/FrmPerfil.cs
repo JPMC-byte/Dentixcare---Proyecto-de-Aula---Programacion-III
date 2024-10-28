@@ -28,7 +28,7 @@ namespace Clinica
             txtSegundoApellido.Text = persona.SegundoNombre;
             txtTelefono.Text = persona.Telefono;
             txtCedula.Text = persona.Cedula;
-            txtEdad.Text = persona.Edad.ToString();
+            txtEdad.Text = persona.CalcularEdad(persona.Fecha_De_Nacimiento).ToString();
             txtIDConsultorio.Text = persona.CodigoConsultorio;
             txtFechaNacimiento.Text = persona.Fecha_De_Nacimiento.ToString("dd/MM/yyyy");
 

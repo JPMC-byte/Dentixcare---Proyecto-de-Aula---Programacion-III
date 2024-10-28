@@ -42,8 +42,7 @@ namespace DAL
             paciente.Cedula = line.Split(';')[5];
             paciente.Telefono = line.Split(';')[6];
             paciente.Fecha_De_Nacimiento = DateTime.Parse(line.Split(';')[7]);
-            paciente.Edad = int.Parse(line.Split(';')[8]);
-            paciente.Contrasena = line.Split(';')[9];
+            paciente.Contrasena = line.Split(';')[8];
 
             return paciente;
         }

@@ -52,21 +52,41 @@ namespace Clinica
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            if (cerrarPrograma())
+            {
+                cerrar();
+            }
+        }
+        bool cerrarPrograma()
+        {
+            if (MessageBox.Show("¿Esta seguro que desea cerrar el programa?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                return true;
+            return false;
+        }
+        void cerrar()
+        {
             Application.Exit();
         }
 
         private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            minimizar();
+        }
+        void minimizar()
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void FrmIngreso_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            moverVentana();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            moverVentana();
+        }
+        void moverVentana()
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

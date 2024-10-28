@@ -16,23 +16,18 @@ namespace Clinica
     public partial class FrmInformacion : Form
     {
         Cita citaSeleccionada;
-        Consultorio consultorioCita;
-        public FrmInformacion(Cita cita, Consultorio consultorio)
+        public FrmInformacion(Cita cita)
         {
             InitializeComponent();
             citaSeleccionada = cita;
-            consultorioCita = consultorio;
-            CargarDatos(citaSeleccionada,consultorioCita);
+            CargarDatos(citaSeleccionada);
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        private void CargarDatos(Cita cita, Consultorio consultorio)
+        private void CargarDatos(Cita cita)
         {
-            txtCodigoConsultorio.Text = consultorio.Codigo;
-            txtNombreConsultorio.Text = consultorio.Nombre;
-            txtDireccion.Text = consultorio.Direccion;
             txtCodigo.Text = cita.Codigo;
             txtCedulaPaciente.Text = cita.CodigoPaciente;
             txtCedulaOrtodoncista.Text = cita.CodigoOrtodoncista;

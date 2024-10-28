@@ -43,7 +43,7 @@ namespace Clinica
         void Actualizar()
         {
             string RazonCita = txtRazonCita.Text;
-            serviscita.Update(CitaActual, RazonCita);
+            serviscita.UpdateRazon(CitaActual, RazonCita);
             MessageBox.Show("Proceso de modificación exitoso");
             Limpiar();
         }

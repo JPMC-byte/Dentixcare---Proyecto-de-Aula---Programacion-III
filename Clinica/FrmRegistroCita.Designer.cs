@@ -170,6 +170,7 @@
             // 
             // CBEstado
             // 
+            this.CBEstado.ForeColor = System.Drawing.Color.DimGray;
             this.CBEstado.FormattingEnabled = true;
             this.CBEstado.Items.AddRange(new object[] {
             "N/A",

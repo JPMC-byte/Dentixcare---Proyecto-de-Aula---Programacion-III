@@ -11,7 +11,6 @@ namespace ENTITY
         public string Cedula { get; set; }
         public string CodigoConsultorio { get; set; }
         public string Telefono { get; set; }
-        public int Edad { get; set; }
         public DateTime Fecha_De_Nacimiento { get; set; }
         public string Contrasena { get; set; }
 
@@ -19,7 +18,7 @@ namespace ENTITY
         {
         }
 
-        public Persona(Consultorio consultorio, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string cedula, string telefono, int edad, DateTime fecha_De_Nacimiento, string contrasena)
+        public Persona(Consultorio consultorio, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string cedula, string telefono, DateTime fecha_De_Nacimiento, string contrasena)
         {
             CodigoConsultorio = consultorio.Codigo;
             PrimerNombre = primerNombre;
@@ -28,20 +27,21 @@ namespace ENTITY
             SegundoApellido = segundoApellido;
             Cedula = cedula;
             Telefono = telefono;
-            Edad = edad;
             Fecha_De_Nacimiento = fecha_De_Nacimiento;
             Contrasena = contrasena;
         }
+
         public int CalcularEdad(DateTime Fecha_Nacimiento)
         {
             DateTime Hoy = DateTime.Today;
-            Edad = Hoy.Year - Fecha_Nacimiento.Year;
-            if (Fecha_Nacimiento.Date > Hoy.AddYears(-Edad)) Edad--;
-            return Edad;
+            int edad = Hoy.Year - Fecha_Nacimiento.Year;
+            if (Fecha_Nacimiento.Date > Hoy.AddYears(-edad)) edad--;
+            return edad;
         }
+
         public override string ToString()
         {
-            return $"{CodigoConsultorio};{PrimerNombre};{SegundoNombre};{PrimerApellido};{SegundoApellido};{Cedula};{Telefono};{Fecha_De_Nacimiento:dd/MM/yyyy};{Edad};{Contrasena}";
+            return $"{CodigoConsultorio};{PrimerNombre};{SegundoNombre};{PrimerApellido};{SegundoApellido};{Cedula};{Telefono};{Fecha_De_Nacimiento:dd/MM/yyyy};{Contrasena}";
         }
     }
 }
