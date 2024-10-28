@@ -141,5 +141,17 @@ namespace Clinica
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void CBVerContraseña_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBVerContraseña.Checked)
+            {
+                txtContraseña.PasswordChar = '\0';
+            }
+            else
+            {
+                txtContraseña.PasswordChar = '*';
+            }
+        }
     }
 }

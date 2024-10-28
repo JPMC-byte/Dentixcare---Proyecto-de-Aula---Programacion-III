@@ -41,6 +41,7 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.PictureBox();
             this.BtnMinimizar = new System.Windows.Forms.PictureBox();
+            this.CBVerContraseña = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
@@ -205,12 +206,25 @@
             this.BtnMinimizar.TabStop = false;
             this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
+            // CBVerContraseña
+            // 
+            this.CBVerContraseña.AutoSize = true;
+            this.CBVerContraseña.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBVerContraseña.Location = new System.Drawing.Point(351, 229);
+            this.CBVerContraseña.Name = "CBVerContraseña";
+            this.CBVerContraseña.Size = new System.Drawing.Size(104, 20);
+            this.CBVerContraseña.TabIndex = 42;
+            this.CBVerContraseña.Text = "Ver contraseña";
+            this.CBVerContraseña.UseVisualStyleBackColor = true;
+            this.CBVerContraseña.CheckedChanged += new System.EventHandler(this.CBVerContraseña_CheckedChanged);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(650, 437);
+            this.Controls.Add(this.CBVerContraseña);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.BtnMinimizar);
             this.Controls.Add(this.btnLimpiar);
@@ -250,6 +264,7 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.PictureBox btnVolver;
         private System.Windows.Forms.PictureBox BtnMinimizar;
+        private System.Windows.Forms.CheckBox CBVerContraseña;
     }
 }
 

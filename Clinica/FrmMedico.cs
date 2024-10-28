@@ -1,4 +1,5 @@
-﻿using ENTITY;
+﻿using BLL;
+using ENTITY;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Clinica
 {
     public partial class FrmMedico : Form
     {
+        ServicioConsultorio servisConsul = new ServicioConsultorio();
         Persona ortodoncista = new Ortodoncista();
         Form FormularioActivo = null;
         public FrmMedico(Persona persona)
@@ -83,6 +85,12 @@ namespace Clinica
         void Minimizar()
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        private void btnDatosConsultorio_Click(object sender, EventArgs e)
+        {
+            Consultorio consultorio = servisConsul.CargarConsultorio("P101");
+            AbrirFormulario(new FrmConsultorio(consultorio));
+            OcultarSubmenu();
         }
     }
 }

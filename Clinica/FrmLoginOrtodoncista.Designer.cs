@@ -41,6 +41,7 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.CBVerContraseña = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
@@ -205,12 +206,25 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // CBVerContraseña
+            // 
+            this.CBVerContraseña.AutoSize = true;
+            this.CBVerContraseña.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBVerContraseña.Location = new System.Drawing.Point(351, 229);
+            this.CBVerContraseña.Name = "CBVerContraseña";
+            this.CBVerContraseña.Size = new System.Drawing.Size(104, 20);
+            this.CBVerContraseña.TabIndex = 49;
+            this.CBVerContraseña.Text = "Ver contraseña";
+            this.CBVerContraseña.UseVisualStyleBackColor = true;
+            this.CBVerContraseña.CheckedChanged += new System.EventHandler(this.CBVerContraseña_CheckedChanged);
+            // 
             // FrmLoginOrtodoncista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(650, 437);
+            this.Controls.Add(this.CBVerContraseña);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label8);
@@ -250,5 +264,6 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.CheckBox CBVerContraseña;
     }
 }

@@ -106,6 +106,7 @@
             this.btnDatosConsultorio.Text = "Datos de consultorio";
             this.btnDatosConsultorio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosConsultorio.UseVisualStyleBackColor = false;
+            this.btnDatosConsultorio.Click += new System.EventHandler(this.btnDatosConsultorio_Click);
             // 
             // PanelSubmenuTratamientos
             // 
