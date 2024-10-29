@@ -114,5 +114,30 @@ namespace BLL
             }
             return true;
         }
+        public bool ValidarEstado(string texto)
+        {
+            if (texto == "Pendiente" || texto == "Finalizada")
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarFiltroEstado(bool activo,string texto)
+        {
+            if (!activo || texto == "N/A")
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarFiltroPaciente(bool activo, string texto)
+        {
+            Cita cita = servicioCita.GetByIDPaciente(texto);
+            if (!activo || cita == null && !string.IsNullOrEmpty(texto))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

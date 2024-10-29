@@ -28,9 +28,21 @@ namespace BLL
         {
             return reposCita.GetById(id);
         }
+        public Cita GetByIDPaciente(string id)
+        {
+            return reposCita.GetByIDPaciente(id);
+        }
         public List<Cita> LoadByID(string id)
         {
             return reposCita.LoadByID(id);
+        }
+        public List<Cita> LoadByEstado(string Estado)
+        {
+            return reposCita.LoadByEstado(Estado);
+        }
+        public List<Cita> LoadByFilters(string Estado, string Cedula)
+        {
+            return reposCita.LoadFilters(Estado, Cedula);
         }
         public string GenerarCodigo()
         {

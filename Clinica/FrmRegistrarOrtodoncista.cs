@@ -16,7 +16,6 @@ namespace Clinica
 {
     public partial class FrmRegistrarOrtodoncista : Form
     {
-        FrmIngreso frmIngreso;
         ServicioOrtodoncista servispaciente = new ServicioOrtodoncista();
         ServicioConsultorio servisconsulto = new ServicioConsultorio();
         Validaciones vali = new Validaciones();

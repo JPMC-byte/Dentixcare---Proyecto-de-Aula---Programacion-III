@@ -16,6 +16,7 @@ namespace Clinica
     {
         ServicioCita servicioCita = new ServicioCita();
         ServicioConsultorio servisconsulto = new ServicioConsultorio();
+        Validaciones vali = new Validaciones();
         Persona UsuarioActual;
         public FrmRegistroCita(Persona persona)
         {
@@ -45,6 +46,25 @@ namespace Clinica
             }
             AbrirInformacion();
         }
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !ValidarEstado())
+            {
+                return;
+            }
+            AbrirActualizar();
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !ValidarEstado())
+            {
+                return;
+            }
+            if (Confirmar())
+            {
+                CancelarCita();
+            }
+        }
         void AbrirInformacion()
         {
             Cita cita = CitaSeleccionada();
@@ -64,14 +84,17 @@ namespace Clinica
                 return false;
             }
         }
-        private void btnActualizar_Click(object sender, EventArgs e)
+        bool ValidarEstado()
         {
-            if (!Verificar())
+            Cita cita = CitaSeleccionada();
+            if (!vali.ValidarEstado(cita.Estado))
             {
-                return;
+                MessageBox.Show("Error - No es posible alterar una cita que ya ha sido atendida.");
+                return false;
             }
-            AbrirActualizar();
+            return true;
         }
+
         void AbrirActualizar()
         {
             Cita cita = CitaSeleccionada();
@@ -79,17 +102,6 @@ namespace Clinica
             F.Show();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            if (!Verificar())
-            {
-                return;
-            }
-            if (Confirmar())
-            {
-                CancelarCita();
-            }
-        }
         bool Confirmar()
         {
             return MessageBox.Show("¿Está seguro que desea eliminar dicha cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;

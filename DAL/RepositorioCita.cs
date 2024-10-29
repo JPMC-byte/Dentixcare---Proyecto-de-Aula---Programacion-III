@@ -55,10 +55,24 @@ namespace DAL
         {
             return LoadData().FirstOrDefault<Cita>(x => x.Codigo == id);
         }
-
+        public Cita GetByIDPaciente(string id)
+        {
+            return LoadData().FirstOrDefault<Cita>(x => x.CodigoPaciente == id);
+        }
         public List<Cita> LoadByID(string id)
         {
             return LoadData().Where(cita => cita.CodigoPaciente == id).ToList();
+        }
+        public List<Cita> LoadByEstado(string estado)
+        {
+            return LoadData().Where(cita => cita.Estado == estado).ToList();
+        }
+        public List<Cita> LoadFilters(string estado, string cedulaPaciente)
+        {
+            List<Cita> Citas = LoadData();
+            Citas = Citas.Where(cita => cita.Estado == estado).ToList();
+            Citas = Citas.Where(cita => cita.CodigoPaciente == cedulaPaciente).ToList();
+            return Citas;
         }
     }
 }
