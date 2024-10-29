@@ -133,7 +133,7 @@ namespace BLL
         public bool ValidarFiltroPaciente(bool activo, string texto)
         {
             Cita cita = servicioCita.GetByIDPaciente(texto);
-            if (!activo || cita == null && !string.IsNullOrEmpty(texto))
+            if (!activo || texto == "CEDULA DEL PACIENTE" || cita == null)
             {
                 return false;
             }

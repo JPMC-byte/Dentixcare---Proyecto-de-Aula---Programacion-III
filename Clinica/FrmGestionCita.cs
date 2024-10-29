@@ -166,5 +166,20 @@ namespace Clinica
                 txtCedulaPaciente.ForeColor = Color.DimGray;
             }
         }
+        private void btnInformacion_Click(object sender, EventArgs e)
+        {
+            if (!Verificar())
+            {
+                return;
+            }
+            AbrirInformacion();
+        }
+        void AbrirInformacion()
+        {
+            Cita cita = CitaSeleccionada();
+            FrmInformacion F = new FrmInformacion(cita);
+            F.Show();
+        }
     }
+
 }

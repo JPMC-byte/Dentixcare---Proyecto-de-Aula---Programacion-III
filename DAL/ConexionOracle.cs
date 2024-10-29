@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Conexion
+    public class ConexionOracle
     {
-        private string cadenaConexion = "User Id=admin1;Password=1008;Data Source=localhost:1521/XEPDB1;";
+        private string cadenaConexion = "User Id=ESQUEMA_AGENDA;Password=123456;Data Source=localhost:1521/orcl;";
 
         protected OracleConnection conexion;
 
-        public Conexion()
+        public ConexionOracle()
         {
             conexion = new OracleConnection(cadenaConexion);
         }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LBTitulo = new System.Windows.Forms.Label();
             this.DGVCitas = new System.Windows.Forms.DataGridView();
             this.btnInformacion = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.CBEstado = new System.Windows.Forms.ComboBox();
             this.LBFiltro = new System.Windows.Forms.Label();
+            this.CBFiltrarEstado = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -64,14 +65,14 @@
             this.DGVCitas.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.DGVCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVCitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.DGVCitas.ColumnHeadersHeight = 30;
             this.DGVCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGVCitas.EnableHeadersVisualStyles = false;
@@ -79,20 +80,20 @@
             this.DGVCitas.Name = "DGVCitas";
             this.DGVCitas.ReadOnly = true;
             this.DGVCitas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVCitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.DGVCitas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVCitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.DGVCitas.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.DGVCitas.Size = new System.Drawing.Size(709, 535);
             this.DGVCitas.TabIndex = 8;
             // 
@@ -170,6 +171,7 @@
             // 
             // CBEstado
             // 
+            this.CBEstado.Enabled = false;
             this.CBEstado.ForeColor = System.Drawing.Color.DimGray;
             this.CBEstado.FormattingEnabled = true;
             this.CBEstado.Items.AddRange(new object[] {
@@ -177,22 +179,31 @@
             "Solicitada",
             "Pendiente",
             "Finalizada"});
-            this.CBEstado.Location = new System.Drawing.Point(504, 35);
+            this.CBEstado.Location = new System.Drawing.Point(558, 34);
             this.CBEstado.Name = "CBEstado";
             this.CBEstado.Size = new System.Drawing.Size(121, 21);
             this.CBEstado.TabIndex = 66;
-            this.CBEstado.Text = "N/A";
             // 
             // LBFiltro
             // 
             this.LBFiltro.AutoSize = true;
             this.LBFiltro.BackColor = System.Drawing.Color.Transparent;
             this.LBFiltro.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBFiltro.Location = new System.Drawing.Point(500, 13);
+            this.LBFiltro.Location = new System.Drawing.Point(554, 12);
             this.LBFiltro.Name = "LBFiltro";
             this.LBFiltro.Size = new System.Drawing.Size(137, 19);
             this.LBFiltro.TabIndex = 67;
             this.LBFiltro.Text = "Filtrar por estado";
+            // 
+            // CBFiltrarEstado
+            // 
+            this.CBFiltrarEstado.AutoSize = true;
+            this.CBFiltrarEstado.Location = new System.Drawing.Point(536, 27);
+            this.CBFiltrarEstado.Name = "CBFiltrarEstado";
+            this.CBFiltrarEstado.Size = new System.Drawing.Size(15, 14);
+            this.CBFiltrarEstado.TabIndex = 80;
+            this.CBFiltrarEstado.UseVisualStyleBackColor = true;
+            this.CBFiltrarEstado.CheckedChanged += new System.EventHandler(this.CBFiltrarEstado_CheckedChanged);
             // 
             // FrmRegistroCita
             // 
@@ -200,6 +211,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.CBFiltrarEstado);
             this.Controls.Add(this.LBFiltro);
             this.Controls.Add(this.CBEstado);
             this.Controls.Add(this.btnActualizar);
@@ -231,5 +243,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ComboBox CBEstado;
         private System.Windows.Forms.Label LBFiltro;
+        private System.Windows.Forms.CheckBox CBFiltrarEstado;
     }
 }

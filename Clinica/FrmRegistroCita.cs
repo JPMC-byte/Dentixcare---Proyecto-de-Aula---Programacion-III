@@ -27,9 +27,15 @@ namespace Clinica
         {
             CargarCitas();
         }
-        private void CargarCitas()
+        private void CargarCitas(string estado = null)
         {
-            DGVCitas.DataSource = servicioCita.LoadByID(UsuarioActual.Cedula);
+            var citas = servicioCita.LoadByID(UsuarioActual.Cedula);
+
+            if (ValidarFiltroEstado(CBFiltrarEstado.Checked, estado))
+            {
+                citas = servicioCita.LoadByFilters(estado, UsuarioActual.Cedula);
+            }
+            DGVCitas.DataSource = citas;
         }
         public Cita CitaSeleccionada()
         {
@@ -94,7 +100,10 @@ namespace Clinica
             }
             return true;
         }
-
+        public bool ValidarFiltroEstado(bool activo, string texto)
+        {
+            return vali.ValidarFiltroEstado(activo, texto);
+        }
         void AbrirActualizar()
         {
             Cita cita = CitaSeleccionada();
@@ -113,7 +122,12 @@ namespace Clinica
         }
         private void btnActualizar_Click_1(object sender, EventArgs e)
         {
-            CargarCitas();
+            Actualizar();
+        }
+        void Actualizar()
+        {
+            string estadoSeleccionado = CBEstado.SelectedItem?.ToString();
+            CargarCitas(estadoSeleccionado);
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -122,6 +136,22 @@ namespace Clinica
         void cerrar()
         {
             this.Close();
+        }
+
+        private void CBFiltrarEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            accionarFiltroPorEstado();
+        }
+        void accionarFiltroPorEstado()
+        {
+            if (CBFiltrarEstado.Checked)
+            {
+                CBEstado.Enabled = true;
+            }
+            else
+            {
+                CBEstado.Enabled = false;
+            }
         }
     }
 }

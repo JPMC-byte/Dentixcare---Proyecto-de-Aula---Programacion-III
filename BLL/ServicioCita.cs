@@ -61,7 +61,6 @@ namespace BLL
             }
             return nuevoCodigo;
         }
-
         public string UpdateRazon(Cita cita, string RazonCita)
         {
             List<Cita> Citas = GetAll();
