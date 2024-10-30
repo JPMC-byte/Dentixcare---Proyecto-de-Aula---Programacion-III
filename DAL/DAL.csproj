@@ -80,7 +80,9 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="ConexionOracle.cs" />
+    <Compile Include="DBCita.cs" />
     <Compile Include="DBConsultorio.cs" />
+    <Compile Include="DBDiagnostico.cs" />
     <Compile Include="DBOrtodoncista.cs" />
     <Compile Include="DBPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

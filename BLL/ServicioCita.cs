@@ -10,11 +10,12 @@ namespace BLL
 {
     public class ServicioCita
     {
-        RepositorioCita reposCita;
+        DBCita reposCita;
 
         public ServicioCita()
         {
-            reposCita = new RepositorioCita(Config.FILENAME_CITA);
+            //reposCita = new RepositorioCita(Config.FILENAME_CITA);
+            reposCita = new DBCita();
         }
         public string Add(Cita cita)
         {
@@ -22,11 +23,11 @@ namespace BLL
         }
         public List<Cita> GetAll()
         {
-            return reposCita.LoadData();
+            return reposCita.GetAll();
         }
         public Cita GetByID(string id) 
         {
-            return reposCita.GetById(id);
+            return reposCita.GetByID(id);
         }
         public Cita GetByIDPaciente(string id)
         {
@@ -66,7 +67,7 @@ namespace BLL
             List<Cita> Citas = GetAll();
             Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
             CitaAModificar.Razon_Cita = RazonCita;
-            return reposCita.SaveData(Citas);
+            return reposCita.SaveData(CitaAModificar);
         }
         public string UpdateAtendida(Cita cita, string CodigoOrtodoncista, string estado)
         {
@@ -74,14 +75,12 @@ namespace BLL
             Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
             CitaAModificar.CodigoOrtodoncista = CodigoOrtodoncista;
             CitaAModificar.Estado = estado;
-            return reposCita.SaveData(Citas);
+            return reposCita.SaveData(CitaAModificar);
         }
 
         public string Delete(Cita cita)
         {
-            List<Cita> Citas = GetAll();
-            Citas.RemoveAll(CitaAEliminar => CitaAEliminar.Codigo == cita.Codigo);
-            return reposCita.SaveData(Citas);
+            return reposCita.Delete(cita.Codigo);
         }
     }
 }

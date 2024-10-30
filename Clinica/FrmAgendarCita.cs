@@ -41,12 +41,14 @@ namespace Clinica
             cita.Codigo = GenerarCodigo();
             cita.CodigoConsultorio = consultorio.Codigo;
             cita.CodigoPaciente = UsuarioActual.Cedula;
+            cita.CodigoChatbot = "No asignado";
             cita.CodigoOrtodoncista = "No asignado";
             cita.Fecha_Cita = DTFecha_Nacimiento.Value.Date;
             cita.Fecha_Creacion = DateTime.Today.Date;
             cita.Hora_Cita = DTHora.Value.TimeOfDay;
             cita.Razon_Cita = txtRazonCita.Text;
             cita.Estado = "Solicitada";
+            cita.RecordatorioCita = false;
             servisCita.Add(cita);
             MessageBox.Show("Proceso de registro exitoso");
             Limpiar();

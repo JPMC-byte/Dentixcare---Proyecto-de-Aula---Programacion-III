@@ -65,7 +65,7 @@ namespace DAL
             };
         }
 
-        public List<Consultorio> ObtenerTodo()
+        public List<Consultorio> GetAll()
         {
             listaConsultorios = new List<Consultorio>();
             string query = "SELECT * FROM CONSULTORIO";
@@ -95,10 +95,9 @@ namespace DAL
             return listaConsultorios;
         }
 
-        public Consultorio BuscarPorCodigo(string codigo)
+        public Consultorio GetByID(string codigo)
         {
-            listaConsultorios = ObtenerTodo();
-            return listaConsultorios.Find(x => x.Codigo == codigo);
+            return GetAll().Find(x => x.Codigo == codigo);
         }
         private void ConsultorioCreado()
         {
@@ -106,13 +105,13 @@ namespace DAL
             string nombre = "DentixCare";
             string telefono = "+57 3053274924";
             string barrio = "San Carlos";
-            string etapa = "5";
+            string etapa = "Etapa 5";
             string manzana = "Manzana 12";
             string calle = "Calle 45A #12-34";
             TimeSpan horaApertura = new TimeSpan(8, 0, 0);
             TimeSpan horaCierre = new TimeSpan(18, 0, 0);
 
-            var consultorioExistente = BuscarPorCodigo(codigo);
+            var consultorioExistente = GetByID(codigo);
 
             if (consultorioExistente == null)
             {

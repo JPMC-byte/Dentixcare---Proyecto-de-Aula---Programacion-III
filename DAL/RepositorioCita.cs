@@ -48,6 +48,7 @@ namespace DAL
             cita.Hora_Cita = TimeSpan.Parse(line.Split(';')[6]);
             cita.Razon_Cita = line.Split(';')[7];
             cita.Estado = line.Split(';')[8];
+            cita.RecordatorioCita = bool.Parse(line.Split(';')[9]);
 
             return cita;
         }

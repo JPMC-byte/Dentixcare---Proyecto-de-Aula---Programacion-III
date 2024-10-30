@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chatbot.cs" />
     <Compile Include="Cita.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Consultorio.cs" />

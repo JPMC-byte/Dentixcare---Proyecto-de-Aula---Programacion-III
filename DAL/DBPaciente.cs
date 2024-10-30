@@ -10,6 +10,7 @@ namespace DAL
     {
         private List<Paciente> listaPacientes;
 
+        public DBPaciente() { }
         public string SaveData(Paciente paciente)
         {
             string query = "INSERT INTO PACIENTE (CEDULA_P, PRIMER_NOMBRE, SEGUNDO_NOMBRE, PRIMER_APELLIDO, " +
@@ -66,7 +67,7 @@ namespace DAL
                 CodigoConsultorio = Convert.ToString(reader["ID_CONSULTORIO"])
             };
         }
-        public List<Paciente> ObtenerTodo()
+        public List<Paciente> GetAll()
         {
             listaPacientes = new List<Paciente>();
             string query = "SELECT * FROM PACIENTE";
@@ -95,14 +96,14 @@ namespace DAL
             }
             return listaPacientes;
         }
-        public Paciente BuscarPorId(string ID)
+        public Paciente GetByID(string ID)
         {
-            listaPacientes = ObtenerTodo();
+            listaPacientes = GetAll();
             return listaPacientes.Find(x => x.Cedula == ID);
         }
-        public Paciente InicioSesion(string ID, string contrasena)
+        public Paciente GetByUser(string ID, string contrasena)
         {
-            listaPacientes = ObtenerTodo();
+            listaPacientes = GetAll();
             return listaPacientes.FirstOrDefault(x => x.Cedula == ID && x.Contrasena == contrasena);
         }
 

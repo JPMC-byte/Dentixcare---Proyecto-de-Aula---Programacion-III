@@ -10,11 +10,12 @@ namespace Logica
 {
     public class ServicioPaciente : ServicioPersona<Paciente>
     {
-        RepositorioPaciente RepsPaciente;
+        DBPaciente RepsPaciente;
 
         public ServicioPaciente()
         {
-            RepsPaciente = new RepositorioPaciente(Config.FILENAME_PACIENTE);
+            //RepsPaciente = new RepositorioPaciente(Config.FILENAME_PACIENTE);
+            RepsPaciente = new DBPaciente();
         }
         public string Add(Paciente value)
         {
@@ -23,7 +24,8 @@ namespace Logica
 
         public List<Paciente> GetAll()
         {
-            return RepsPaciente.LoadData();
+            //return RepsPaciente.LoadData();
+            return RepsPaciente.GetAll();
         }
 
         public Paciente GetByID(string ID)

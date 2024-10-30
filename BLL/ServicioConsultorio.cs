@@ -10,19 +10,20 @@ namespace BLL
 {
     public class ServicioConsultorio
     {
-        RepositorioConsultorio reposConsul;
+        DBConsultorio reposConsul;
 
         public ServicioConsultorio()
         {
-            reposConsul = new RepositorioConsultorio(Config.FILENAME_CONSULTORIO);
+            //reposConsul = new RepositorioConsultorio(Config.FILENAME_CONSULTORIO);
+            reposConsul = new DBConsultorio();
         }
         public Consultorio CargarConsultorio(string ID)
         {
-            return reposConsul.GetById(ID);
+            return reposConsul.GetByID(ID);
         }
         public List<Consultorio> GetAll()
         {
-            return reposConsul.LoadData();
+            return reposConsul.GetAll();
         }
     }
 }

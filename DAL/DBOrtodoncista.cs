@@ -10,6 +10,7 @@ namespace DAL
     {
         private List<Ortodoncista> listaOrtodoncistas;
 
+        public DBOrtodoncista() { }
         public string SaveData(Ortodoncista ortodoncista)
         {
             string query = "INSERT INTO ORTODONCISTA (CEDULA_O, PRIMER_NOMBRE, SEGUNDO_NOMBRE, PRIMER_APELLIDO, " +
@@ -68,7 +69,7 @@ namespace DAL
             };
         }
 
-        public List<Ortodoncista> ObtenerTodo()
+        public List<Ortodoncista> GetAll()
         {
             listaOrtodoncistas = new List<Ortodoncista>();
             string query = "SELECT * FROM ORTODONCISTA";
@@ -98,15 +99,15 @@ namespace DAL
             return listaOrtodoncistas;
         }
 
-        public Ortodoncista BuscarPorId(string ID)
+        public Ortodoncista GetByID(string ID)
         {
-            listaOrtodoncistas = ObtenerTodo();
+            listaOrtodoncistas = GetAll();
             return listaOrtodoncistas.Find(x => x.Cedula == ID);
         }
 
-        public Ortodoncista InicioSesion(string ID, string contrasena)
+        public Ortodoncista GetByUser(string ID, string contrasena)
         {
-            listaOrtodoncistas = ObtenerTodo();
+            listaOrtodoncistas = GetAll();
             return listaOrtodoncistas.FirstOrDefault(x => x.Cedula == ID && x.Contrasena == contrasena);
         }
     }
