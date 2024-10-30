@@ -15,7 +15,7 @@ namespace DAL
         {
         }
 
-        public override List<Cita> LoadData()
+        public override List<Cita> GetAll()
         {
             try
             {
@@ -54,23 +54,23 @@ namespace DAL
         }
         public Cita GetById(string id)
         {
-            return LoadData().FirstOrDefault<Cita>(x => x.Codigo == id);
+            return GetAll().FirstOrDefault<Cita>(x => x.Codigo == id);
         }
         public Cita GetByIDPaciente(string id)
         {
-            return LoadData().FirstOrDefault<Cita>(x => x.CodigoPaciente == id);
+            return GetAll().FirstOrDefault<Cita>(x => x.CodigoPaciente == id);
         }
         public List<Cita> LoadByID(string id)
         {
-            return LoadData().Where(cita => cita.CodigoPaciente == id).ToList();
+            return GetAll().Where(cita => cita.CodigoPaciente == id).ToList();
         }
         public List<Cita> LoadByEstado(string estado)
         {
-            return LoadData().Where(cita => cita.Estado == estado).ToList();
+            return GetAll().Where(cita => cita.Estado == estado).ToList();
         }
         public List<Cita> LoadFilters(string estado, string cedulaPaciente)
         {
-            List<Cita> Citas = LoadData();
+            List<Cita> Citas = GetAll();
             Citas = Citas.Where(cita => cita.Estado == estado).ToList();
             Citas = Citas.Where(cita => cita.CodigoPaciente == cedulaPaciente).ToList();
             return Citas;

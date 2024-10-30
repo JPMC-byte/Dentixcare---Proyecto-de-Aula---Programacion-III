@@ -10,7 +10,7 @@ namespace DAL
     {
         public RepositorioOrtodoncista(string fileName) : base(fileName) { }
 
-        public override List<Ortodoncista> LoadData()
+        public override List<Ortodoncista> GetAll()
         {
             try
             {
@@ -49,12 +49,12 @@ namespace DAL
 
         public Ortodoncista GetByUser(string id, string Password)
         {
-            return LoadData().FirstOrDefault(x => x.Cedula == id && x.Contrasena == Password);
+            return GetAll().FirstOrDefault(x => x.Cedula == id && x.Contrasena == Password);
         }
 
         public Ortodoncista GetByID(string ID)
         {
-            return LoadData().FirstOrDefault(x => x.Cedula == ID);
+            return GetAll().FirstOrDefault(x => x.Cedula == ID);
         }
     }
 }

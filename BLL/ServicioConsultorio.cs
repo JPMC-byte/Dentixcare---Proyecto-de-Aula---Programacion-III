@@ -10,6 +10,7 @@ namespace BLL
 {
     public class ServicioConsultorio
     {
+        //RepositorioConsultorio reposConsul;
         DBConsultorio reposConsul;
 
         public ServicioConsultorio()

@@ -15,7 +15,7 @@ namespace DAL
             ConsultorioCreado();
         }
 
-        public override List<Consultorio> LoadData()
+        public override List<Consultorio> GetAll()
         {
             try
             {
@@ -53,7 +53,7 @@ namespace DAL
         }
         public Consultorio GetById(string id)
         {
-            return LoadData().FirstOrDefault<Consultorio>(x => x.Codigo == id);
+            return GetAll().FirstOrDefault<Consultorio>(x => x.Codigo == id);
         }
         private void ConsultorioCreado()
         {

@@ -11,8 +11,8 @@ namespace BLL
 {
     public class ServicioOrtodoncista : ServicioPersona<Ortodoncista>
     {
+        //RepositorioOrtodoncista RepsOrto;
         DBOrtodoncista RepsOrto;
-
         public ServicioOrtodoncista()
         {
             //RepsOrto = new RepositorioOrtodoncista(Config.FILENAME_ORTODONCISTA);
@@ -24,7 +24,6 @@ namespace BLL
         }
         public List<Ortodoncista> GetAll()
         {
-            //return RepsOrto.LoadData();
             return RepsOrto.GetAll();
         }
 

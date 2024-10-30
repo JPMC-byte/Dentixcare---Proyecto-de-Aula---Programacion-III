@@ -24,7 +24,6 @@ namespace Logica
 
         public List<Paciente> GetAll()
         {
-            //return RepsPaciente.LoadData();
             return RepsPaciente.GetAll();
         }
 

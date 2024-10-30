@@ -10,6 +10,7 @@ namespace BLL
 {
     public class ServicioCita
     {
+        // RepositorioCita reposCita;
         DBCita reposCita;
 
         public ServicioCita()

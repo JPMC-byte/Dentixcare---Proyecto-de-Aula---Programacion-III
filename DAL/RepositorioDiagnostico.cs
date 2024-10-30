@@ -13,7 +13,7 @@ namespace DAL
 
         }
 
-        public override List<Diagnostico> LoadData()
+        public override List<Diagnostico> GetAll()
         {
             try
             {
@@ -46,7 +46,7 @@ namespace DAL
         }
         public Diagnostico GetById(string id)
         {
-            return LoadData().FirstOrDefault<Diagnostico>(x => x.Codigo == id);
+            return GetAll().FirstOrDefault<Diagnostico>(x => x.Codigo == id);
         }
     }
 }

@@ -50,6 +50,6 @@ namespace DAL
             }
         }
 
-        public abstract List<T> LoadData();
+        public abstract List<T> GetAll();
     }
 }
