@@ -127,7 +127,7 @@ namespace DAL
         public string Modify(Cita cita)
         {
             string horaCita = cita.Hora_Cita.ToString(@"hh\:mm\:ss");
-            string query = "UPDATE CITA SET RAZON_CITA = :Razon_cita, FECHA_CREACION = TO_DATE(:Fecha_Creacion, 'DD-MM-YYYY'), FECHA_CITA = TO_DATE(:Fecha_Cita, 'DD-MM-YYYY'), HORA_CITA = Hora_Cita, ESTADO = :Estado, " +
+            string query = "UPDATE CITA SET RAZON_CITA = :Razon_cita, FECHA_CREACION = TO_DATE(:Fecha_Creacion, 'DD-MM-YYYY'), FECHA_CITA = TO_DATE(:Fecha_Cita, 'DD-MM-YYYY'), HORA_CITA = :Hora_Cita, ESTADO = :Estado, " +
                            "RECORDATORIO_CITA = :Recordatorio_Cita, CEDULA_O = :CodigoOrtodoncista, CEDULA_P = :CodigoPaciente, ID_CONSULTORIO = :CodigoConsultorio, ID_CHATBOT = :CodigoChatbot " +
                            "WHERE ID_CITA = :Codigo";
             OracleTransaction transaction = null;
