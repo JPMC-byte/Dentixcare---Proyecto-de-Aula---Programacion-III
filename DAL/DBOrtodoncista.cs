@@ -90,7 +90,7 @@ namespace DAL
             }
             catch (Exception)
             {
-                return null;
+                return new List<Ortodoncista>();
             }
             finally
             {

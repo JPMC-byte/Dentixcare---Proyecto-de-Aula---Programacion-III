@@ -88,7 +88,7 @@ namespace DAL
             }
             catch (Exception)
             {
-                return null;
+                return new List<Paciente>();
             }
             finally
             {

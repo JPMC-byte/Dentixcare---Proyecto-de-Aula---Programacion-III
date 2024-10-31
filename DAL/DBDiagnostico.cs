@@ -12,7 +12,7 @@ namespace DAL
         public string SaveData(Diagnostico diagnostico)
         {
             string query = "INSERT INTO DIAGNOSTICO (ID_DIAGNOSTICO, FECHA_DIAGNOSTICO, DESCRIPCION, ID_CITA, CEDULA_P) " +
-                           "VALUES (:Codigo, :Fecha_Diagnostico, :Descripcion, :CodigoCita, :CedulaPaciente)";
+                           "VALUES (:Codigo, TO_DATE(:Fecha_Diagnostico, 'DD-MM-YYYY'), :Descripcion, :CodigoCita, :CedulaPaciente)";
 
             OracleTransaction transaction = null;
 
@@ -24,7 +24,7 @@ namespace DAL
                 using (OracleCommand command = new OracleCommand(query, conexion))
                 {
                     command.Parameters.Add(new OracleParameter("Codigo", diagnostico.Codigo));
-                    command.Parameters.Add(new OracleParameter("Fecha_Diagnostico", diagnostico.Fecha_Diagnostico));
+                    command.Parameters.Add(new OracleParameter("Fecha_Diagnostico", diagnostico.Fecha_Diagnostico.ToString("dd-MM-yyyy")));
                     command.Parameters.Add(new OracleParameter("Descripcion", diagnostico.Descripcion));
                     command.Parameters.Add(new OracleParameter("CodigoCita", diagnostico.CodigoCita));
                     command.Parameters.Add(new OracleParameter("CedulaPaciente", diagnostico.CedulaPaciente));

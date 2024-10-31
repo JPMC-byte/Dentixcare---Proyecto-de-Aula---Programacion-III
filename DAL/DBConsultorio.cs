@@ -11,6 +11,8 @@ namespace DAL
         public DBConsultorio() { ConsultorioCreado(); }
         public string SaveData(Consultorio consultorio)
         {
+            string horaApertura = consultorio.Hora_Apertura.ToString(@"hh\:mm");
+            string horaCierre = consultorio.Hora_Cierre.ToString(@"hh\:mm");
             string query = "INSERT INTO CONSULTORIO (ID_CONSULTORIO, NOMBRE_CONSULTORIO, BARRIO, ETAPA, MANZANA, CALLE, TELEFONO, HORA_APERTURA, HORA_CIERRE) " +
                            "VALUES (:Codigo, :Nombre, :Barrio, :Etapa, :Manzana, :Calle, :Telefono, :Hora_Apertura, :Hora_Cierre)";
 
@@ -30,8 +32,8 @@ namespace DAL
                     command.Parameters.Add(new OracleParameter("Manzana", consultorio.Manzana ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("Calle", consultorio.Calle ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("Telefono", consultorio.Telefono ?? (object)DBNull.Value));
-                    command.Parameters.Add(new OracleParameter("Hora_Apertura", consultorio.Hora_Apertura));
-                    command.Parameters.Add(new OracleParameter("Hora_Cierre", consultorio.Hora_Cierre));
+                    command.Parameters.Add(new OracleParameter("Hora_Apertura", horaApertura));
+                    command.Parameters.Add(new OracleParameter("Hora_Cierre", horaCierre));
 
                     command.ExecuteNonQuery();
                 }
@@ -60,8 +62,8 @@ namespace DAL
                 Etapa = Convert.ToString(reader["ETAPA"]),
                 Manzana = Convert.ToString(reader["MANZANA"]),
                 Calle = Convert.ToString(reader["CALLE"]),
-                Hora_Apertura = (TimeSpan)reader["HORA_APERTURA"],
-                Hora_Cierre = (TimeSpan)reader["HORA_CIERRE"]
+                Hora_Apertura = TimeSpan.ParseExact(Convert.ToString(reader["HORA_APERTURA"]), @"hh\:mm", null),
+                Hora_Cierre = TimeSpan.ParseExact(Convert.ToString(reader["HORA_CIERRE"]), @"hh\:mm", null)
             };
         }
 

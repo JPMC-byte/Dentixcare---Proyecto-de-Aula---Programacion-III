@@ -68,7 +68,7 @@ namespace BLL
             List<Cita> Citas = GetAll();
             Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
             CitaAModificar.Razon_Cita = RazonCita;
-            return reposCita.SaveData(CitaAModificar);
+            return reposCita.Modify(CitaAModificar);
         }
         public string UpdateAtendida(Cita cita, string CodigoOrtodoncista, string estado)
         {
@@ -76,7 +76,7 @@ namespace BLL
             Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
             CitaAModificar.CodigoOrtodoncista = CodigoOrtodoncista;
             CitaAModificar.Estado = estado;
-            return reposCita.SaveData(CitaAModificar);
+            return reposCita.Modify(CitaAModificar);
         }
 
         public string Delete(Cita cita)
