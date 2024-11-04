@@ -90,18 +90,30 @@ namespace Clinica
         {
             VerConsultorio();
         }
+        private void btnGestionCitas_Click(object sender, EventArgs e)
+        {
+            VerGestionCita();
+        }
+
+        private void btnGestionPaciente_Click(object sender, EventArgs e)
+        {
+            VerGestionPaciente();
+        }
         void VerConsultorio()
         {
             Consultorio consultorio = servisConsul.CargarConsultorio("P101");
             AbrirFormulario(new FrmConsultorio(consultorio));
             OcultarSubmenu();
         }
-
-        private void btnGestionCitas_Click(object sender, EventArgs e)
+        void VerGestionCita()
         {
             AbrirFormulario(new FrmGestionCita(ortodoncista));
             OcultarSubmenu();
         }
-
+        void VerGestionPaciente()
+        {
+            AbrirFormulario(new FrmGestionPaciente());
+            OcultarSubmenu();
+        }
     }
 }

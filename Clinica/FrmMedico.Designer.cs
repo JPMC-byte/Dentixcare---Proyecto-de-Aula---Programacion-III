@@ -109,6 +109,7 @@
             this.btnGestionPaciente.Text = "Gestión de pacientes";
             this.btnGestionPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionPaciente.UseVisualStyleBackColor = false;
+            this.btnGestionPaciente.Click += new System.EventHandler(this.btnGestionPaciente_Click);
             // 
             // btnGestionDiagnostico
             // 

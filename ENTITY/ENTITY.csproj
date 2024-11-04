@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Chatbot.cs" />
     <Compile Include="Cita.cs" />
-    <Compile Include="Config.cs" />
     <Compile Include="Consultorio.cs" />
     <Compile Include="Diagnostico.cs" />
     <Compile Include="Factura.cs" />

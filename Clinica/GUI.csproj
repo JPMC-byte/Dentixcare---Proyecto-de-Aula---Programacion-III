@@ -86,6 +86,12 @@
     <Compile Include="FrmGestionCita.Designer.cs">
       <DependentUpon>FrmGestionCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionPaciente.Designer.cs">
+      <DependentUpon>FrmGestionPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmInformacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionCita.resx">
       <DependentUpon>FrmGestionCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionPaciente.resx">
+      <DependentUpon>FrmGestionPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInformacion.resx">
       <DependentUpon>FrmInformacion.cs</DependentUpon>

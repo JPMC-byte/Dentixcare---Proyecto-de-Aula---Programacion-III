@@ -32,6 +32,11 @@ namespace Logica
             return RepsPaciente.GetByID(ID);
         }
 
+        public List<Paciente> LoadByID(string ID)
+        {
+            return RepsPaciente.LoadByID(ID);
+        }
+
         public Paciente IniciarSesion(string id, string Password)
         {
             return RepsPaciente.GetByUser(id, Password);

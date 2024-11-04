@@ -47,6 +47,7 @@
     <Compile Include="ServicioOrtodoncista.cs" />
     <Compile Include="ServicioPaciente.cs" />
     <Compile Include="ServicioPersona.cs" />
+    <Compile Include="ServicioTratamiento.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
   <ItemGroup>

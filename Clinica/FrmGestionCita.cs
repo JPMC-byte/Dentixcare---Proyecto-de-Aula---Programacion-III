@@ -58,7 +58,7 @@ namespace Clinica
             CargarCitas(estadoSeleccionado, cedulaPaciente);
             if (CBFiltrarPorPaciente.Checked && !ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente))
             {
-                MessageBox.Show("La cédula del paciente no existe en los datos de las citas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La cédula del paciente no existe en el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -152,13 +152,21 @@ namespace Clinica
         }
         private void txtCedulaPaciente_Enter(object sender, EventArgs e)
         {
+            eventoEntrar();
+        }
+        private void txtCedulaPaciente_Leave(object sender, EventArgs e)
+        {
+            eventoSalir();
+        }
+        void eventoEntrar()
+        {
             if (txtCedulaPaciente.Text == "CEDULA DEL PACIENTE")
             {
                 txtCedulaPaciente.Text = "";
                 txtCedulaPaciente.ForeColor = Color.Black;
             }
         }
-        private void txtCedulaPaciente_Leave(object sender, EventArgs e)
+        void eventoSalir()
         {
             if (txtCedulaPaciente.Text == "")
             {

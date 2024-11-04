@@ -106,6 +106,10 @@ namespace DAL
             listaPacientes = GetAll();
             return listaPacientes.FirstOrDefault(x => x.Cedula == ID && x.Contrasena == contrasena);
         }
+        public List<Paciente> LoadByID(string codigo)
+        {
+            return GetAll().Where(paciente => paciente.Cedula == codigo).ToList();
+        }
 
     }
 }
