@@ -1,10 +1,8 @@
 ﻿using DAL;
 using ENTITY;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BLL
 {
@@ -65,15 +63,13 @@ namespace BLL
         }
         public string UpdateRazon(Cita cita, string RazonCita)
         {
-            List<Cita> Citas = GetAll();
-            Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
+            Cita CitaAModificar = GetByID(cita.Codigo);
             CitaAModificar.Razon_Cita = RazonCita;
             return reposCita.Modify(CitaAModificar);
         }
         public string UpdateAtendida(Cita cita, string CodigoOrtodoncista, string estado)
         {
-            List<Cita> Citas = GetAll();
-            Cita CitaAModificar = Citas.Find(CitaABuscar => CitaABuscar.Codigo == cita.Codigo);
+            Cita CitaAModificar = GetByID(cita.Codigo);
             CitaAModificar.CodigoOrtodoncista = CodigoOrtodoncista;
             CitaAModificar.Estado = estado;
             return reposCita.Modify(CitaAModificar);

@@ -19,22 +19,32 @@ namespace BLL
         {
             return reposTratamiento.SaveData(tratamiento);
         }
-
         public List<Tratamiento> GetAll()
         {
             return reposTratamiento.GetAll();
         }
-
         public Tratamiento GetByID(string id)
         {
             return reposTratamiento.GetByID(id);
         }
-
         public string Delete(string id)
         {
             return reposTratamiento.Delete(id);
         }
+        public string UpdateDescripcion(Tratamiento tratamiento, string nuevaDescripcion)
+        {
+            Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
+            tratamientoAModificar.Descripcion = nuevaDescripcion;
+            return reposTratamiento.SaveData(tratamientoAModificar);
 
+        }
+        public string UpdateCosto(Tratamiento tratamiento, double nuevoCosto)
+        {
+            Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
+            tratamientoAModificar.Costo = nuevoCosto;
+            return reposTratamiento.SaveData(tratamientoAModificar);
+
+        }
         public string GenerarCodigo()
         {
             List<Tratamiento> tratamientosExistentes = GetAll();
@@ -51,24 +61,6 @@ namespace BLL
                 nuevoCodigo = "T" + (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
             }
             return nuevoCodigo;
-        }
-
-        public string UpdateDescripcion(Tratamiento tratamiento, string nuevaDescripcion)
-        {
-            List<Tratamiento> tratamientos = GetAll();
-            Tratamiento tratamientoAModificar = tratamientos.Find(t => t.ID_Tratamiento == tratamiento.ID_Tratamiento);
-            tratamientoAModificar.Descripcion = nuevaDescripcion;
-            return reposTratamiento.SaveData(tratamientoAModificar);
-
-        }
-
-        public string UpdateCosto(Tratamiento tratamiento, double nuevoCosto)
-        {
-            List<Tratamiento> tratamientos = GetAll();
-            Tratamiento tratamientoAModificar = tratamientos.Find(t => t.ID_Tratamiento == tratamiento.ID_Tratamiento);
-            tratamientoAModificar.Costo = nuevoCosto;
-            return reposTratamiento.SaveData(tratamientoAModificar); 
-
         }
     }
 }

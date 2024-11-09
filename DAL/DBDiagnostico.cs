@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ENTITY;
 using Oracle.ManagedDataAccess.Client;
 
@@ -77,8 +78,7 @@ namespace DAL
 
         public Diagnostico GetByID(string codigo)
         {
-            listaDiagnosticos = GetAll();
-            return listaDiagnosticos.Find(c => c.Codigo == codigo);
+            return GetAll().FirstOrDefault<Diagnostico>(x => x.Codigo == codigo);
         }
 
         private Diagnostico Map(OracleDataReader reader)
@@ -91,6 +91,43 @@ namespace DAL
                 CodigoCita = Convert.ToString(reader["ID_CITA"]),
                 CedulaPaciente = Convert.ToString(reader["CEDULA_P"])
             };
+        }
+        public string Update(Diagnostico diagnostico)
+        {
+            string query = "UPDATE DIAGNOSTICO SET FECHA_DIAGNOSTICO = TO_DATE(:Fecha_Diagnostico, 'DD-MM-YYYY'), " +
+                           "DESCRIPCION = :Descripcion, ID_CITA = :CodigoCita, CEDULA_P = :CedulaPaciente " +
+                           "WHERE ID_DIAGNOSTICO = :Codigo";
+
+            OracleTransaction transaction = null;
+
+            try
+            {
+                AbrirConexion();
+                transaction = conexion.BeginTransaction();
+
+                using (OracleCommand command = new OracleCommand(query, conexion))
+                {
+                    command.Parameters.Add(new OracleParameter("Fecha_Diagnostico", diagnostico.Fecha_Diagnostico.ToString("dd-MM-yyyy")));
+                    command.Parameters.Add(new OracleParameter("Descripcion", diagnostico.Descripcion));
+                    command.Parameters.Add(new OracleParameter("CodigoCita", diagnostico.CodigoCita));
+                    command.Parameters.Add(new OracleParameter("CedulaPaciente", diagnostico.CedulaPaciente));
+                    command.Parameters.Add(new OracleParameter("Codigo", diagnostico.Codigo));
+
+                    command.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+                return "Diagnóstico actualizado exitosamente";
+            }
+            catch (Exception ex)
+            {
+                transaction?.Rollback();
+                return "Error al actualizar diagnóstico: " + ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
         }
 
         public string Delete(string codigo)

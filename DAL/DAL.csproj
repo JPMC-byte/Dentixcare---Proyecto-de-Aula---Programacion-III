@@ -82,8 +82,10 @@
     <Compile Include="DBCita.cs" />
     <Compile Include="DBConsultorio.cs" />
     <Compile Include="DBDiagnostico.cs" />
+    <Compile Include="DBFactura.cs" />
     <Compile Include="DBOrtodoncista.cs" />
     <Compile Include="DBPaciente.cs" />
+    <Compile Include="DBPago.cs" />
     <Compile Include="DBTratamiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
