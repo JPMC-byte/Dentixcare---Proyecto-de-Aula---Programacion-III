@@ -7,7 +7,6 @@ namespace ENTITY
         public string Codigo { get; set; }
         public string CodigoConsultorio { get; set; }
         public string CodigoOrtodoncista { get; set; }
-        public string CodigoChatbot { get; set; }
         public string CodigoPaciente { get; set; }
         public DateTime Fecha_Cita { get; set; }
         public DateTime Fecha_Creacion { get; set; }
@@ -18,7 +17,7 @@ namespace ENTITY
 
         public Cita() { }
 
-        public Cita(string codigo, Consultorio consultorio, Paciente paciente, Chatbot chatbot, DateTime fecha_creacion, DateTime fecha_Cita, TimeSpan hora_Cita, string razon_Cita, string estado, bool recordatorioCita)
+        public Cita(string codigo, Consultorio consultorio, Paciente paciente, DateTime fecha_creacion, DateTime fecha_Cita, TimeSpan hora_Cita, string razon_Cita, string estado, bool recordatorioCita)
         {
             Codigo = codigo;
             CodigoOrtodoncista = null;
@@ -30,12 +29,11 @@ namespace ENTITY
             Razon_Cita = razon_Cita;
             Estado = estado;
             RecordatorioCita = recordatorioCita;
-            CodigoChatbot = chatbot.IdChatbot;
         }
 
         public override string ToString()
         {
-            return $"{Codigo};{CodigoConsultorio};{CodigoOrtodoncista};{CodigoChatbot};{CodigoPaciente};{Fecha_Cita:dd/MM/yyyy};{Fecha_Creacion:dd/MM/yyyy};{Hora_Cita};{Razon_Cita};{Estado};{RecordatorioCita}";
+            return $"{Codigo};{CodigoConsultorio};{CodigoOrtodoncista};{CodigoPaciente};{Fecha_Cita:dd/MM/yyyy};{Fecha_Creacion:dd/MM/yyyy};{Hora_Cita};{Razon_Cita};{Estado};{RecordatorioCita}";
         }
     }
 }

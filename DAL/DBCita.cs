@@ -14,8 +14,8 @@ namespace DAL
         public string SaveData(Cita cita)
         {
             string horaCita = cita.Hora_Cita.ToString(@"hh\:mm\:ss");
-            string query = "INSERT INTO CITA (ID_CITA, RAZON_CITA, FECHA_CREACION, FECHA_CITA, HORA_CITA, ESTADO, RECORDATORIO_CITA, CEDULA_O, CEDULA_P, ID_CONSULTORIO, ID_CHATBOT) " +
-                           "VALUES (:Codigo, :Razon_Cita, TO_DATE(:Fecha_Creacion, 'DD-MM-YYYY'), TO_DATE(:Fecha_Cita, 'DD-MM-YYYY'), :Hora_Cita, :Estado, :Recordatorio_Cita, :CodigoOrtodoncista, :CodigoPaciente, :CodigoConsultorio, :CodigoChatbot)";
+            string query = "INSERT INTO CITA (ID_CITA, RAZON_CITA, FECHA_CREACION, FECHA_CITA, HORA_CITA, ESTADO, RECORDATORIO_CITA, CEDULA_O, CEDULA_P, ID_CONSULTORIO) " +
+                           "VALUES (:Codigo, :Razon_Cita, TO_DATE(:Fecha_Creacion, 'DD-MM-YYYY'), TO_DATE(:Fecha_Cita, 'DD-MM-YYYY'), :Hora_Cita, :Estado, :Recordatorio_Cita, :CodigoOrtodoncista, :CodigoPaciente, :CodigoConsultorio)";
 
             OracleTransaction transaction = null;
 
@@ -36,7 +36,6 @@ namespace DAL
                     command.Parameters.Add(new OracleParameter("CodigoOrtodoncista", cita.CodigoOrtodoncista ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("CodigoPaciente", cita.CodigoPaciente));
                     command.Parameters.Add(new OracleParameter("CodigoConsultorio", cita.CodigoConsultorio));
-                    command.Parameters.Add(new OracleParameter("CodigoChatbot", cita.CodigoChatbot ?? (object)DBNull.Value));
                     command.ExecuteNonQuery();
                 }
                 transaction.Commit();
@@ -66,8 +65,7 @@ namespace DAL
                 RecordatorioCita = Convert.ToString(reader["RECORDATORIO_CITA"]) == "1",
                 CodigoOrtodoncista = Convert.ToString(reader["CEDULA_O"]),
                 CodigoPaciente = Convert.ToString(reader["CEDULA_P"]),
-                CodigoConsultorio = Convert.ToString(reader["ID_CONSULTORIO"]),
-                CodigoChatbot = Convert.ToString(reader["ID_CHATBOT"])
+                CodigoConsultorio = Convert.ToString(reader["ID_CONSULTORIO"])
             };
         }
 
@@ -128,7 +126,7 @@ namespace DAL
         {
             string horaCita = cita.Hora_Cita.ToString(@"hh\:mm\:ss");
             string query = "UPDATE CITA SET RAZON_CITA = :Razon_cita, FECHA_CREACION = TO_DATE(:Fecha_Creacion, 'DD-MM-YYYY'), FECHA_CITA = TO_DATE(:Fecha_Cita, 'DD-MM-YYYY'), HORA_CITA = :Hora_Cita, ESTADO = :Estado, " +
-                           "RECORDATORIO_CITA = :Recordatorio_Cita, CEDULA_O = :CodigoOrtodoncista, CEDULA_P = :CodigoPaciente, ID_CONSULTORIO = :CodigoConsultorio, ID_CHATBOT = :CodigoChatbot " +
+                           "RECORDATORIO_CITA = :Recordatorio_Cita, CEDULA_O = :CodigoOrtodoncista, CEDULA_P = :CodigoPaciente, ID_CONSULTORIO = :CodigoConsultorio" +
                            "WHERE ID_CITA = :Codigo";
             OracleTransaction transaction = null;
             try
@@ -146,7 +144,6 @@ namespace DAL
                     command.Parameters.Add(new OracleParameter("CodigoOrtodoncista", cita.CodigoOrtodoncista ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("CodigoPaciente", cita.CodigoPaciente));
                     command.Parameters.Add(new OracleParameter("CodigoConsultorio", cita.CodigoConsultorio));
-                    command.Parameters.Add(new OracleParameter("CodigoChatbot", cita.CodigoChatbot ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("Codigo", cita.Codigo));
 
                     command.ExecuteNonQuery();

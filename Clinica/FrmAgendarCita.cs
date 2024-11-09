@@ -41,7 +41,6 @@ namespace Clinica
             cita.Codigo = GenerarCodigo();
             cita.CodigoConsultorio = consultorio.Codigo;
             cita.CodigoPaciente = UsuarioActual.Cedula;
-            cita.CodigoChatbot = null;
             cita.CodigoOrtodoncista = null;
             cita.Fecha_Cita = DTFecha_Nacimiento.Value.Date;
             cita.Fecha_Creacion = DateTime.Today.Date;
