@@ -385,7 +385,6 @@
             this.Name = "FrmRegistrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar";
-            this.Load += new System.EventHandler(this.FrmRegistrar_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmRegistrar_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

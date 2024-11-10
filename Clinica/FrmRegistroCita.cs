@@ -93,7 +93,7 @@ namespace Clinica
         bool ValidarEstado()
         {
             Cita cita = CitaSeleccionada();
-            if (!vali.ValidarEstado(cita.Estado))
+            if (!vali.ValidarAtendida(cita.Estado))
             {
                 MessageBox.Show("Error - No es posible alterar una cita que ya ha sido atendida.");
                 return false;

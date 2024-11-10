@@ -80,6 +80,12 @@
     <Compile Include="FrmAcceso.Designer.cs">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionAntecedentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionAntecedentes.Designer.cs">
+      <DependentUpon>FrmGestionAntecedentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="FrmGestionPaciente.Designer.cs">
       <DependentUpon>FrmGestionPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInfoDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfoDiagnostico.Designer.cs">
+      <DependentUpon>FrmInfoDiagnostico.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInformacion.cs">
       <SubType>Form</SubType>
@@ -140,6 +152,12 @@
     <Compile Include="FrmPerfil.Designer.cs">
       <DependentUpon>FrmPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRealizarDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRealizarDiagnostico.Designer.cs">
+      <DependentUpon>FrmRealizarDiagnostico.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistrarOrtodoncista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,11 +193,17 @@
     <EmbeddedResource Include="FrmAcceso.resx">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionAntecedentes.resx">
+      <DependentUpon>FrmGestionAntecedentes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionCita.resx">
       <DependentUpon>FrmGestionCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionPaciente.resx">
       <DependentUpon>FrmGestionPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfoDiagnostico.resx">
+      <DependentUpon>FrmInfoDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInformacion.resx">
       <DependentUpon>FrmInformacion.cs</DependentUpon>
@@ -204,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPerfil.resx">
       <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRealizarDiagnostico.resx">
+      <DependentUpon>FrmRealizarDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrar.resx">
       <DependentUpon>FrmRegistrar.cs</DependentUpon>
@@ -274,6 +301,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\IconConsultorio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\IconDiagnostico.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

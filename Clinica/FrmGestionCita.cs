@@ -1,5 +1,6 @@
 ﻿using BLL;
 using ENTITY;
+using Logica;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Clinica
 {
     public partial class FrmGestionCita : Form
     {
+        ServicioPaciente servicioPaciente = new ServicioPaciente();
         ServicioCita servicioCita = new ServicioCita();
         Persona UsuarioActual;
         Validaciones vali = new Validaciones();
@@ -56,7 +58,7 @@ namespace Clinica
             string estadoSeleccionado = CBEstado.SelectedItem?.ToString();
             string cedulaPaciente = txtCedulaPaciente.Text != "CEDULA DEL PACIENTE" ? txtCedulaPaciente.Text : string.Empty;
             CargarCitas(estadoSeleccionado, cedulaPaciente);
-            if (CBFiltrarPorPaciente.Checked && !ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente))
+            if (!ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente))
             {
                 MessageBox.Show("La cédula del paciente no existe en el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -65,7 +67,13 @@ namespace Clinica
         {
             cerrar();
         }
+        public Paciente PacienteSeleccionado()
+        {
+            var cedulaPaciente = DGVCitas.SelectedRows[0].Cells["CodigoPaciente"].Value.ToString();
 
+            Paciente pacienteSeleccionado = servicioPaciente.GetByID(cedulaPaciente);
+            return pacienteSeleccionado;
+        }
         public Cita CitaSeleccionada()
         {
             var codigoCita = DGVCitas.SelectedRows[0].Cells["Codigo"].Value.ToString();
@@ -88,7 +96,7 @@ namespace Clinica
         bool ValidarEstado()
         {
             Cita cita = CitaSeleccionada();
-            if (!vali.ValidarEstado(cita.Estado))
+            if (!vali.ValidarAtendida(cita.Estado))
             {
                 MessageBox.Show("Error - No es posible alterar una cita que ya ha sido atendida.");
                 return false;
@@ -186,6 +194,23 @@ namespace Clinica
         {
             Cita cita = CitaSeleccionada();
             FrmInformacion F = new FrmInformacion(cita);
+            F.Show();
+        }
+
+        private void btnDiagnostico_Click(object sender, EventArgs e)
+        {
+            if (!Verificar())
+            {
+                return;
+            }
+            AbrirRealizarDiagnostico();
+        }
+
+        void AbrirRealizarDiagnostico()
+        {
+            Cita cita = CitaSeleccionada();
+            Paciente paciente = PacienteSeleccionado();
+            FrmRealizarDiagnostico F = new FrmRealizarDiagnostico(cita, paciente);
             F.Show();
         }
     }

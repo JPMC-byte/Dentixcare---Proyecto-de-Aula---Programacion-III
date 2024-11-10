@@ -1,5 +1,6 @@
 ﻿using DAL;
 using ENTITY;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,7 +40,18 @@ namespace BLL
             diagnosticoAModificar.Descripcion = diagnosticoDescripcion;
             return reposDiagnostico.Update(diagnosticoAModificar);
         }
-
+        public List<Diagnostico> LoadByCedula(string codigo) 
+        {
+            return reposDiagnostico.LoadByCedula(codigo);
+        }
+        public List<Diagnostico> LoadByFecha(DateTime fecha)
+        {
+            return reposDiagnostico.LoadByFecha(fecha);
+        }
+        public List<Diagnostico> LoadByFilters(DateTime fecha, string IDPaciente)
+        {
+            return reposDiagnostico.LoadFilters(fecha, IDPaciente);
+        }
         public string GenerarCodigo()
         {
             List<Diagnostico> diagnosticosExistentes = GetAll();

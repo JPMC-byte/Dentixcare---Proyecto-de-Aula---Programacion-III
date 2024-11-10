@@ -80,6 +80,21 @@ namespace DAL
         {
             return GetAll().FirstOrDefault<Diagnostico>(x => x.Codigo == codigo);
         }
+        public List<Diagnostico> LoadByCedula(string codigo)
+        {
+            return GetAll().Where(diag => diag.CedulaPaciente == codigo).ToList();
+        }
+        public List<Diagnostico> LoadByFecha(DateTime fecha)
+        {
+            return GetAll().Where(diag => diag.Fecha_Diagnostico.Date == fecha.Date).ToList();
+        }
+        public List<Diagnostico> LoadFilters(DateTime fecha, string cedulaPaciente)
+        {
+            List<Diagnostico> Diagnosticos = GetAll();
+            Diagnosticos = LoadByCedula(cedulaPaciente);
+            Diagnosticos = LoadByFecha(fecha);
+            return Diagnosticos;
+        }
 
         private Diagnostico Map(OracleDataReader reader)
         {

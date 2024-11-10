@@ -106,15 +106,7 @@ namespace BLL
             }
             return true;
         }
-        public bool ValidarAtendida(Cita cita)
-        {
-            if (cita.Estado == "Pendiente" || cita.CodigoOrtodoncista != "No asignado")
-            {
-                return false;
-            }
-            return true;
-        }
-        public bool ValidarEstado(string texto)
+        public bool ValidarAtendida(string texto)
         {
             if (texto == "Pendiente" || texto == "Finalizada")
             {
@@ -135,6 +127,14 @@ namespace BLL
             Cita cita = servicioCita.GetByIDPaciente(texto);
             Paciente paciente = servicioPaciente.GetByID(texto);
             if (!activo || texto == "CEDULA DEL PACIENTE" || cita == null || paciente == null)
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarFiltroFecha(bool activo, DateTime fecha)
+        {
+            if (!activo || fecha.Date > DateTime.Now.Date || fecha == null)
             {
                 return false;
             }

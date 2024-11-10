@@ -62,14 +62,15 @@ namespace Clinica
             f.Show();
             this.Close();
         }
-
         private void FrmInicioSesion_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            moverMouse();
         }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            moverMouse();
+        }
+        void moverMouse()
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

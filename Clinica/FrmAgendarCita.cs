@@ -103,13 +103,21 @@ namespace Clinica
         }
         private void txtRazonCita_Enter(object sender, EventArgs e)
         {
+            EventoEntrar();
+        }
+        private void txtRazonCita_Leave(object sender, EventArgs e)
+        {
+            EventoSalir();
+        }
+        void EventoEntrar()
+        {
             if (txtRazonCita.Text == "RAZON DE CITA")
             {
                 txtRazonCita.Text = "";
                 txtRazonCita.ForeColor = Color.Black;
             }
         }
-        private void txtRazonCita_Leave(object sender, EventArgs e)
+        void EventoSalir()
         {
             if (txtRazonCita.Text == "")
             {
@@ -117,6 +125,8 @@ namespace Clinica
                 txtRazonCita.ForeColor = Color.DimGray;
             }
         }
+
+
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {

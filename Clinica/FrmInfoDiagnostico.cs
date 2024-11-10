@@ -1,5 +1,4 @@
-﻿using BLL;
-using ENTITY;
+﻿using ENTITY;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,29 +12,30 @@ using System.Windows.Forms;
 
 namespace Clinica
 {
-    public partial class FrmInformacion : Form
+    public partial class FrmInfoDiagnostico : Form
     {
-        Cita citaSeleccionada;
-        public FrmInformacion(Cita cita)
+        Diagnostico diagnosticoActual;
+        public FrmInfoDiagnostico(Diagnostico diagnostico)
         {
             InitializeComponent();
-            citaSeleccionada = cita;
-            CargarDatos(citaSeleccionada);
+            diagnosticoActual = diagnostico;
+            CargarDatos(diagnosticoActual);
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        private void CargarDatos(Cita cita)
+        private void FrmInfoDiagnostico_MouseDown(object sender, MouseEventArgs e)
         {
-            txtCodigo.Text = cita.Codigo;
-            txtCedulaPaciente.Text = cita.CodigoPaciente;
-            txtCedulaOrtodoncista.Text = cita.CodigoOrtodoncista;
-            txtFechaDeCreacion.Text = cita.Fecha_Creacion.ToString("dd/MM/yyyy");
-            txtFechaCita.Text = cita.Fecha_Cita.ToString("dd/MM/yyyy");
-            txtHoraCita.Text = cita.Hora_Cita.ToString();
-            txtRazon.Text = cita.Razon_Cita;
-            txtEstado.Text = cita.Estado;
+            moverCursor();
+        }
+        public void CargarDatos(Diagnostico diagnostico) 
+        { 
+            txtCodigo.Text = diagnostico.Codigo;
+            txtCodigoCita.Text = diagnostico.CodigoCita;
+            txtCedulaPaciente.Text = diagnostico.CedulaPaciente;
+            txtFecha.Text = diagnostico.Fecha_Diagnostico.ToString("dd/MM/yyyy");
+            txtDescripcion.Text = diagnostico.Descripcion;
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -44,10 +44,6 @@ namespace Clinica
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             Minimizar();
-        }
-        private void FrmInformacion_MouseDown(object sender, MouseEventArgs e)
-        {
-            moverCursor();
         }
         void Cerrar()
         {
@@ -62,5 +58,6 @@ namespace Clinica
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
     }
 }
