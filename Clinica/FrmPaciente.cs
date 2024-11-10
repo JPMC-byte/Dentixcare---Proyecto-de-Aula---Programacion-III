@@ -16,12 +16,12 @@ namespace Clinica
     public partial class FrmPaciente : Form
     {
         ServicioConsultorio servisConsul = new ServicioConsultorio();
-        Persona paciente = new Paciente();
+        Persona UsuarioActual = new Paciente();
         Form FormularioActivo = null;
         public FrmPaciente(Persona persona)
         {
             InitializeComponent();
-            paciente = persona;
+            UsuarioActual = persona;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -92,25 +92,24 @@ namespace Clinica
         }
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmPerfil(paciente));
+            AbrirFormulario(new FrmPerfil(UsuarioActual));
             OcultarSubmenu();
         }
 
         private void btnAntecedentes_Click(object sender, EventArgs e)
         {
-
-
+            AbrirFormulario(new FrmGestionAntecedentes(UsuarioActual));
             OcultarSubmenu();
         }
 
         private void btnAgendarCita_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmAgendarCita(paciente));
+            AbrirFormulario(new FrmAgendarCita(UsuarioActual));
             OcultarSubmenu();
         }
         private void btnRegistroCitas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmRegistroCita(paciente));
+            AbrirFormulario(new FrmRegistroCita(UsuarioActual));
             OcultarSubmenu();
         }
         private void btnCancelarCita_Click(object sender, EventArgs e)

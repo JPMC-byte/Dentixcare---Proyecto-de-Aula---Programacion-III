@@ -134,7 +134,7 @@ namespace BLL
         }
         public bool ValidarFiltroFecha(bool activo, DateTime fecha)
         {
-            if (!activo || fecha.Date > DateTime.Now.Date || fecha == null)
+            if (!activo || fecha.Date > DateTime.Now.Date)
             {
                 return false;
             }

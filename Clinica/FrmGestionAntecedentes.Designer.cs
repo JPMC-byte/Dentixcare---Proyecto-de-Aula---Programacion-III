@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnInformacion = new System.Windows.Forms.Button();
             this.CBFiltrarPorPaciente = new System.Windows.Forms.CheckBox();
             this.CBFiltrarFecha = new System.Windows.Forms.CheckBox();
             this.txtCedulaPaciente = new System.Windows.Forms.TextBox();
             this.LBFiltrarPorPaciente = new System.Windows.Forms.Label();
             this.LBFiltro = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnActualizarDiagnostico = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.LBTitulo = new System.Windows.Forms.Label();
             this.DGVDiagnostico = new System.Windows.Forms.DataGridView();
             this.DTFiltroFecha = new System.Windows.Forms.DateTimePicker();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnActualizarRegistro = new System.Windows.Forms.Button();
+            this.btnAsignarTratamiento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiagnostico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +57,9 @@
             this.btnInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInformacion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformacion.ForeColor = System.Drawing.Color.Black;
-            this.btnInformacion.Location = new System.Drawing.Point(43, 626);
+            this.btnInformacion.Location = new System.Drawing.Point(4, 626);
             this.btnInformacion.Name = "btnInformacion";
-            this.btnInformacion.Size = new System.Drawing.Size(162, 50);
+            this.btnInformacion.Size = new System.Drawing.Size(147, 50);
             this.btnInformacion.TabIndex = 94;
             this.btnInformacion.Text = "Más información";
             this.btnInformacion.UseVisualStyleBackColor = false;
@@ -71,6 +73,7 @@
             this.CBFiltrarPorPaciente.Size = new System.Drawing.Size(15, 14);
             this.CBFiltrarPorPaciente.TabIndex = 93;
             this.CBFiltrarPorPaciente.UseVisualStyleBackColor = true;
+            this.CBFiltrarPorPaciente.CheckedChanged += new System.EventHandler(this.CBFiltrarPorPaciente_CheckedChanged);
             // 
             // CBFiltrarFecha
             // 
@@ -80,6 +83,7 @@
             this.CBFiltrarFecha.Size = new System.Drawing.Size(15, 14);
             this.CBFiltrarFecha.TabIndex = 92;
             this.CBFiltrarFecha.UseVisualStyleBackColor = true;
+            this.CBFiltrarFecha.CheckedChanged += new System.EventHandler(this.CBFiltrarFecha_CheckedChanged);
             // 
             // txtCedulaPaciente
             // 
@@ -91,6 +95,8 @@
             this.txtCedulaPaciente.Size = new System.Drawing.Size(147, 22);
             this.txtCedulaPaciente.TabIndex = 91;
             this.txtCedulaPaciente.Text = "CEDULA DEL PACIENTE";
+            this.txtCedulaPaciente.Enter += new System.EventHandler(this.txtCedulaPaciente_Enter);
+            this.txtCedulaPaciente.Leave += new System.EventHandler(this.txtCedulaPaciente_Leave);
             // 
             // LBFiltrarPorPaciente
             // 
@@ -116,20 +122,20 @@
             this.LBFiltro.TabIndex = 89;
             this.LBFiltro.Text = "Filtrar por fecha";
             // 
-            // btnActualizar
+            // btnActualizarDiagnostico
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.Location = new System.Drawing.Point(533, 626);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(174, 50);
-            this.btnActualizar.TabIndex = 87;
-            this.btnActualizar.Text = "Actualizar diagnostico";
-            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizarDiagnostico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnActualizarDiagnostico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarDiagnostico.FlatAppearance.BorderSize = 0;
+            this.btnActualizarDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarDiagnostico.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarDiagnostico.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizarDiagnostico.Location = new System.Drawing.Point(310, 626);
+            this.btnActualizarDiagnostico.Name = "btnActualizarDiagnostico";
+            this.btnActualizarDiagnostico.Size = new System.Drawing.Size(147, 50);
+            this.btnActualizarDiagnostico.TabIndex = 87;
+            this.btnActualizarDiagnostico.Text = "Actualizar diagnostico";
+            this.btnActualizarDiagnostico.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
             // 
@@ -139,9 +145,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(285, 626);
+            this.btnEliminar.Location = new System.Drawing.Point(157, 626);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(174, 50);
+            this.btnEliminar.Size = new System.Drawing.Size(147, 50);
             this.btnEliminar.TabIndex = 84;
             this.btnEliminar.Text = "Eliminar diagnostico";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -167,14 +173,14 @@
             this.DGVDiagnostico.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.DGVDiagnostico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVDiagnostico.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVDiagnostico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVDiagnostico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVDiagnostico.ColumnHeadersHeight = 30;
             this.DGVDiagnostico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGVDiagnostico.EnableHeadersVisualStyles = false;
@@ -182,25 +188,26 @@
             this.DGVDiagnostico.Name = "DGVDiagnostico";
             this.DGVDiagnostico.ReadOnly = true;
             this.DGVDiagnostico.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVDiagnostico.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.DGVDiagnostico.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVDiagnostico.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.DGVDiagnostico.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DGVDiagnostico.Size = new System.Drawing.Size(709, 535);
             this.DGVDiagnostico.TabIndex = 83;
             // 
             // DTFiltroFecha
             // 
+            this.DTFiltroFecha.Enabled = false;
             this.DTFiltroFecha.Location = new System.Drawing.Point(310, 46);
             this.DTFiltroFecha.Name = "DTFiltroFecha";
             this.DTFiltroFecha.Size = new System.Drawing.Size(150, 20);
@@ -217,12 +224,45 @@
             this.btnCerrar.TabIndex = 85;
             this.btnCerrar.TabStop = false;
             // 
+            // btnActualizarRegistro
+            // 
+            this.btnActualizarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnActualizarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarRegistro.FlatAppearance.BorderSize = 0;
+            this.btnActualizarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarRegistro.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarRegistro.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizarRegistro.Location = new System.Drawing.Point(463, 626);
+            this.btnActualizarRegistro.Name = "btnActualizarRegistro";
+            this.btnActualizarRegistro.Size = new System.Drawing.Size(147, 50);
+            this.btnActualizarRegistro.TabIndex = 96;
+            this.btnActualizarRegistro.Text = "Actualizar registro";
+            this.btnActualizarRegistro.UseVisualStyleBackColor = false;
+            this.btnActualizarRegistro.Click += new System.EventHandler(this.btnActualizarRegistro_Click);
+            // 
+            // btnAsignarTratamiento
+            // 
+            this.btnAsignarTratamiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAsignarTratamiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAsignarTratamiento.FlatAppearance.BorderSize = 0;
+            this.btnAsignarTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarTratamiento.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsignarTratamiento.ForeColor = System.Drawing.Color.Black;
+            this.btnAsignarTratamiento.Location = new System.Drawing.Point(616, 626);
+            this.btnAsignarTratamiento.Name = "btnAsignarTratamiento";
+            this.btnAsignarTratamiento.Size = new System.Drawing.Size(147, 50);
+            this.btnAsignarTratamiento.TabIndex = 97;
+            this.btnAsignarTratamiento.Text = "Asignar un tratamiento";
+            this.btnAsignarTratamiento.UseVisualStyleBackColor = false;
+            // 
             // FrmGestionAntecedentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.btnAsignarTratamiento);
+            this.Controls.Add(this.btnActualizarRegistro);
             this.Controls.Add(this.DTFiltroFecha);
             this.Controls.Add(this.btnInformacion);
             this.Controls.Add(this.CBFiltrarPorPaciente);
@@ -230,7 +270,7 @@
             this.Controls.Add(this.txtCedulaPaciente);
             this.Controls.Add(this.LBFiltrarPorPaciente);
             this.Controls.Add(this.LBFiltro);
-            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnActualizarDiagnostico);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.LBTitulo);
@@ -253,11 +293,13 @@
         private System.Windows.Forms.TextBox txtCedulaPaciente;
         private System.Windows.Forms.Label LBFiltrarPorPaciente;
         private System.Windows.Forms.Label LBFiltro;
-        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnActualizarDiagnostico;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label LBTitulo;
         private System.Windows.Forms.DataGridView DGVDiagnostico;
         private System.Windows.Forms.DateTimePicker DTFiltroFecha;
+        private System.Windows.Forms.Button btnActualizarRegistro;
+        private System.Windows.Forms.Button btnAsignarTratamiento;
     }
 }

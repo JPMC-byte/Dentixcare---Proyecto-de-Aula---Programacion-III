@@ -24,15 +24,42 @@ namespace Clinica
             determinarUsuario(UsuarioActual);
             CargarDiagnosticos();
         }
+        private void btnInformacion_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            AbrirInformacion();
+        }
+        private void btnActualizarRegistro_Click(object sender, EventArgs e)
+        {
+            Actualizar();
+        }
+        private void CBFiltrarFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            accionarFiltroPorFecha();
+        }
+
+        private void CBFiltrarPorPaciente_CheckedChanged(object sender, EventArgs e)
+        {
+            accionarFiltroPorPaciente();
+        }
+        private void txtCedulaPaciente_Enter(object sender, EventArgs e)
+        {
+            eventoEntrar();
+        }
+        private void txtCedulaPaciente_Leave(object sender, EventArgs e)
+        {
+            eventoSalir();
+        }
         private void CargarDiagnosticos(DateTime? Fecha = null, string cedulaPaciente = null)
         {
             List<Diagnostico> diagnosticos = new List<Diagnostico>();
 
             if (UsuarioActual is Paciente)
             {
+                cedulaPaciente = UsuarioActual.Cedula;
                 diagnosticos = servisDiag.LoadByCedula(cedulaPaciente);
 
-                if (ValidarFiltroFecha(CBFiltrarFecha.Checked, Fecha.Value))
+                if (Fecha.HasValue && ValidarFiltroFecha(CBFiltrarFecha.Checked, Fecha.Value))
                 {
                     diagnosticos = servisDiag.LoadByFecha(Fecha.Value);
                 }
@@ -41,7 +68,7 @@ namespace Clinica
             {
                 diagnosticos = servisDiag.GetAll();
 
-                if (ValidarFiltroFecha(CBFiltrarFecha.Checked, Fecha.Value))
+                if (Fecha.HasValue && ValidarFiltroFecha(CBFiltrarFecha.Checked, Fecha.Value))
                 {
                     diagnosticos = servisDiag.LoadByFecha(Fecha.Value);
                 }
@@ -49,7 +76,7 @@ namespace Clinica
                 {
                     diagnosticos = servisDiag.LoadByCedula(cedulaPaciente);
                 }
-                if(ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente) && ValidarFiltroFecha(CBFiltrarFecha.Checked, Fecha.Value))
+                if(Fecha.HasValue && ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente) && ValidarFiltroFecha(CBFiltrarFecha.Checked, Fecha.Value))
                 {
                     diagnosticos = servisDiag.LoadByFilters(Fecha.Value, cedulaPaciente);
                 }
@@ -63,7 +90,8 @@ namespace Clinica
                 CBFiltrarPorPaciente.Enabled = false;
                 txtCedulaPaciente.Enabled = false;
                 btnEliminar.Enabled = false;
-                btnActualizar.Enabled = false;
+                btnActualizarDiagnostico.Enabled = false;
+                btnAsignarTratamiento.Enabled = false;
                 LBFiltrarPorPaciente.Enabled = false;
             }
         }
@@ -89,21 +117,42 @@ namespace Clinica
         }
         void Actualizar()
         {
-            DateTime? fechaSeleccionada = CBFiltrarFecha.Checked ? DTFiltroFecha.Value.Date : null;
+            DateTime? fechaSeleccionada = CBFiltrarFecha.Checked ? (DateTime?)DTFiltroFecha.Value.Date : null;
             string cedulaPaciente = txtCedulaPaciente.Text != "CEDULA DEL PACIENTE" ? txtCedulaPaciente.Text : null;
 
             CargarDiagnosticos(fechaSeleccionada, cedulaPaciente);
 
-            if (!ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente))
+            if (CBFiltrarPorPaciente.Checked && !ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente))
             {
                 MessageBox.Show("La cédula del paciente no existe en el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (!ValidarFiltroFecha(CBFiltrarFecha.Checked, DTFiltroFecha.Value.Date))
+            if (CBFiltrarFecha.Checked && !ValidarFiltroFecha(CBFiltrarFecha.Checked, DTFiltroFecha.Value.Date))
             {
                 MessageBox.Show("No es posible filtrar por una fecha futura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        void accionarFiltroPorFecha()
+        {
+            if (CBFiltrarFecha.Checked)
+            {
+                DTFiltroFecha.Enabled = true;
+            }
+            else
+            {
+                DTFiltroFecha.Enabled = false;
+            }
+        }
+        void accionarFiltroPorPaciente()
+        {
+            if (CBFiltrarPorPaciente.Checked)
+            {
+                txtCedulaPaciente.Enabled = true;
+            }
+            else
+            {
+                txtCedulaPaciente.Enabled = false;
+            }
+        }
         public Diagnostico DiagnosticoSeleccionado()
         {
             var codigoDiag = DGVDiagnostico.SelectedRows[0].Cells["Codigo"].Value.ToString();
@@ -117,10 +166,21 @@ namespace Clinica
             FrmInfoDiagnostico F = new FrmInfoDiagnostico(diagnostico);
             F.Show();
         }
-        private void btnInformacion_Click(object sender, EventArgs e)
+        void eventoEntrar()
         {
-            if (!Verificar()) { return; }
-            AbrirInformacion();
+            if (txtCedulaPaciente.Text == "CEDULA DEL PACIENTE")
+            {
+                txtCedulaPaciente.Text = "";
+                txtCedulaPaciente.ForeColor = Color.Black;
+            }
+        }
+        void eventoSalir()
+        {
+            if (txtCedulaPaciente.Text == "")
+            {
+                txtCedulaPaciente.Text = "CEDULA DEL PACIENTE";
+                txtCedulaPaciente.ForeColor = Color.DimGray;
+            }
         }
     }
 }

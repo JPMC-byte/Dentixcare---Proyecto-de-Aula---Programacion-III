@@ -58,7 +58,7 @@ namespace Clinica
             string estadoSeleccionado = CBEstado.SelectedItem?.ToString();
             string cedulaPaciente = txtCedulaPaciente.Text != "CEDULA DEL PACIENTE" ? txtCedulaPaciente.Text : string.Empty;
             CargarCitas(estadoSeleccionado, cedulaPaciente);
-            if (!ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente))
+            if (CBFiltrarPorPaciente.Checked && !ValidarFiltroPaciente(CBFiltrarPorPaciente.Checked, cedulaPaciente))
             {
                 MessageBox.Show("La cédula del paciente no existe en el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

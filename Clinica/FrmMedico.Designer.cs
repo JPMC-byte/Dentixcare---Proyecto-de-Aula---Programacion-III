@@ -127,6 +127,7 @@
             this.btnGestionDiagnostico.Text = "Gestión de diagnosticos";
             this.btnGestionDiagnostico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionDiagnostico.UseVisualStyleBackColor = false;
+            this.btnGestionDiagnostico.Click += new System.EventHandler(this.btnGestionDiagnostico_Click);
             // 
             // PanelSubmenuTratamientos
             // 

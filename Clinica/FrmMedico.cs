@@ -16,12 +16,12 @@ namespace Clinica
     public partial class FrmMedico : Form
     {
         ServicioConsultorio servisConsul = new ServicioConsultorio();
-        Persona ortodoncista = new Ortodoncista();
+        Persona personaActual = new Ortodoncista();
         Form FormularioActivo = null;
         public FrmMedico(Persona persona)
         {
             InitializeComponent();
-            ortodoncista = persona;
+            personaActual = persona;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -59,7 +59,7 @@ namespace Clinica
         }
         private void btnDatosUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmPerfil(ortodoncista));
+            AbrirFormulario(new FrmPerfil(personaActual));
             OcultarSubmenu();
         }
         private void OcultarSubmenu()
@@ -99,6 +99,10 @@ namespace Clinica
         {
             VerGestionPaciente();
         }
+        private void btnGestionDiagnostico_Click(object sender, EventArgs e)
+        {
+            VerGestionDiagnosticos();
+        }
         void VerConsultorio()
         {
             Consultorio consultorio = servisConsul.CargarConsultorio("P101");
@@ -107,7 +111,7 @@ namespace Clinica
         }
         void VerGestionCita()
         {
-            AbrirFormulario(new FrmGestionCita(ortodoncista));
+            AbrirFormulario(new FrmGestionCita(personaActual));
             OcultarSubmenu();
         }
         void VerGestionPaciente()
@@ -115,5 +119,11 @@ namespace Clinica
             AbrirFormulario(new FrmGestionPaciente());
             OcultarSubmenu();
         }
+        void VerGestionDiagnosticos()
+        {
+            AbrirFormulario(new FrmGestionAntecedentes(personaActual));
+            OcultarSubmenu();
+        }
+
     }
 }
