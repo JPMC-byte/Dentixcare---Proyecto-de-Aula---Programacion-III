@@ -155,9 +155,10 @@
             this.btnRegistroTratamientos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnRegistroTratamientos.Size = new System.Drawing.Size(250, 40);
             this.btnRegistroTratamientos.TabIndex = 35;
-            this.btnRegistroTratamientos.Text = "Registro de tratamientos";
+            this.btnRegistroTratamientos.Text = "Gestión de tratamientos";
             this.btnRegistroTratamientos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistroTratamientos.UseVisualStyleBackColor = false;
+            this.btnRegistroTratamientos.Click += new System.EventHandler(this.btnRegistroTratamientos_Click);
             // 
             // btnRealizarTratamiento
             // 

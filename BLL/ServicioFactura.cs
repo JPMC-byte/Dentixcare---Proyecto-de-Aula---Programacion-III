@@ -34,17 +34,22 @@ namespace BLL
         {
             return reposFactura.Delete(id);
         }
-
-        public string UpdateMonto(Factura factura, double Monto_total)
-        {
-            Factura facturaAModificar = GetByID(factura.ID_Factura);
-            facturaAModificar.Total = Monto_total;
-            return reposFactura.Update(facturaAModificar);
-        }
         public string UpdateEstado(Factura factura, string estado)
         {
             Factura facturaAModificar = GetByID(factura.ID_Factura);
             facturaAModificar.Estado = estado;
+            return reposFactura.Update(facturaAModificar);
+        }
+        public string SumarMonto(Factura factura, double monto)
+        {
+            Factura facturaAModificar = GetByID(factura.ID_Factura);
+            facturaAModificar.Total += monto;
+            return reposFactura.Update(facturaAModificar);
+        }
+        public string RestarMonto(Factura factura, double monto)
+        {
+            Factura facturaAModificar = GetByID(factura.ID_Factura);
+            facturaAModificar.Total -= monto;
             return reposFactura.Update(facturaAModificar);
         }
         public string GenerarCodigo()
@@ -64,5 +69,6 @@ namespace BLL
             }
             return nuevoCodigo;
         }
+
     }
 }

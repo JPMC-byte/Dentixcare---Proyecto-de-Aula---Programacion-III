@@ -13,8 +13,8 @@ namespace DAL
         {
             try
             {
-                string query = "INSERT INTO FACTURA (ID_FACTURA, FECHA_EMISION, ESTADO, MONTO_TOTAL) " +
-                               "VALUES (:ID_Factura, TO_DATE(:Fecha_Emision, 'DD-MM-YYYY'), :Estado, :Total)";
+                string query = "INSERT INTO FACTURA (ID_FACTURA, FECHA_EMISION, ESTADO, MONTO_TOTAL, TOTAL_PAGADO, CAMBIO) " +
+                               "VALUES (:ID_Factura, TO_DATE(:Fecha_Emision, 'DD-MM-YYYY'), :Estado, :Total, :Total_Pagado, :Cambio)";
 
                 AbrirConexion();
 
@@ -24,6 +24,8 @@ namespace DAL
                     command.Parameters.Add(new OracleParameter("Fecha_Emision", factura.Fecha_Emision.ToString("dd-MM-yyyy")));
                     command.Parameters.Add(new OracleParameter("Estado", factura.Estado));
                     command.Parameters.Add(new OracleParameter("Total", factura.Total));
+                    command.Parameters.Add(new OracleParameter("Total_Pagado", factura.Total_Pagado));
+                    command.Parameters.Add(new OracleParameter("Cambio", factura.Cambio));
 
                     command.ExecuteNonQuery();
                 }
@@ -39,6 +41,7 @@ namespace DAL
                 CerrarConexion();
             }
         }
+
         private Factura Map(OracleDataReader reader)
         {
             return new Factura
@@ -46,7 +49,9 @@ namespace DAL
                 ID_Factura = Convert.ToString(reader["ID_FACTURA"]),
                 Fecha_Emision = Convert.ToDateTime(reader["FECHA_EMISION"]),
                 Estado = Convert.ToString(reader["ESTADO"]),
-                Total = Convert.ToDouble(reader["MONTO_TOTAL"])
+                Total = Convert.ToDouble(reader["MONTO_TOTAL"]),
+                Total_Pagado = Convert.ToDouble(reader["TOTAL_PAGADO"]),
+                Cambio = Convert.ToDouble(reader["CAMBIO"])
             };
         }
 
@@ -120,8 +125,8 @@ namespace DAL
         {
             try
             {
-                string query = "UPDATE FACTURA SET FECHA_EMISION = TO_DATE(:Fecha_Emision, 'DD-MM-YYYY'), ESTADO = :Estado, MONTO_TOTAL = :Total " +
-                               "WHERE ID_FACTURA = :ID_Factura";
+                string query = "UPDATE FACTURA SET FECHA_EMISION = TO_DATE(:Fecha_Emision, 'DD-MM-YYYY'), ESTADO = :Estado, MONTO_TOTAL = :Total, " +
+                               "TOTAL_PAGADO = :Total_Pagado, CAMBIO = :Cambio WHERE ID_FACTURA = :ID_Factura";
 
                 AbrirConexion();
 
@@ -131,6 +136,8 @@ namespace DAL
                     command.Parameters.Add(new OracleParameter("Fecha_Emision", factura.Fecha_Emision.ToString("dd-MM-yyyy")));
                     command.Parameters.Add(new OracleParameter("Estado", factura.Estado));
                     command.Parameters.Add(new OracleParameter("Total", factura.Total));
+                    command.Parameters.Add(new OracleParameter("Total_Pagado", factura.Total_Pagado));
+                    command.Parameters.Add(new OracleParameter("Cambio", factura.Cambio));
 
                     command.ExecuteNonQuery();
                 }

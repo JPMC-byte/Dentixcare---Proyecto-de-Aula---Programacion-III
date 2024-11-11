@@ -29,6 +29,11 @@ namespace BLL
             return reposPago.GetById(id);
         }
 
+        public List<Pago> LoadByFactura(string codigoFactura) 
+        {
+            return reposPago.LoadByFactura(codigoFactura);
+        }
+
         public string GenerarCodigo()
         {
             List<Pago> pagosExistentes = GetAll();

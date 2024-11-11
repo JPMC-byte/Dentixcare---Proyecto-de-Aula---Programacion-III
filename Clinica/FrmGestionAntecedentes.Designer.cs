@@ -244,6 +244,7 @@
             this.btnAsignarTratamiento.TabIndex = 97;
             this.btnAsignarTratamiento.Text = "Asignar un tratamiento";
             this.btnAsignarTratamiento.UseVisualStyleBackColor = false;
+            this.btnAsignarTratamiento.Click += new System.EventHandler(this.btnAsignarTratamiento_Click);
             // 
             // btnTratamientosRelacion
             // 
@@ -259,6 +260,7 @@
             this.btnTratamientosRelacion.TabIndex = 98;
             this.btnTratamientosRelacion.Text = "Ver tratamientos relacionados";
             this.btnTratamientosRelacion.UseVisualStyleBackColor = false;
+            this.btnTratamientosRelacion.Click += new System.EventHandler(this.btnTratamientosRelacion_Click);
             // 
             // btnCerrar
             // 

@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDatosConsultorio = new System.Windows.Forms.Button();
-            this.btnGestionPagos = new System.Windows.Forms.Button();
+            this.btnGestionFacturas = new System.Windows.Forms.Button();
             this.PanelSubmenuCitas = new System.Windows.Forms.Panel();
             this.btnRegistroCitas = new System.Windows.Forms.Button();
             this.btnAgendarCita = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panel1.Controls.Add(this.btnDatosConsultorio);
-            this.panel1.Controls.Add(this.btnGestionPagos);
+            this.panel1.Controls.Add(this.btnGestionFacturas);
             this.panel1.Controls.Add(this.PanelSubmenuCitas);
             this.panel1.Controls.Add(this.btnGestionCitas);
             this.panel1.Controls.Add(this.PanelSubmenuDatos);
@@ -95,23 +95,23 @@
             this.btnDatosConsultorio.UseVisualStyleBackColor = false;
             this.btnDatosConsultorio.Click += new System.EventHandler(this.btnDatosConsultorio_Click);
             // 
-            // btnGestionPagos
+            // btnGestionFacturas
             // 
-            this.btnGestionPagos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGestionPagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGestionPagos.FlatAppearance.BorderSize = 0;
-            this.btnGestionPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionPagos.ForeColor = System.Drawing.Color.White;
-            this.btnGestionPagos.Location = new System.Drawing.Point(0, 466);
-            this.btnGestionPagos.Name = "btnGestionPagos";
-            this.btnGestionPagos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGestionPagos.Size = new System.Drawing.Size(250, 41);
-            this.btnGestionPagos.TabIndex = 37;
-            this.btnGestionPagos.Text = "Gestión de pagos";
-            this.btnGestionPagos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionPagos.UseVisualStyleBackColor = false;
-            this.btnGestionPagos.Click += new System.EventHandler(this.btnGestionPagos_Click);
+            this.btnGestionFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionFacturas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionFacturas.FlatAppearance.BorderSize = 0;
+            this.btnGestionFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionFacturas.ForeColor = System.Drawing.Color.White;
+            this.btnGestionFacturas.Location = new System.Drawing.Point(0, 466);
+            this.btnGestionFacturas.Name = "btnGestionFacturas";
+            this.btnGestionFacturas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGestionFacturas.Size = new System.Drawing.Size(250, 41);
+            this.btnGestionFacturas.TabIndex = 37;
+            this.btnGestionFacturas.Text = "Gestión de facturas";
+            this.btnGestionFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionFacturas.UseVisualStyleBackColor = false;
+            this.btnGestionFacturas.Click += new System.EventHandler(this.btnGestionPagos_Click);
             // 
             // PanelSubmenuCitas
             // 
@@ -394,7 +394,7 @@
         private System.Windows.Forms.Panel PanelDia;
         private System.Windows.Forms.Panel PanelHijo;
         private System.Windows.Forms.Button btnDatosConsultorio;
-        private System.Windows.Forms.Button btnGestionPagos;
+        private System.Windows.Forms.Button btnGestionFacturas;
         private System.Windows.Forms.PictureBox PCFondo;
     }
 }

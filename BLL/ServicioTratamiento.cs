@@ -44,6 +44,26 @@ namespace BLL
             tratamientoAModificar.Costo = nuevoCosto;
             return reposTratamiento.Update(tratamientoAModificar);
         }
+        public string UpdateFKDiagnostico(Tratamiento tratamiento, string Codigo)
+        {
+            Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
+            tratamientoAModificar.CodigoDiagnostico = Codigo;
+            return reposTratamiento.Update(tratamientoAModificar);
+        }
+        public string UpdateFKFactura(Tratamiento tratamiento, string Codigo)
+        {
+            Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
+            tratamientoAModificar.CodigoFactura = Codigo;
+            return reposTratamiento.Update(tratamientoAModificar);
+        }
+        public List<Tratamiento> LoadByFactura(string codigo)
+        {
+            return reposTratamiento.LoadByFactura(codigo);
+        }
+        public List<Tratamiento> LoadByDiagnostico(string codigo)
+        {
+            return reposTratamiento.LoadByDiagnostico(codigo);
+        }
         public string GenerarCodigo()
         {
             List<Tratamiento> tratamientosExistentes = GetAll();
@@ -60,6 +80,15 @@ namespace BLL
                 nuevoCodigo = "T" + (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
             }
             return nuevoCodigo;
+        }
+        public string obtenerFacturaRelacionada(string codigoDiagnostico)
+        {
+            List<Tratamiento> tratamientos = LoadByDiagnostico(codigoDiagnostico);
+            if (tratamientos.Count > 0)
+            {
+                return tratamientos[0].CodigoFactura;
+            }
+            return "No se encontró factura relacionada";
         }
     }
 }

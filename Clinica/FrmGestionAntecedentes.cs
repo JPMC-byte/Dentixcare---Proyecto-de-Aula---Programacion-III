@@ -180,7 +180,6 @@ namespace Clinica
         public Diagnostico DiagnosticoSeleccionado()
         {
             var codigoDiag = DGVDiagnostico.SelectedRows[0].Cells["Codigo"].Value.ToString();
-
             Diagnostico diagnosticoSeleccionado = servisDiag.GetByID(codigoDiag);
             return diagnosticoSeleccionado;
         }
@@ -209,6 +208,31 @@ namespace Clinica
         void cerrar()
         {
             this.Close();
+        }
+
+        private void btnAsignarTratamiento_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            AsignarTratamiento();
+        }
+
+        void AsignarTratamiento()
+        {
+            Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
+            FrmSeleccionTratamiento F = new FrmSeleccionTratamiento(diagnosticoSeleccionado);
+            F.Show();
+        }
+
+        private void btnTratamientosRelacion_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            verTratamientosRelacionados();
+        }
+        void verTratamientosRelacionados()
+        {
+            Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
+            FrmGestionTratamientos F = new FrmGestionTratamientos(diagnosticoSeleccionado);
+            F.Show();
         }
     }
 }

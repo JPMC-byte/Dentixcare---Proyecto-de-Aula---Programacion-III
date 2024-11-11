@@ -35,16 +35,16 @@
             this.txtCodigoCita = new System.Windows.Forms.TextBox();
             this.LBTelefono = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.BtnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.LBRazon = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LBPerfil
@@ -53,7 +53,7 @@
             this.LBPerfil.BackColor = System.Drawing.Color.Transparent;
             this.LBPerfil.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBPerfil.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LBPerfil.Location = new System.Drawing.Point(12, 51);
+            this.LBPerfil.Location = new System.Drawing.Point(4, 77);
             this.LBPerfil.Name = "LBPerfil";
             this.LBPerfil.Size = new System.Drawing.Size(430, 39);
             this.LBPerfil.TabIndex = 68;
@@ -64,7 +64,7 @@
             this.LBCedulaPaciente.AutoSize = true;
             this.LBCedulaPaciente.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBCedulaPaciente.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LBCedulaPaciente.Location = new System.Drawing.Point(573, 139);
+            this.LBCedulaPaciente.Location = new System.Drawing.Point(565, 165);
             this.LBCedulaPaciente.Name = "LBCedulaPaciente";
             this.LBCedulaPaciente.Size = new System.Drawing.Size(157, 19);
             this.LBCedulaPaciente.TabIndex = 64;
@@ -76,7 +76,7 @@
             this.txtCedulaPaciente.Enabled = false;
             this.txtCedulaPaciente.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedulaPaciente.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCedulaPaciente.Location = new System.Drawing.Point(577, 161);
+            this.txtCedulaPaciente.Location = new System.Drawing.Point(569, 187);
             this.txtCedulaPaciente.Name = "txtCedulaPaciente";
             this.txtCedulaPaciente.Size = new System.Drawing.Size(198, 20);
             this.txtCedulaPaciente.TabIndex = 65;
@@ -87,7 +87,7 @@
             this.LBCodigo.AutoSize = true;
             this.LBCodigo.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBCodigo.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LBCodigo.Location = new System.Drawing.Point(313, 139);
+            this.LBCodigo.Location = new System.Drawing.Point(305, 165);
             this.LBCodigo.Name = "LBCodigo";
             this.LBCodigo.Size = new System.Drawing.Size(63, 19);
             this.LBCodigo.TabIndex = 62;
@@ -99,7 +99,7 @@
             this.txtCodigoCita.Enabled = false;
             this.txtCodigoCita.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoCita.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodigoCita.Location = new System.Drawing.Point(317, 243);
+            this.txtCodigoCita.Location = new System.Drawing.Point(309, 269);
             this.txtCodigoCita.Name = "txtCodigoCita";
             this.txtCodigoCita.Size = new System.Drawing.Size(199, 20);
             this.txtCodigoCita.TabIndex = 67;
@@ -110,7 +110,7 @@
             this.LBTelefono.AutoSize = true;
             this.LBTelefono.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTelefono.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LBTelefono.Location = new System.Drawing.Point(313, 221);
+            this.LBTelefono.Location = new System.Drawing.Point(305, 247);
             this.LBTelefono.Name = "LBTelefono";
             this.LBTelefono.Size = new System.Drawing.Size(134, 19);
             this.LBTelefono.TabIndex = 66;
@@ -123,35 +123,11 @@
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodigo.Location = new System.Drawing.Point(317, 161);
+            this.txtCodigo.Location = new System.Drawing.Point(309, 187);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(198, 20);
             this.txtCodigo.TabIndex = 63;
             this.txtCodigo.Text = "CODIGO";
-            // 
-            // BtnMinimizar
-            // 
-            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
-            this.BtnMinimizar.Location = new System.Drawing.Point(709, 13);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnMinimizar.TabIndex = 70;
-            this.BtnMinimizar.TabStop = false;
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(735, 13);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 69;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // txtFecha
             // 
@@ -159,7 +135,7 @@
             this.txtFecha.Enabled = false;
             this.txtFecha.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFecha.ForeColor = System.Drawing.Color.DimGray;
-            this.txtFecha.Location = new System.Drawing.Point(577, 243);
+            this.txtFecha.Location = new System.Drawing.Point(569, 269);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(199, 20);
             this.txtFecha.TabIndex = 72;
@@ -170,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(573, 221);
+            this.label1.Location = new System.Drawing.Point(565, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 19);
             this.label1.TabIndex = 71;
@@ -183,7 +159,7 @@
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDescripcion.Location = new System.Drawing.Point(323, 325);
+            this.txtDescripcion.Location = new System.Drawing.Point(315, 351);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(452, 237);
@@ -195,7 +171,7 @@
             this.LBRazon.AutoSize = true;
             this.LBRazon.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBRazon.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LBRazon.Location = new System.Drawing.Point(313, 303);
+            this.LBRazon.Location = new System.Drawing.Point(305, 329);
             this.LBRazon.Name = "LBRazon";
             this.LBRazon.Size = new System.Drawing.Size(97, 19);
             this.LBRazon.TabIndex = 73;
@@ -204,12 +180,36 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDiagnostico;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 139);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 165);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(285, 423);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
+            this.BtnMinimizar.Location = new System.Drawing.Point(712, 13);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnMinimizar.TabIndex = 70;
+            this.BtnMinimizar.TabStop = false;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Location = new System.Drawing.Point(738, 13);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 69;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmInfoDiagnostico
             // 
@@ -236,9 +236,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInfoDiagnostico";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmInfoDiagnostico_MouseDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

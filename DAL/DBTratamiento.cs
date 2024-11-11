@@ -90,6 +90,14 @@ namespace DAL
             }
             return listaTratamientos;
         }
+        public List<Tratamiento> LoadByDiagnostico(string codigo)
+        {
+            return GetAll().Where(trat => trat.CodigoDiagnostico == codigo).ToList();
+        }
+        public List<Tratamiento> LoadByFactura(string codigo)
+        {
+            return GetAll().Where(trat => trat.CodigoFactura == codigo).ToList();
+        }
 
         public Tratamiento GetByID(string idTratamiento)
         {

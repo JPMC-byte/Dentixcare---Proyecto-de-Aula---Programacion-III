@@ -91,7 +91,7 @@ namespace Clinica
         {
             if (!vali.ValidarExistenteOrtodoncista(txtCedula.Text))
             {
-                MessageBox.Show("Error - Esté paciente ya se encuentra registrado.");
+                MessageBox.Show("Error - Esté usuario ya se encuentra registrado.");
                 return false;
             }
             return true;

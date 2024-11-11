@@ -1,6 +1,6 @@
 ﻿namespace Clinica
 {
-    partial class FrmGestionTratamientos
+    partial class FrmGestionFactura
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,12 @@
             this.btnActualizarRegistro = new System.Windows.Forms.Button();
             this.btnInformacion = new System.Windows.Forms.Button();
             this.btnActualizarTratamiento = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.LBTitulo = new System.Windows.Forms.Label();
-            this.DGVTratamiento = new System.Windows.Forms.DataGridView();
+            this.DGVFacturas = new System.Windows.Forms.DataGridView();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTratamiento)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFacturaRelacionada
@@ -51,11 +51,11 @@
             this.btnFacturaRelacionada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFacturaRelacionada.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacturaRelacionada.ForeColor = System.Drawing.Color.Black;
-            this.btnFacturaRelacionada.Location = new System.Drawing.Point(190, 626);
+            this.btnFacturaRelacionada.Location = new System.Drawing.Point(376, 626);
             this.btnFacturaRelacionada.Name = "btnFacturaRelacionada";
             this.btnFacturaRelacionada.Size = new System.Drawing.Size(180, 50);
-            this.btnFacturaRelacionada.TabIndex = 113;
-            this.btnFacturaRelacionada.Text = "Ver factura relacionada";
+            this.btnFacturaRelacionada.TabIndex = 121;
+            this.btnFacturaRelacionada.Text = "Ver pagos relacionados";
             this.btnFacturaRelacionada.UseVisualStyleBackColor = false;
             // 
             // btnActualizarRegistro
@@ -69,7 +69,7 @@
             this.btnActualizarRegistro.Location = new System.Drawing.Point(445, 22);
             this.btnActualizarRegistro.Name = "btnActualizarRegistro";
             this.btnActualizarRegistro.Size = new System.Drawing.Size(198, 50);
-            this.btnActualizarRegistro.TabIndex = 111;
+            this.btnActualizarRegistro.TabIndex = 120;
             this.btnActualizarRegistro.Text = "Actualizar registro";
             this.btnActualizarRegistro.UseVisualStyleBackColor = false;
             this.btnActualizarRegistro.Click += new System.EventHandler(this.btnActualizarRegistro_Click);
@@ -85,7 +85,7 @@
             this.btnInformacion.Location = new System.Drawing.Point(4, 626);
             this.btnInformacion.Name = "btnInformacion";
             this.btnInformacion.Size = new System.Drawing.Size(180, 50);
-            this.btnInformacion.TabIndex = 109;
+            this.btnInformacion.TabIndex = 119;
             this.btnInformacion.Text = "Más información";
             this.btnInformacion.UseVisualStyleBackColor = false;
             this.btnInformacion.Click += new System.EventHandler(this.btnInformacion_Click);
@@ -98,24 +98,12 @@
             this.btnActualizarTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarTratamiento.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarTratamiento.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizarTratamiento.Location = new System.Drawing.Point(376, 626);
+            this.btnActualizarTratamiento.Location = new System.Drawing.Point(190, 626);
             this.btnActualizarTratamiento.Name = "btnActualizarTratamiento";
             this.btnActualizarTratamiento.Size = new System.Drawing.Size(180, 50);
-            this.btnActualizarTratamiento.TabIndex = 103;
-            this.btnActualizarTratamiento.Text = "Actualizar tratamiento";
+            this.btnActualizarTratamiento.TabIndex = 118;
+            this.btnActualizarTratamiento.Text = "Realizar pago";
             this.btnActualizarTratamiento.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(745, 22);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 102;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnEliminar
             // 
@@ -128,8 +116,8 @@
             this.btnEliminar.Location = new System.Drawing.Point(562, 626);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(180, 50);
-            this.btnEliminar.TabIndex = 101;
-            this.btnEliminar.Text = "Eliminar tratamiento";
+            this.btnEliminar.TabIndex = 116;
+            this.btnEliminar.Text = "Gestion de pagos";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // LBTitulo
@@ -140,19 +128,19 @@
             this.LBTitulo.ForeColor = System.Drawing.Color.Black;
             this.LBTitulo.Location = new System.Drawing.Point(12, 30);
             this.LBTitulo.Name = "LBTitulo";
-            this.LBTitulo.Size = new System.Drawing.Size(371, 39);
-            this.LBTitulo.TabIndex = 99;
-            this.LBTitulo.Text = "Gestión de tratamientos";
+            this.LBTitulo.Size = new System.Drawing.Size(301, 39);
+            this.LBTitulo.TabIndex = 114;
+            this.LBTitulo.Text = "Gestion de facturas";
             // 
-            // DGVTratamiento
+            // DGVFacturas
             // 
-            this.DGVTratamiento.AllowUserToAddRows = false;
-            this.DGVTratamiento.AllowUserToDeleteRows = false;
-            this.DGVTratamiento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.DGVTratamiento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DGVTratamiento.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.DGVTratamiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DGVTratamiento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGVFacturas.AllowUserToAddRows = false;
+            this.DGVFacturas.AllowUserToDeleteRows = false;
+            this.DGVFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.DGVFacturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGVFacturas.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.DGVFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGVFacturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,14 +148,14 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVTratamiento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGVTratamiento.ColumnHeadersHeight = 30;
-            this.DGVTratamiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DGVTratamiento.EnableHeadersVisualStyles = false;
-            this.DGVTratamiento.Location = new System.Drawing.Point(19, 85);
-            this.DGVTratamiento.Name = "DGVTratamiento";
-            this.DGVTratamiento.ReadOnly = true;
-            this.DGVTratamiento.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGVFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVFacturas.ColumnHeadersHeight = 30;
+            this.DGVFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DGVFacturas.EnableHeadersVisualStyles = false;
+            this.DGVFacturas.Location = new System.Drawing.Point(19, 85);
+            this.DGVFacturas.Name = "DGVFacturas";
+            this.DGVFacturas.ReadOnly = true;
+            this.DGVFacturas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DeepSkyBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,17 +163,29 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVTratamiento.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DGVFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.DeepSkyBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.DGVTratamiento.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.DGVTratamiento.Size = new System.Drawing.Size(709, 535);
-            this.DGVTratamiento.TabIndex = 100;
+            this.DGVFacturas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.DGVFacturas.Size = new System.Drawing.Size(709, 535);
+            this.DGVFacturas.TabIndex = 115;
             // 
-            // FrmGestionTratamientos
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Location = new System.Drawing.Point(745, 22);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 117;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // FrmGestionFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,15 +198,13 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.LBTitulo);
-            this.Controls.Add(this.DGVTratamiento);
+            this.Controls.Add(this.DGVFacturas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmGestionTratamientos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGestionTratamientos";
-            this.Load += new System.EventHandler(this.FrmGestionTratamientos_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmGestionTratamientos_MouseDown);
+            this.Name = "FrmGestionFactura";
+            this.Text = "FrmGestionFactura";
+            this.Load += new System.EventHandler(this.FrmGestionFactura_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTratamiento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +219,6 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label LBTitulo;
-        private System.Windows.Forms.DataGridView DGVTratamiento;
+        private System.Windows.Forms.DataGridView DGVFacturas;
     }
 }

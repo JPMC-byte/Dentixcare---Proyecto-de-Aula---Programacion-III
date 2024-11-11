@@ -125,6 +125,10 @@ namespace Clinica
         {
             VerAgendarTratamiento();
         }
+        private void btnRegistroTratamientos_Click(object sender, EventArgs e)
+        {
+            VerGestionTratamientos();
+        }
         void VerConsultorio()
         {
             Consultorio consultorio = servisConsul.CargarConsultorio("P101");
@@ -149,6 +153,11 @@ namespace Clinica
         void VerAgendarTratamiento()
         {
             AbrirFormulario(new FrmRealizarTratamiento());
+            OcultarSubmenu();
+        }
+        void VerGestionTratamientos()
+        {
+            AbrirFormulario(new FrmGestionTratamientos());
             OcultarSubmenu();
         }
     }

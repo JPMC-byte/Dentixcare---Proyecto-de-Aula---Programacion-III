@@ -15,6 +15,7 @@ namespace BLL
         ServicioOrtodoncista servicioOrtodoncista = new ServicioOrtodoncista();
         ServicioCita servicioCita = new ServicioCita();
         ServicioConsultorio servicioConsultorio = new ServicioConsultorio();
+        ServicioTratamiento servicioTratamiento = new ServicioTratamiento();
         public Validaciones() { }
         public bool ValidarLetras(string Texto)
         {
@@ -44,6 +45,16 @@ namespace BLL
             ortodoncista = servicioOrtodoncista.GetByID(Texto);
 
             if (ortodoncista == null)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool ValidarExistenteFactura(string Texto)
+        {
+            List<Tratamiento> lista = new List<Tratamiento>();
+            lista = servicioTratamiento.LoadByDiagnostico(Texto);
+            if (lista.Count > 0)
             {
                 return true;
             }

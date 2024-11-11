@@ -81,6 +81,10 @@ namespace DAL
                 CerrarConexion();
             }
         }
+        public List<Pago> LoadByFactura(string codigo)
+        {
+            return GetAll().Where(pago => pago.CodigoFactura == codigo).ToList();
+        }
         public Pago GetById(string id)
         {
             return GetAll().FirstOrDefault<Pago>(x => x.ID_Pago == id);
