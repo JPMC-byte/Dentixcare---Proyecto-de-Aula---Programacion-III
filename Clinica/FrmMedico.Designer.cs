@@ -33,9 +33,9 @@
             this.btnGestionPaciente = new System.Windows.Forms.Button();
             this.btnGestionDiagnostico = new System.Windows.Forms.Button();
             this.PanelSubmenuTratamientos = new System.Windows.Forms.Panel();
-            this.btnRegistroPagos = new System.Windows.Forms.Button();
-            this.btnRealizarPago = new System.Windows.Forms.Button();
-            this.btnGestionPagos = new System.Windows.Forms.Button();
+            this.btnRegistroTratamientos = new System.Windows.Forms.Button();
+            this.btnRealizarTratamiento = new System.Windows.Forms.Button();
+            this.btnGestionTratamientos = new System.Windows.Forms.Button();
             this.btnGestionCitas = new System.Windows.Forms.Button();
             this.btnDatosUsuario = new System.Windows.Forms.Button();
             this.Panellogo = new System.Windows.Forms.Panel();
@@ -64,7 +64,7 @@
             this.panel1.Controls.Add(this.btnGestionPaciente);
             this.panel1.Controls.Add(this.btnGestionDiagnostico);
             this.panel1.Controls.Add(this.PanelSubmenuTratamientos);
-            this.panel1.Controls.Add(this.btnGestionPagos);
+            this.panel1.Controls.Add(this.btnGestionTratamientos);
             this.panel1.Controls.Add(this.btnGestionCitas);
             this.panel1.Controls.Add(this.btnDatosUsuario);
             this.panel1.Controls.Add(this.Panellogo);
@@ -131,8 +131,8 @@
             // 
             // PanelSubmenuTratamientos
             // 
-            this.PanelSubmenuTratamientos.Controls.Add(this.btnRegistroPagos);
-            this.PanelSubmenuTratamientos.Controls.Add(this.btnRealizarPago);
+            this.PanelSubmenuTratamientos.Controls.Add(this.btnRegistroTratamientos);
+            this.PanelSubmenuTratamientos.Controls.Add(this.btnRealizarTratamiento);
             this.PanelSubmenuTratamientos.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSubmenuTratamientos.Location = new System.Drawing.Point(0, 334);
             this.PanelSubmenuTratamientos.Name = "PanelSubmenuTratamientos";
@@ -140,58 +140,60 @@
             this.PanelSubmenuTratamientos.TabIndex = 38;
             this.PanelSubmenuTratamientos.Visible = false;
             // 
-            // btnRegistroPagos
+            // btnRegistroTratamientos
             // 
-            this.btnRegistroPagos.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnRegistroPagos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistroPagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegistroPagos.FlatAppearance.BorderSize = 0;
-            this.btnRegistroPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistroPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistroPagos.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistroPagos.Location = new System.Drawing.Point(0, 40);
-            this.btnRegistroPagos.Name = "btnRegistroPagos";
-            this.btnRegistroPagos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRegistroPagos.Size = new System.Drawing.Size(250, 40);
-            this.btnRegistroPagos.TabIndex = 35;
-            this.btnRegistroPagos.Text = "Registro de tratamientos";
-            this.btnRegistroPagos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistroPagos.UseVisualStyleBackColor = false;
+            this.btnRegistroTratamientos.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRegistroTratamientos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistroTratamientos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistroTratamientos.FlatAppearance.BorderSize = 0;
+            this.btnRegistroTratamientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistroTratamientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistroTratamientos.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistroTratamientos.Location = new System.Drawing.Point(0, 40);
+            this.btnRegistroTratamientos.Name = "btnRegistroTratamientos";
+            this.btnRegistroTratamientos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRegistroTratamientos.Size = new System.Drawing.Size(250, 40);
+            this.btnRegistroTratamientos.TabIndex = 35;
+            this.btnRegistroTratamientos.Text = "Registro de tratamientos";
+            this.btnRegistroTratamientos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistroTratamientos.UseVisualStyleBackColor = false;
             // 
-            // btnRealizarPago
+            // btnRealizarTratamiento
             // 
-            this.btnRealizarPago.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnRealizarPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRealizarPago.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRealizarPago.FlatAppearance.BorderSize = 0;
-            this.btnRealizarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRealizarPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRealizarPago.ForeColor = System.Drawing.Color.Black;
-            this.btnRealizarPago.Location = new System.Drawing.Point(0, 0);
-            this.btnRealizarPago.Name = "btnRealizarPago";
-            this.btnRealizarPago.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRealizarPago.Size = new System.Drawing.Size(250, 40);
-            this.btnRealizarPago.TabIndex = 34;
-            this.btnRealizarPago.Text = "Realizar tratamiento";
-            this.btnRealizarPago.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRealizarPago.UseVisualStyleBackColor = false;
+            this.btnRealizarTratamiento.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRealizarTratamiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRealizarTratamiento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRealizarTratamiento.FlatAppearance.BorderSize = 0;
+            this.btnRealizarTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRealizarTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRealizarTratamiento.ForeColor = System.Drawing.Color.Black;
+            this.btnRealizarTratamiento.Location = new System.Drawing.Point(0, 0);
+            this.btnRealizarTratamiento.Name = "btnRealizarTratamiento";
+            this.btnRealizarTratamiento.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRealizarTratamiento.Size = new System.Drawing.Size(250, 40);
+            this.btnRealizarTratamiento.TabIndex = 34;
+            this.btnRealizarTratamiento.Text = "Realizar tratamiento";
+            this.btnRealizarTratamiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRealizarTratamiento.UseVisualStyleBackColor = false;
+            this.btnRealizarTratamiento.Click += new System.EventHandler(this.btnRealizarTratamiento_Click);
             // 
-            // btnGestionPagos
+            // btnGestionTratamientos
             // 
-            this.btnGestionPagos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGestionPagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGestionPagos.FlatAppearance.BorderSize = 0;
-            this.btnGestionPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionPagos.ForeColor = System.Drawing.Color.White;
-            this.btnGestionPagos.Location = new System.Drawing.Point(0, 293);
-            this.btnGestionPagos.Name = "btnGestionPagos";
-            this.btnGestionPagos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGestionPagos.Size = new System.Drawing.Size(250, 41);
-            this.btnGestionPagos.TabIndex = 37;
-            this.btnGestionPagos.Text = "Gestión de tratamientos";
-            this.btnGestionPagos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionPagos.UseVisualStyleBackColor = false;
+            this.btnGestionTratamientos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionTratamientos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionTratamientos.FlatAppearance.BorderSize = 0;
+            this.btnGestionTratamientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionTratamientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionTratamientos.ForeColor = System.Drawing.Color.White;
+            this.btnGestionTratamientos.Location = new System.Drawing.Point(0, 293);
+            this.btnGestionTratamientos.Name = "btnGestionTratamientos";
+            this.btnGestionTratamientos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGestionTratamientos.Size = new System.Drawing.Size(250, 41);
+            this.btnGestionTratamientos.TabIndex = 37;
+            this.btnGestionTratamientos.Text = "Gestión de tratamientos";
+            this.btnGestionTratamientos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionTratamientos.UseVisualStyleBackColor = false;
+            this.btnGestionTratamientos.Click += new System.EventHandler(this.btnGestionTratamientos_Click);
             // 
             // btnGestionCitas
             // 
@@ -358,9 +360,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PanelSubmenuTratamientos;
-        private System.Windows.Forms.Button btnRegistroPagos;
-        private System.Windows.Forms.Button btnRealizarPago;
-        private System.Windows.Forms.Button btnGestionPagos;
+        private System.Windows.Forms.Button btnRegistroTratamientos;
+        private System.Windows.Forms.Button btnRealizarTratamiento;
+        private System.Windows.Forms.Button btnGestionTratamientos;
         private System.Windows.Forms.Button btnGestionCitas;
         private System.Windows.Forms.Button btnDatosUsuario;
         private System.Windows.Forms.Panel Panellogo;

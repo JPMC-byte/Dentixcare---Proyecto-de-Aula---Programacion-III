@@ -139,37 +139,45 @@
             // 
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.ForeColor = System.Drawing.Color.DimGray;
             this.txtCodigo.Location = new System.Drawing.Point(19, 134);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(118, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(130, 22);
             this.txtCodigo.TabIndex = 73;
+            this.txtCodigo.Text = "CODIGO";
             // 
             // txtFecha
             // 
             this.txtFecha.Enabled = false;
             this.txtFecha.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.ForeColor = System.Drawing.Color.DimGray;
             this.txtFecha.Location = new System.Drawing.Point(231, 134);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(157, 22);
             this.txtFecha.TabIndex = 74;
+            this.txtFecha.Text = "FECHA DE REALIZACION";
             // 
             // txtCedula
             // 
             this.txtCedula.Enabled = false;
             this.txtCedula.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCedula.ForeColor = System.Drawing.Color.DimGray;
             this.txtCedula.Location = new System.Drawing.Point(231, 212);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(157, 22);
             this.txtCedula.TabIndex = 78;
+            this.txtCedula.Text = "CEDULA DEL PACIENTE";
             // 
             // txtCodigoCita
             // 
             this.txtCodigoCita.Enabled = false;
             this.txtCodigoCita.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCita.ForeColor = System.Drawing.Color.DimGray;
             this.txtCodigoCita.Location = new System.Drawing.Point(19, 212);
             this.txtCodigoCita.Name = "txtCodigoCita";
-            this.txtCodigoCita.Size = new System.Drawing.Size(118, 22);
+            this.txtCodigoCita.Size = new System.Drawing.Size(130, 22);
             this.txtCodigoCita.TabIndex = 77;
+            this.txtCodigoCita.Text = "CODIGO DE LA CITA";
             // 
             // label1
             // 

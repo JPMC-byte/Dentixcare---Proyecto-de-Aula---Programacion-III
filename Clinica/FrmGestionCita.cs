@@ -49,6 +49,14 @@ namespace Clinica
                 AtenderCita();
             }
         }
+        private void btnDiagnostico_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !ValidarEstado(false))
+            {
+                return;
+            }
+            AbrirRealizarDiagnostico();
+        }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Actualizar();
@@ -208,17 +216,6 @@ namespace Clinica
             FrmInformacion F = new FrmInformacion(cita);
             F.Show();
         }
-
-        private void btnDiagnostico_Click(object sender, EventArgs e)
-        {
-            
-            if (!Verificar() || !ValidarEstado(false))
-            {
-                return;
-            }
-            AbrirRealizarDiagnostico();
-        }
-
         void AbrirRealizarDiagnostico()
         {
             Cita cita = CitaSeleccionada();

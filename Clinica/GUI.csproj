@@ -158,6 +158,12 @@
     <Compile Include="FrmRealizarDiagnostico.Designer.cs">
       <DependentUpon>FrmRealizarDiagnostico.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRealizarTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRealizarTratamiento.Designer.cs">
+      <DependentUpon>FrmRealizarTratamiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistrarOrtodoncista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     <EmbeddedResource Include="FrmRealizarDiagnostico.resx">
       <DependentUpon>FrmRealizarDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRealizarTratamiento.resx">
+      <DependentUpon>FrmRealizarTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrar.resx">
       <DependentUpon>FrmRegistrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +313,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\IconDiagnostico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\IconTratamiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\IconDolar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

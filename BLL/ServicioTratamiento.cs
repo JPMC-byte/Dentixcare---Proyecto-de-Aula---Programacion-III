@@ -35,15 +35,14 @@ namespace BLL
         {
             Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
             tratamientoAModificar.Descripcion = nuevaDescripcion;
-            return reposTratamiento.SaveData(tratamientoAModificar);
+            return reposTratamiento.Update(tratamientoAModificar);
 
         }
         public string UpdateCosto(Tratamiento tratamiento, double nuevoCosto)
         {
             Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
             tratamientoAModificar.Costo = nuevoCosto;
-            return reposTratamiento.SaveData(tratamientoAModificar);
-
+            return reposTratamiento.Update(tratamientoAModificar);
         }
         public string GenerarCodigo()
         {

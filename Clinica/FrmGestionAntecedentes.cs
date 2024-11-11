@@ -33,6 +33,10 @@ namespace Clinica
         {
             Actualizar();
         }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            cerrar();
+        }
         private void CBFiltrarFecha_CheckedChanged(object sender, EventArgs e)
         {
             accionarFiltroPorFecha();
@@ -181,6 +185,10 @@ namespace Clinica
                 txtCedulaPaciente.Text = "CEDULA DEL PACIENTE";
                 txtCedulaPaciente.ForeColor = Color.DimGray;
             }
+        }
+        void cerrar()
+        {
+            this.Close();
         }
     }
 }

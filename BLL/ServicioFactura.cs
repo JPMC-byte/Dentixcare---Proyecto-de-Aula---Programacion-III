@@ -59,7 +59,7 @@ namespace BLL
             else
             {
                 Factura ultimaFactura = facturasExistentes.Last();
-                int ultimoCodigoNumerico = int.Parse(ultimaFactura.ID_Factura);
+                int ultimoCodigoNumerico = int.Parse(ultimaFactura.ID_Factura.Substring(2));
                 nuevoCodigo = "FC" + (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
             }
             return nuevoCodigo;

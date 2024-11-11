@@ -62,12 +62,15 @@ namespace Clinica
             AbrirFormulario(new FrmPerfil(personaActual));
             OcultarSubmenu();
         }
+        private void btnGestionTratamientos_Click(object sender, EventArgs e)
+        {
+            MostrarSubmenu(PanelSubmenuTratamientos);
+        }
         private void OcultarSubmenu()
         {
             if (PanelSubmenuTratamientos.Visible == true)
                 PanelSubmenuTratamientos.Visible = false;
         }
-
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             cerrarSesion();
@@ -77,7 +80,6 @@ namespace Clinica
             if (MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
         }
-
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             Minimizar();
@@ -85,6 +87,18 @@ namespace Clinica
         void Minimizar()
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        private void MostrarSubmenu(Panel submenu)
+        {
+            if (submenu.Visible == false)
+            {
+                OcultarSubmenu();
+                submenu.Visible = true;
+            }
+            else
+            {
+                submenu.Visible = false;
+            }
         }
         private void btnDatosConsultorio_Click(object sender, EventArgs e)
         {
@@ -102,6 +116,10 @@ namespace Clinica
         private void btnGestionDiagnostico_Click(object sender, EventArgs e)
         {
             VerGestionDiagnosticos();
+        }
+        private void btnRealizarTratamiento_Click(object sender, EventArgs e)
+        {
+            VerAgendarTratamiento();
         }
         void VerConsultorio()
         {
@@ -124,6 +142,10 @@ namespace Clinica
             AbrirFormulario(new FrmGestionAntecedentes(personaActual));
             OcultarSubmenu();
         }
-
+        void VerAgendarTratamiento()
+        {
+            AbrirFormulario(new FrmRealizarTratamiento());
+            OcultarSubmenu();
+        }
     }
 }

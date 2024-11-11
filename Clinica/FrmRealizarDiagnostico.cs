@@ -38,6 +38,10 @@ namespace Clinica
         }
         private void btnRegistrado_Click(object sender, EventArgs e)
         {
+            if (!Verificar())
+            {
+                return;
+            }
             Registrar();
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -76,14 +80,22 @@ namespace Clinica
             MessageBox.Show("Proceso de registro exitoso");
             Limpiar();
         }
+        bool Verificar()
+        {
+            if (txtDescripcionDiag.Text == "DESCRIPCION")
+            {
+                MessageBox.Show("Por favor, rellene/complete los campos vacios");
+                return false;
+            }
+            return true;
+        }
         void cerrar()
         {
             this.Close();
         }
         private void Limpiar()
         {
-            txtDescripcionDiag.Text = "DESCRIPCION";
-            txtDescripcionDiag.ForeColor = Color.DimGray;
+            BaseTextbox(txtDescripcionDiag, "DESCRIPCION");
         }
         void EventoEntrar()
         {
@@ -109,6 +121,11 @@ namespace Clinica
         void Minimizar()
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        void BaseTextbox(TextBox textBox, string nombre)
+        {
+            textBox.Text = nombre;
+            textBox.ForeColor = Color.DimGray;
         }
     }
 }

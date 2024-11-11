@@ -26,8 +26,8 @@ namespace DAL
                 using (OracleCommand command = new OracleCommand(query, conexion))
                 {
                     command.Parameters.Add(new OracleParameter("ID_Tratamiento", tratamiento.ID_Tratamiento));
-                    command.Parameters.Add(new OracleParameter("Descripcion", tratamiento.Descripcion ?? (object)DBNull.Value));
-                    command.Parameters.Add(new OracleParameter("Duracion", tratamiento.Duracion ?? (object)DBNull.Value));
+                    command.Parameters.Add(new OracleParameter("Descripcion", tratamiento.Descripcion));
+                    command.Parameters.Add(new OracleParameter("Duracion", tratamiento.Duracion));
                     command.Parameters.Add(new OracleParameter("Costo", tratamiento.Costo));
                     command.Parameters.Add(new OracleParameter("CodigoDiagnostico", tratamiento.CodigoDiagnostico ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("CodigoFactura", tratamiento.CodigoFactura ?? (object)DBNull.Value));
@@ -125,5 +125,47 @@ namespace DAL
                 CerrarConexion();
             }
         }
+        public string Update(Tratamiento tratamiento)
+        {
+            string query = "UPDATE TRATAMIENTO SET " +
+                           "DESCRIPCION = :Descripcion, " +
+                           "DURACION = :Duracion, " +
+                           "COSTO = :Costo, " +
+                           "ID_DIAGNOSTICO = :CodigoDiagnostico, " +
+                           "ID_FACTURA = :CodigoFactura " +
+                           "WHERE ID_TRATAMIENTO = :ID_Tratamiento";
+            OracleTransaction transaction = null;
+
+            try
+            {
+                AbrirConexion();
+                transaction = conexion.BeginTransaction();
+
+                using (OracleCommand command = new OracleCommand(query, conexion))
+                {
+                    command.Parameters.Add(new OracleParameter("Descripcion", tratamiento.Descripcion));
+                    command.Parameters.Add(new OracleParameter("Duracion", tratamiento.Duracion));
+                    command.Parameters.Add(new OracleParameter("Costo", tratamiento.Costo));
+                    command.Parameters.Add(new OracleParameter("CodigoDiagnostico", tratamiento.CodigoDiagnostico ?? (object)DBNull.Value));
+                    command.Parameters.Add(new OracleParameter("CodigoFactura", tratamiento.CodigoFactura ?? (object)DBNull.Value));
+                    command.Parameters.Add(new OracleParameter("ID_Tratamiento", tratamiento.ID_Tratamiento));
+
+                    command.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+                return "Tratamiento actualizado exitosamente";
+            }
+            catch (Exception ex)
+            {
+                transaction?.Rollback();
+                return "Error al actualizar: " + ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
     }
 }

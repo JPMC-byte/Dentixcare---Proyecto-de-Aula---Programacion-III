@@ -41,7 +41,7 @@ namespace BLL
             else
             {
                 Pago ultimoPago = pagosExistentes.Last();
-                int ultimoCodigoNumerico = int.Parse(ultimoPago.ID_Pago);
+                int ultimoCodigoNumerico = int.Parse(ultimoPago.ID_Pago.Substring(2));
                 nuevoCodigo = "PG" + (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
             }
             return nuevoCodigo;
