@@ -64,7 +64,7 @@ namespace BLL
             else
             {
                 Diagnostico ultimoDiagnostico = diagnosticosExistentes.Last();
-                int ultimoCodigoNumerico = int.Parse(ultimoDiagnostico.Codigo);
+                int ultimoCodigoNumerico = int.Parse(ultimoDiagnostico.Codigo.Substring(1));
                 nuevoCodigo = 'D' + (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
             }
 

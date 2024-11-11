@@ -93,13 +93,25 @@ namespace Clinica
                 return false;
             }
         }
-        bool ValidarEstado()
+        bool ValidarEstado(bool verificarPendiente = true)
         {
             Cita cita = CitaSeleccionada();
-            if (!vali.ValidarAtendida(cita.Estado))
+
+            if (verificarPendiente)
             {
-                MessageBox.Show("Error - No es posible alterar una cita que ya ha sido atendida.");
-                return false;
+                if (!vali.ValidarAtendida(cita.Estado))
+                {
+                    MessageBox.Show("Error - No es posible alterar una cita que ya ha sido atendida.");
+                    return false;
+                }
+            }
+            else
+            {
+                if (vali.ValidarAtendida(cita.Estado))
+                {
+                    MessageBox.Show("Error - No es posible realizar un diagnóstico si la cita no ha sido atendida.");
+                    return false;
+                }
             }
             return true;
         }
@@ -199,7 +211,8 @@ namespace Clinica
 
         private void btnDiagnostico_Click(object sender, EventArgs e)
         {
-            if (!Verificar())
+            
+            if (!Verificar() || !ValidarEstado(false))
             {
                 return;
             }
