@@ -91,8 +91,8 @@ namespace DAL
         public List<Diagnostico> LoadFilters(DateTime fecha, string cedulaPaciente)
         {
             List<Diagnostico> Diagnosticos = GetAll();
-            Diagnosticos = LoadByCedula(cedulaPaciente);
-            Diagnosticos = LoadByFecha(fecha);
+            Diagnosticos = Diagnosticos.Where(diag => diag.CedulaPaciente == cedulaPaciente).ToList();
+            Diagnosticos = Diagnosticos.Where(diag => diag.Fecha_Diagnostico.Date == fecha.Date).ToList();
             return Diagnosticos;
         }
 

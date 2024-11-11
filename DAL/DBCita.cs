@@ -118,8 +118,8 @@ namespace DAL
         public List<Cita> LoadFilters(string estado, string cedulaPaciente)
         {
             List<Cita> Citas = GetAll();
-            Citas = LoadByEstado(estado);
-            Citas = LoadByID(cedulaPaciente);
+            Citas = Citas.Where(cita => cita.CodigoPaciente == cedulaPaciente).ToList();
+            Citas = Citas.Where(cita => cita.Estado == estado).ToList();
             return Citas;
         }
         public string Modify(Cita cita)

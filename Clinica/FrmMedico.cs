@@ -52,6 +52,10 @@ namespace Clinica
         {
             MoverPestaña();
         }
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverPestaña();
+        }
         void MoverPestaña()
         {
             ReleaseCapture();

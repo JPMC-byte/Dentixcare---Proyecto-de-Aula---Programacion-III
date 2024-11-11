@@ -36,6 +36,10 @@ namespace Clinica
         {
             MoverPestaña();
         }
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverPestaña();
+        }
         void MoverPestaña()
         {
             ReleaseCapture();
@@ -118,6 +122,12 @@ namespace Clinica
 
             OcultarSubmenu();
         }
+        private void btnDatosConsultorio_Click(object sender, EventArgs e)
+        {
+            Consultorio consultorio = servisConsul.CargarConsultorio("P101");
+            AbrirFormulario(new FrmConsultorio(consultorio));
+            OcultarSubmenu();
+        }
 
         private void AbrirFormulario(Form FormularioHijo)
         {
@@ -133,13 +143,6 @@ namespace Clinica
             PanelHijo.Tag = FormularioHijo;
             FormularioHijo.BringToFront();
             FormularioHijo.Show();
-        }
-
-        private void btnDatosConsultorio_Click(object sender, EventArgs e)
-        {
-            Consultorio consultorio = servisConsul.CargarConsultorio("P101");
-            AbrirFormulario(new FrmConsultorio(consultorio));
-            OcultarSubmenu();
         }
     }
 }

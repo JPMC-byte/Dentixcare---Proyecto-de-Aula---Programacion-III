@@ -295,6 +295,7 @@
             this.Controls.Add(this.DGVDiagnostico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGestionAntecedentes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGestionAntecedentes";
             this.Load += new System.EventHandler(this.FrmGestionAntecedentes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiagnostico)).EndInit();

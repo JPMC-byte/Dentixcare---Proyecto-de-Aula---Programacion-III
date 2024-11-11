@@ -59,7 +59,7 @@ namespace Clinica
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un paciente de la lista para ver más información.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, seleccione un paciente de la lista para realizar dicha acción", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
@@ -80,6 +80,11 @@ namespace Clinica
         void cerrar()
         {
             this.Close();
+        }
+        private void btnAntecedentes_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) {  return; }
+            MostrarAntecedentes();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -135,6 +140,12 @@ namespace Clinica
                 txtCedulaPaciente.Text = "CEDULA DEL PACIENTE";
                 txtCedulaPaciente.ForeColor = Color.DimGray;
             }
+        }
+        void MostrarAntecedentes()
+        {
+            Paciente paciente = PacienteSeleccionado();
+            FrmGestionAntecedentes F = new FrmGestionAntecedentes(paciente);
+            F.Show();
         }
     }
 }
