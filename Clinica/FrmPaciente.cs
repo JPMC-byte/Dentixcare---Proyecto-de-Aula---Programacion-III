@@ -90,8 +90,7 @@ namespace Clinica
         }
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
-
-
+            AbrirFormulario(new FrmGestionFactura());
             OcultarSubmenu();
         }
         private void btnPerfil_Click(object sender, EventArgs e)

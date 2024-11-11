@@ -297,6 +297,7 @@
             this.Controls.Add(this.txtCodigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInfoFactura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInfoFactura";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmInfoFactura_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

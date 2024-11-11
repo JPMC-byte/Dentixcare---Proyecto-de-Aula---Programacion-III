@@ -132,12 +132,12 @@ namespace DAL
 
                 using (OracleCommand command = new OracleCommand(query, conexion))
                 {
-                    command.Parameters.Add(new OracleParameter("ID_Factura", factura.ID_Factura));
                     command.Parameters.Add(new OracleParameter("Fecha_Emision", factura.Fecha_Emision.ToString("dd-MM-yyyy")));
                     command.Parameters.Add(new OracleParameter("Estado", factura.Estado));
                     command.Parameters.Add(new OracleParameter("Total", factura.Total));
                     command.Parameters.Add(new OracleParameter("Total_Pagado", factura.Total_Pagado));
                     command.Parameters.Add(new OracleParameter("Cambio", factura.Cambio));
+                    command.Parameters.Add(new OracleParameter("ID_Factura", factura.ID_Factura));
 
                     command.ExecuteNonQuery();
                 }

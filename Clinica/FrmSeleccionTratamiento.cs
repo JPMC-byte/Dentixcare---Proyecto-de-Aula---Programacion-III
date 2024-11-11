@@ -88,7 +88,6 @@ namespace Clinica
         void ConfirmarSeleccion()
         {
             Tratamiento tratamiento = TratamientoSeleccionado();
-            servistrat.UpdateFKDiagnostico(tratamiento, diagnosticoSeleccionado.Codigo);
 
             if (!ValidarExistenteFactura())
             {
@@ -101,6 +100,7 @@ namespace Clinica
                 factura.Cambio = 0;
                 servisFac.Add(factura);
 
+                servistrat.UpdateFKDiagnostico(tratamiento, diagnosticoSeleccionado.Codigo);
                 servistrat.UpdateFKFactura(tratamiento,factura.ID_Factura);
                 MessageBox.Show("Una nueva factura ha sido registrada");
             }
@@ -109,6 +109,7 @@ namespace Clinica
                 string CodigoFactura = servistrat.obtenerFacturaRelacionada(diagnosticoSeleccionado.Codigo);
                 Factura factura = servisFac.GetByID(CodigoFactura);
 
+                servistrat.UpdateFKDiagnostico(tratamiento, diagnosticoSeleccionado.Codigo);
                 servistrat.UpdateFKFactura(tratamiento, factura.ID_Factura);
                 servisFac.SumarMonto(factura,tratamiento.Costo);
                 MessageBox.Show("Se ha agregado un elemento a una factura existente");
