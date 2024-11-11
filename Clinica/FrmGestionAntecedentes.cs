@@ -22,6 +22,9 @@ namespace Clinica
             InitializeComponent();
             UsuarioActual = persona;
             determinarUsuario(UsuarioActual);
+        }
+        private void FrmGestionAntecedentes_Load(object sender, EventArgs e)
+        {
             CargarDiagnosticos();
         }
         private void btnInformacion_Click(object sender, EventArgs e)
@@ -107,7 +110,7 @@ namespace Clinica
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un diagnostico de la lista para ver más información.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, seleccione un diagnostico de la lista para realizar dicha acción", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }

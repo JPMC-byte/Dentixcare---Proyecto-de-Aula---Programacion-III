@@ -42,9 +42,10 @@
             this.LBTitulo = new System.Windows.Forms.Label();
             this.DGVDiagnostico = new System.Windows.Forms.DataGridView();
             this.DTFiltroFecha = new System.Windows.Forms.DateTimePicker();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnActualizarRegistro = new System.Windows.Forms.Button();
             this.btnAsignarTratamiento = new System.Windows.Forms.Button();
+            this.btnTratamientosRelacion = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiagnostico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             // CBFiltrarPorPaciente
             // 
             this.CBFiltrarPorPaciente.AutoSize = true;
-            this.CBFiltrarPorPaciente.Location = new System.Drawing.Point(479, 38);
+            this.CBFiltrarPorPaciente.Location = new System.Drawing.Point(429, 38);
             this.CBFiltrarPorPaciente.Name = "CBFiltrarPorPaciente";
             this.CBFiltrarPorPaciente.Size = new System.Drawing.Size(15, 14);
             this.CBFiltrarPorPaciente.TabIndex = 93;
@@ -78,7 +79,7 @@
             // CBFiltrarFecha
             // 
             this.CBFiltrarFecha.AutoSize = true;
-            this.CBFiltrarFecha.Location = new System.Drawing.Point(285, 38);
+            this.CBFiltrarFecha.Location = new System.Drawing.Point(235, 38);
             this.CBFiltrarFecha.Name = "CBFiltrarFecha";
             this.CBFiltrarFecha.Size = new System.Drawing.Size(15, 14);
             this.CBFiltrarFecha.TabIndex = 92;
@@ -90,7 +91,7 @@
             this.txtCedulaPaciente.Enabled = false;
             this.txtCedulaPaciente.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedulaPaciente.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCedulaPaciente.Location = new System.Drawing.Point(504, 48);
+            this.txtCedulaPaciente.Location = new System.Drawing.Point(454, 48);
             this.txtCedulaPaciente.Name = "txtCedulaPaciente";
             this.txtCedulaPaciente.Size = new System.Drawing.Size(147, 22);
             this.txtCedulaPaciente.TabIndex = 91;
@@ -104,7 +105,7 @@
             this.LBFiltrarPorPaciente.BackColor = System.Drawing.Color.Transparent;
             this.LBFiltrarPorPaciente.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBFiltrarPorPaciente.ForeColor = System.Drawing.Color.Black;
-            this.LBFiltrarPorPaciente.Location = new System.Drawing.Point(500, 23);
+            this.LBFiltrarPorPaciente.Location = new System.Drawing.Point(450, 23);
             this.LBFiltrarPorPaciente.Name = "LBFiltrarPorPaciente";
             this.LBFiltrarPorPaciente.Size = new System.Drawing.Size(151, 19);
             this.LBFiltrarPorPaciente.TabIndex = 90;
@@ -116,7 +117,7 @@
             this.LBFiltro.BackColor = System.Drawing.Color.Transparent;
             this.LBFiltro.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBFiltro.ForeColor = System.Drawing.Color.Black;
-            this.LBFiltro.Location = new System.Drawing.Point(306, 23);
+            this.LBFiltro.Location = new System.Drawing.Point(256, 23);
             this.LBFiltro.Name = "LBFiltro";
             this.LBFiltro.Size = new System.Drawing.Size(128, 19);
             this.LBFiltro.TabIndex = 89;
@@ -208,22 +209,10 @@
             // DTFiltroFecha
             // 
             this.DTFiltroFecha.Enabled = false;
-            this.DTFiltroFecha.Location = new System.Drawing.Point(310, 46);
+            this.DTFiltroFecha.Location = new System.Drawing.Point(260, 46);
             this.DTFiltroFecha.Name = "DTFiltroFecha";
             this.DTFiltroFecha.Size = new System.Drawing.Size(150, 20);
             this.DTFiltroFecha.TabIndex = 95;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(745, 22);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 85;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnActualizarRegistro
             // 
@@ -233,9 +222,9 @@
             this.btnActualizarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarRegistro.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarRegistro.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizarRegistro.Location = new System.Drawing.Point(463, 626);
+            this.btnActualizarRegistro.Location = new System.Drawing.Point(607, 22);
             this.btnActualizarRegistro.Name = "btnActualizarRegistro";
-            this.btnActualizarRegistro.Size = new System.Drawing.Size(147, 50);
+            this.btnActualizarRegistro.Size = new System.Drawing.Size(123, 50);
             this.btnActualizarRegistro.TabIndex = 96;
             this.btnActualizarRegistro.Text = "Actualizar registro";
             this.btnActualizarRegistro.UseVisualStyleBackColor = false;
@@ -249,12 +238,39 @@
             this.btnAsignarTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarTratamiento.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarTratamiento.ForeColor = System.Drawing.Color.Black;
-            this.btnAsignarTratamiento.Location = new System.Drawing.Point(616, 626);
+            this.btnAsignarTratamiento.Location = new System.Drawing.Point(463, 626);
             this.btnAsignarTratamiento.Name = "btnAsignarTratamiento";
             this.btnAsignarTratamiento.Size = new System.Drawing.Size(147, 50);
             this.btnAsignarTratamiento.TabIndex = 97;
             this.btnAsignarTratamiento.Text = "Asignar un tratamiento";
             this.btnAsignarTratamiento.UseVisualStyleBackColor = false;
+            // 
+            // btnTratamientosRelacion
+            // 
+            this.btnTratamientosRelacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnTratamientosRelacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTratamientosRelacion.FlatAppearance.BorderSize = 0;
+            this.btnTratamientosRelacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTratamientosRelacion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTratamientosRelacion.ForeColor = System.Drawing.Color.Black;
+            this.btnTratamientosRelacion.Location = new System.Drawing.Point(616, 626);
+            this.btnTratamientosRelacion.Name = "btnTratamientosRelacion";
+            this.btnTratamientosRelacion.Size = new System.Drawing.Size(147, 50);
+            this.btnTratamientosRelacion.TabIndex = 98;
+            this.btnTratamientosRelacion.Text = "Ver tratamientos relacionados";
+            this.btnTratamientosRelacion.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Location = new System.Drawing.Point(745, 22);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 85;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmGestionAntecedentes
             // 
@@ -262,6 +278,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.btnTratamientosRelacion);
             this.Controls.Add(this.btnAsignarTratamiento);
             this.Controls.Add(this.btnActualizarRegistro);
             this.Controls.Add(this.DTFiltroFecha);
@@ -279,6 +296,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGestionAntecedentes";
             this.Text = "FrmGestionAntecedentes";
+            this.Load += new System.EventHandler(this.FrmGestionAntecedentes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiagnostico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
@@ -302,5 +320,6 @@
         private System.Windows.Forms.DateTimePicker DTFiltroFecha;
         private System.Windows.Forms.Button btnActualizarRegistro;
         private System.Windows.Forms.Button btnAsignarTratamiento;
+        private System.Windows.Forms.Button btnTratamientosRelacion;
     }
 }
