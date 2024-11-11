@@ -298,6 +298,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGestionAntecedentes";
             this.Load += new System.EventHandler(this.FrmGestionAntecedentes_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmGestionAntecedentes_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiagnostico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
