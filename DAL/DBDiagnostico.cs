@@ -157,7 +157,7 @@ namespace DAL
 
                 using (OracleCommand command = new OracleCommand(query, conexion))
                 {
-                    command.Parameters.Add(new OracleParameter("NumeroDocumento", codigo));
+                    command.Parameters.Add(new OracleParameter("ID_DIAGNOSTICO", codigo));
                     command.ExecuteNonQuery();
                 }
                 transaction.Commit();

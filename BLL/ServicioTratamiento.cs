@@ -27,9 +27,9 @@ namespace BLL
         {
             return reposTratamiento.GetByID(id);
         }
-        public string Delete(string id)
+        public string Delete(Tratamiento tratamiento)
         {
-            return reposTratamiento.Delete(id);
+            return reposTratamiento.Delete(tratamiento.ID_Tratamiento);
         }
         public string UpdateDescripcion(Tratamiento tratamiento, string nuevaDescripcion)
         {

@@ -17,6 +17,8 @@ namespace Clinica
     {
         Diagnostico diagnosticoActual;
         ServicioTratamiento servistrat = new ServicioTratamiento();
+        ServicioFactura servisFactu = new ServicioFactura();
+        Validaciones vali = new Validaciones();
         public FrmGestionTratamientos(Diagnostico diagnostico = null)
         {
             InitializeComponent();
@@ -50,38 +52,64 @@ namespace Clinica
         {
             cerrar();
         }
-        void cerrar()
-        {
-            this.Close();
-        }
-
         private void FrmGestionTratamientos_Load(object sender, EventArgs e)
         {
             determinarIndependencia();
             CargarTratamientos();
         }
 
-        public void CargarTratamientos()
-        { 
-            var Tratamientos = servistrat.GetAll();
-            if (this.Parent == null) Tratamientos = servistrat.LoadByDiagnostico(diagnosticoActual.Codigo);
-            DGVTratamiento.DataSource = Tratamientos;
-        }
-
         private void btnActualizarRegistro_Click(object sender, EventArgs e)
         {
             CargarTratamientos();
+        }
+        private void btnInformacion_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            AbrirInformacion();
+        }
+        private void btnFacturaRelacionada_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !validarTratamientoAsignado())
+            {
+                return;
+            }
+            abrirInfoFactura();
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !validarExistenteRelacion())
+            {
+                return;
+            }
+            if (Confirmar())
+            {
+                eliminarTratamiento();
+            }
+        }
+        public void CargarTratamientos()
+        {
+            var Tratamientos = servistrat.GetAll();
+            if (this.Parent == null) Tratamientos = servistrat.LoadByDiagnostico(diagnosticoActual.Codigo);
+            DGVTratamiento.DataSource = Tratamientos;
         }
         void Actualizar()
         {
             CargarTratamientos();
         }
+
         public Tratamiento TratamientoSeleccionado()
         {
             var IDTratamiento = DGVTratamiento.SelectedRows[0].Cells["ID_Tratamiento"].Value.ToString();
 
             Tratamiento tratamientoSeleccionado = servistrat.GetByID(IDTratamiento);
             return tratamientoSeleccionado;
+        }
+        public Factura FacturaRelacionada()
+        {
+            var IDFactura = DGVTratamiento.SelectedRows[0].Cells["CodigoFactura"].Value.ToString();
+
+            Factura facturaSeleccionada = servisFactu.GetByID(IDFactura);
+            return facturaSeleccionada;
         }
         bool Verificar()
         {
@@ -91,21 +119,57 @@ namespace Clinica
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un tratamiento de la lista para realizar dicha acción", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, seleccione un elemento de la lista para realizar dicha acción", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
-
-        private void btnInformacion_Click(object sender, EventArgs e)
+        bool validarTratamientoAsignado()
         {
-            if (!Verificar()) { return; }
-            AbrirInformacion();
+            Tratamiento tratamiento = TratamientoSeleccionado();
+            if (!vali.ValidarTratamientoAsignado(tratamiento))
+            {
+                MessageBox.Show("Error - Este tratamiento no presenta una factura relacionada", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        bool validarExistenteRelacion()
+        {
+            Tratamiento tratamiento = TratamientoSeleccionado();
+            if (vali.ValidarTratamientoAsignado(tratamiento))
+            {
+                MessageBox.Show("Error - No es posible eliminar un tratamiento con diagnostico/factura asignada", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        bool Confirmar()
+        {
+            return MessageBox.Show("¿Está seguro que desea eliminar dicho registro?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
         }
         void AbrirInformacion()
         {
             Tratamiento tratamiento = TratamientoSeleccionado();
             FrmInfoTratamiento F = new FrmInfoTratamiento(tratamiento);
             F.Show();
+        }
+
+        void abrirInfoFactura()
+        {
+            Factura factura = FacturaRelacionada();
+            FrmInfoFactura F = new FrmInfoFactura(factura);
+            F.Show();
+        }
+
+        void eliminarTratamiento()
+        {
+            Tratamiento tratamiento = TratamientoSeleccionado();
+            servistrat.Delete(tratamiento);
+            MessageBox.Show("Registro eliminado con exito");
+        }
+        void cerrar()
+        {
+            this.Close();
         }
     }
 }

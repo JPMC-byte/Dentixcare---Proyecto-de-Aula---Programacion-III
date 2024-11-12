@@ -113,7 +113,7 @@ namespace Clinica
 
         bool Confirmar()
         {
-            return MessageBox.Show("¿Está seguro que desea eliminar dicha cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+            return MessageBox.Show("¿Está seguro que desea eliminar dicho registro?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
         }
         void CancelarCita()
         {

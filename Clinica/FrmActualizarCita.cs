@@ -20,15 +20,11 @@ namespace Clinica
         {
             InitializeComponent();
             CitaActual = cita;
+        }
+        private void FrmActualizarCita_Load(object sender, EventArgs e)
+        {
             CargarDatos(CitaActual);
         }
-
-        private void CargarDatos(Cita cita)
-        {
-            txtHora.Text = cita.Hora_Cita.ToString();
-            txtFecha.Text = cita.Fecha_Cita.ToString("dd/MM/yyyy");
-        }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (!Verificar())
@@ -39,6 +35,48 @@ namespace Clinica
             {
                 Actualizar();
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+        private void txtRazonCita_Enter(object sender, EventArgs e)
+        {
+            eventoEnter();
+        }
+        private void txtRazonCita_Leave(object sender, EventArgs e)
+        {
+            eventoSalir();
+        }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            cerrar();
+        }
+        void eventoEnter()
+        {
+            if (txtRazonCita.Text == "RAZON DE CITA")
+            {
+                txtRazonCita.Text = "";
+                txtRazonCita.ForeColor = Color.Black;
+            }
+        }
+        void eventoSalir()
+        {
+            if (txtRazonCita.Text == "")
+            {
+                txtRazonCita.Text = "RAZON DE CITA";
+                txtRazonCita.ForeColor = Color.DimGray;
+            }
+        }
+        void cerrar()
+        {
+            this.Close();
+        }
+        private void CargarDatos(Cita cita)
+        {
+            txtHora.Text = cita.Hora_Cita.ToString();
+            txtFecha.Text = cita.Fecha_Cita.ToString("dd/MM/yyyy");
         }
         void Actualizar()
         {
@@ -53,7 +91,7 @@ namespace Clinica
         }
         bool Verificar()
         {
-            if (txtRazonCita.Text == "RAZON DE CITA" )
+            if (txtRazonCita.Text == "RAZON DE CITA")
             {
                 MessageBox.Show("Por favor, rellene/complete los campos vacios");
                 return false;
@@ -69,36 +107,6 @@ namespace Clinica
         {
             txtRazonCita.Text = "RAZON DE CITA";
             txtRazonCita.ForeColor = Color.DimGray;
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-        private void txtRazonCita_Enter(object sender, EventArgs e)
-        {
-            if (txtRazonCita.Text == "RAZON DE CITA")
-            {
-                txtRazonCita.Text = "";
-                txtRazonCita.ForeColor = Color.Black;
-            }
-        }
-        private void txtRazonCita_Leave(object sender, EventArgs e)
-        {
-            if (txtRazonCita.Text == "")
-            {
-                txtRazonCita.Text = "RAZON DE CITA";
-                txtRazonCita.ForeColor = Color.DimGray;
-            }
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            cerrar();
-        }
-        void cerrar()
-        {
-            this.Close();
         }
     }
 }

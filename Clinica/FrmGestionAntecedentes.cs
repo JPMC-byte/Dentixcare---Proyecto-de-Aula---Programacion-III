@@ -234,5 +234,37 @@ namespace Clinica
             FrmGestionTratamientos F = new FrmGestionTratamientos(diagnosticoSeleccionado);
             F.Show();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !validarExistenteRelacion())
+            {
+                return;
+            }
+            if (Confirmar())
+            {
+                CancelarDiagnostico();
+            }
+        }
+        void CancelarDiagnostico()
+        {
+            Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
+            servisDiag.Delete(diagnosticoSeleccionado);
+            MessageBox.Show("Registro eliminado con exito");
+        }
+        bool Confirmar()
+        {
+            return MessageBox.Show("¿Está seguro que desea eliminar dicho registro?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+        }
+        bool validarExistenteRelacion()
+        {
+            Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
+            if (vali.ValidarExistenteFactura(diagnosticoSeleccionado.Codigo))
+            {
+                MessageBox.Show("Error - No es posible eliminar un diagnostico con tratamientos asignados", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
     }
 }

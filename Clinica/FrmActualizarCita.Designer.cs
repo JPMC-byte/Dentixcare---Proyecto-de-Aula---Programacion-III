@@ -197,6 +197,7 @@
             this.Name = "FrmActualizarCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmActualizarCita";
+            this.Load += new System.EventHandler(this.FrmActualizarCita_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);

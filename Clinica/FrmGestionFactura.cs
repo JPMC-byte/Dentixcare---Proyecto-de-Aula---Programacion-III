@@ -70,7 +70,6 @@ namespace Clinica
             Factura factura = FacturaSeleccionada();
             FrmInfoFactura F = new FrmInfoFactura(factura);
             F.Show();
-
         }
     }
 }

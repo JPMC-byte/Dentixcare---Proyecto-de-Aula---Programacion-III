@@ -152,6 +152,7 @@
             this.btnEliminar.TabIndex = 84;
             this.btnEliminar.Text = "Eliminar diagnostico";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // LBTitulo
             // 

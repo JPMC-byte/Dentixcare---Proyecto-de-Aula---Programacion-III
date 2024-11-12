@@ -57,6 +57,7 @@
             this.btnFacturaRelacionada.TabIndex = 113;
             this.btnFacturaRelacionada.Text = "Ver factura relacionada";
             this.btnFacturaRelacionada.UseVisualStyleBackColor = false;
+            this.btnFacturaRelacionada.Click += new System.EventHandler(this.btnFacturaRelacionada_Click);
             // 
             // btnActualizarRegistro
             // 
@@ -131,6 +132,7 @@
             this.btnEliminar.TabIndex = 101;
             this.btnEliminar.Text = "Eliminar tratamiento";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // LBTitulo
             // 

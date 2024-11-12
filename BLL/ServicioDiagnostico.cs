@@ -30,9 +30,9 @@ namespace BLL
             return reposDiagnostico.GetByID(codigo);
         }
 
-        public string Delete(string codigo)
+        public string Delete(Diagnostico diagnostico)
         {
-            return reposDiagnostico.Delete(codigo);
+            return reposDiagnostico.Delete(diagnostico.Codigo);
         }
         public string Update(Diagnostico diagnostico, string diagnosticoDescripcion)
         {

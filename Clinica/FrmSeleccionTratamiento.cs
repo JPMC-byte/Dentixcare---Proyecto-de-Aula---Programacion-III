@@ -76,7 +76,7 @@ namespace Clinica
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (ConfirmarAsignacion()) ConfirmarSeleccion();
+            if (ConfirmarAsignacion() && ValidarTratamientoAsignado()) ConfirmarSeleccion();
         }
         bool ConfirmarAsignacion()
         {
@@ -102,7 +102,7 @@ namespace Clinica
 
                 servistrat.UpdateFKDiagnostico(tratamiento, diagnosticoSeleccionado.Codigo);
                 servistrat.UpdateFKFactura(tratamiento,factura.ID_Factura);
-                MessageBox.Show("Una nueva factura ha sido registrada");
+                MessageBox.Show("Una nueva factura ha sido registrada con exito");
             }
             else
             {
@@ -112,7 +112,7 @@ namespace Clinica
                 servistrat.UpdateFKDiagnostico(tratamiento, diagnosticoSeleccionado.Codigo);
                 servistrat.UpdateFKFactura(tratamiento, factura.ID_Factura);
                 servisFac.SumarMonto(factura,tratamiento.Costo);
-                MessageBox.Show("Se ha agregado un elemento a una factura existente");
+                MessageBox.Show("Se ha anexado un elemento a una factura existente");
             }
             cerrar();
         }
@@ -120,6 +120,16 @@ namespace Clinica
         {
             if (!vali.ValidarExistenteFactura(diagnosticoSeleccionado.Codigo))
             {
+                return false;
+            }
+            return true;
+        }
+        bool ValidarTratamientoAsignado()
+        {
+            Tratamiento tratamiento = TratamientoSeleccionado();
+            if (vali.ValidarTratamientoAsignado(tratamiento))
+            {
+                MessageBox.Show("Error - Este tratamiento ya ha sido asignado a un diagnostico", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
                 return false;
             }
             return true;

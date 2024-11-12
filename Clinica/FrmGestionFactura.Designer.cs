@@ -35,10 +35,11 @@
             this.btnActualizarRegistro = new System.Windows.Forms.Button();
             this.btnInformacion = new System.Windows.Forms.Button();
             this.btnActualizarTratamiento = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnTratamientosRelacionados = new System.Windows.Forms.Button();
             this.LBTitulo = new System.Windows.Forms.Label();
             this.DGVFacturas = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +52,9 @@
             this.btnFacturaRelacionada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFacturaRelacionada.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacturaRelacionada.ForeColor = System.Drawing.Color.Black;
-            this.btnFacturaRelacionada.Location = new System.Drawing.Point(376, 626);
+            this.btnFacturaRelacionada.Location = new System.Drawing.Point(300, 626);
             this.btnFacturaRelacionada.Name = "btnFacturaRelacionada";
-            this.btnFacturaRelacionada.Size = new System.Drawing.Size(180, 50);
+            this.btnFacturaRelacionada.Size = new System.Drawing.Size(142, 50);
             this.btnFacturaRelacionada.TabIndex = 121;
             this.btnFacturaRelacionada.Text = "Ver pagos relacionados";
             this.btnFacturaRelacionada.UseVisualStyleBackColor = false;
@@ -84,7 +85,7 @@
             this.btnInformacion.ForeColor = System.Drawing.Color.Black;
             this.btnInformacion.Location = new System.Drawing.Point(4, 626);
             this.btnInformacion.Name = "btnInformacion";
-            this.btnInformacion.Size = new System.Drawing.Size(180, 50);
+            this.btnInformacion.Size = new System.Drawing.Size(142, 50);
             this.btnInformacion.TabIndex = 119;
             this.btnInformacion.Text = "Más información";
             this.btnInformacion.UseVisualStyleBackColor = false;
@@ -98,27 +99,27 @@
             this.btnActualizarTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarTratamiento.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarTratamiento.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizarTratamiento.Location = new System.Drawing.Point(190, 626);
+            this.btnActualizarTratamiento.Location = new System.Drawing.Point(152, 626);
             this.btnActualizarTratamiento.Name = "btnActualizarTratamiento";
-            this.btnActualizarTratamiento.Size = new System.Drawing.Size(180, 50);
+            this.btnActualizarTratamiento.Size = new System.Drawing.Size(142, 50);
             this.btnActualizarTratamiento.TabIndex = 118;
             this.btnActualizarTratamiento.Text = "Realizar pago";
             this.btnActualizarTratamiento.UseVisualStyleBackColor = false;
             // 
-            // btnEliminar
+            // btnTratamientosRelacionados
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(562, 626);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(180, 50);
-            this.btnEliminar.TabIndex = 116;
-            this.btnEliminar.Text = "Gestion de pagos";
-            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnTratamientosRelacionados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnTratamientosRelacionados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTratamientosRelacionados.FlatAppearance.BorderSize = 0;
+            this.btnTratamientosRelacionados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTratamientosRelacionados.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTratamientosRelacionados.ForeColor = System.Drawing.Color.Black;
+            this.btnTratamientosRelacionados.Location = new System.Drawing.Point(448, 626);
+            this.btnTratamientosRelacionados.Name = "btnTratamientosRelacionados";
+            this.btnTratamientosRelacionados.Size = new System.Drawing.Size(145, 50);
+            this.btnTratamientosRelacionados.TabIndex = 116;
+            this.btnTratamientosRelacionados.Text = "Ver tratamientos relacionados";
+            this.btnTratamientosRelacionados.UseVisualStyleBackColor = false;
             // 
             // LBTitulo
             // 
@@ -185,18 +186,34 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(599, 626);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 50);
+            this.button1.TabIndex = 122;
+            this.button1.Text = "Gestion de pagos";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // FrmGestionFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnFacturaRelacionada);
             this.Controls.Add(this.btnActualizarRegistro);
             this.Controls.Add(this.btnInformacion);
             this.Controls.Add(this.btnActualizarTratamiento);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnTratamientosRelacionados);
             this.Controls.Add(this.LBTitulo);
             this.Controls.Add(this.DGVFacturas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -217,8 +234,9 @@
         private System.Windows.Forms.Button btnInformacion;
         private System.Windows.Forms.Button btnActualizarTratamiento;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnTratamientosRelacionados;
         private System.Windows.Forms.Label LBTitulo;
         private System.Windows.Forms.DataGridView DGVFacturas;
+        private System.Windows.Forms.Button button1;
     }
 }

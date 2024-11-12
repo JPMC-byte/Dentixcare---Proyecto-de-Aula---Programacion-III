@@ -151,5 +151,14 @@ namespace BLL
             }
             return true;
         }
+
+        public bool ValidarTratamientoAsignado(Tratamiento tratamiento)
+        {
+            if (tratamiento.CodigoDiagnostico == "" || tratamiento.CodigoFactura == "")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
