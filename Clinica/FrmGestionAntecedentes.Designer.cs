@@ -137,6 +137,7 @@
             this.btnActualizarDiagnostico.TabIndex = 87;
             this.btnActualizarDiagnostico.Text = "Actualizar diagnostico";
             this.btnActualizarDiagnostico.UseVisualStyleBackColor = false;
+            this.btnActualizarDiagnostico.Click += new System.EventHandler(this.btnActualizarDiagnostico_Click);
             // 
             // btnEliminar
             // 

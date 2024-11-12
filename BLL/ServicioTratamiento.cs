@@ -31,18 +31,14 @@ namespace BLL
         {
             return reposTratamiento.Delete(tratamiento.ID_Tratamiento);
         }
-        public string UpdateDescripcion(Tratamiento tratamiento, string nuevaDescripcion)
+        public string UpdateTratamiento(Tratamiento tratamiento, string nuevaDescripcion, string nuevaDuracion, double nuevoCosto)
         {
             Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
             tratamientoAModificar.Descripcion = nuevaDescripcion;
-            return reposTratamiento.Update(tratamientoAModificar);
-
-        }
-        public string UpdateCosto(Tratamiento tratamiento, double nuevoCosto)
-        {
-            Tratamiento tratamientoAModificar = GetByID(tratamiento.ID_Tratamiento);
+            tratamientoAModificar.Duracion = nuevaDuracion;
             tratamientoAModificar.Costo = nuevoCosto;
             return reposTratamiento.Update(tratamientoAModificar);
+
         }
         public string UpdateFKDiagnostico(Tratamiento tratamiento, string Codigo)
         {

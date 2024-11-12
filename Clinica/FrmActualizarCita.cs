@@ -96,11 +96,6 @@ namespace Clinica
                 MessageBox.Show("Por favor, rellene/complete los campos vacios");
                 return false;
             }
-            if (txtRazonCita.Text == CitaActual.Razon_Cita)
-            {
-                MessageBox.Show("Error - No es posible actualizar si no se realiza alguna modificación correspondiente.");
-                return false;
-            }
             return true;
         }
         private void Limpiar()

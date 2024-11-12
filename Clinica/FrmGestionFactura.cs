@@ -31,6 +31,16 @@ namespace Clinica
         {
             cargarFacturas();
         }
+        private void btnInformacion_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            abrirMasInformacion();
+        }
+        private void btnTratamientosRelacionados_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            verTratamientosRelacionados();
+        }
         void cerrar()
         {
             this.Close();
@@ -59,16 +69,16 @@ namespace Clinica
             Factura facturaSeleccionada = servisFactu.GetByID(IDFactura);
             return facturaSeleccionada;
         }
-
-        private void btnInformacion_Click(object sender, EventArgs e)
-        {
-            if (!Verificar()) { return; }
-            abrirMasInformacion();
-        }
         void abrirMasInformacion()
         {
             Factura factura = FacturaSeleccionada();
             FrmInfoFactura F = new FrmInfoFactura(factura);
+            F.Show();
+        }
+        void verTratamientosRelacionados()
+        {
+            Factura factura = FacturaSeleccionada();
+            FrmGestionTratamientos F = new FrmGestionTratamientos(factura);
             F.Show();
         }
     }

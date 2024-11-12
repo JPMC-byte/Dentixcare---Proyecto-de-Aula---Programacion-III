@@ -16,13 +16,23 @@ namespace Clinica
     public partial class FrmGestionTratamientos : Form
     {
         Diagnostico diagnosticoActual;
+        Factura facturaActual;
         ServicioTratamiento servistrat = new ServicioTratamiento();
         ServicioFactura servisFactu = new ServicioFactura();
         Validaciones vali = new Validaciones();
+        public FrmGestionTratamientos()
+        {
+            InitializeComponent();
+        }
         public FrmGestionTratamientos(Diagnostico diagnostico = null)
         {
             InitializeComponent();
             diagnosticoActual = diagnostico;
+        }
+        public FrmGestionTratamientos(Factura factura = null)
+        {
+            InitializeComponent();
+            facturaActual = factura;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -37,7 +47,6 @@ namespace Clinica
         {
             if (this.Parent == null)
             {
-                btnInformacion.Enabled = false;
                 btnActualizarRegistro.Enabled = false;
                 btnEliminar.Enabled = false;
                 btnActualizarTratamiento.Enabled = false;
@@ -75,6 +84,11 @@ namespace Clinica
             }
             abrirInfoFactura();
         }
+        private void btnActualizarTratamiento_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !validarExistenteRelacion()) { return; }
+            AbrirActualizar();
+        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (!Verificar() || !validarExistenteRelacion())
@@ -89,7 +103,14 @@ namespace Clinica
         public void CargarTratamientos()
         {
             var Tratamientos = servistrat.GetAll();
-            if (this.Parent == null) Tratamientos = servistrat.LoadByDiagnostico(diagnosticoActual.Codigo);
+            if (diagnosticoActual != null)
+            {
+                Tratamientos = servistrat.LoadByDiagnostico(diagnosticoActual.Codigo);
+            }
+            else if (facturaActual != null)
+            {
+                Tratamientos = servistrat.LoadByFactura(facturaActual.ID_Factura);
+            }
             DGVTratamiento.DataSource = Tratamientos;
         }
         void Actualizar()
@@ -138,7 +159,7 @@ namespace Clinica
             Tratamiento tratamiento = TratamientoSeleccionado();
             if (vali.ValidarTratamientoAsignado(tratamiento))
             {
-                MessageBox.Show("Error - No es posible eliminar un tratamiento con diagnostico/factura asignada", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error - No es posible alterar un tratamiento con diagnostico/factura asignada", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -151,6 +172,12 @@ namespace Clinica
         {
             Tratamiento tratamiento = TratamientoSeleccionado();
             FrmInfoTratamiento F = new FrmInfoTratamiento(tratamiento);
+            F.Show();
+        }
+        void AbrirActualizar()
+        {
+            Tratamiento tratamiento = TratamientoSeleccionado();
+            FrmActualizarTratamiento F = new FrmActualizarTratamiento(tratamiento);
             F.Show();
         }
 

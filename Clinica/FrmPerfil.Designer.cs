@@ -349,6 +349,7 @@
             this.Name = "FrmPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPerfil";
+            this.Load += new System.EventHandler(this.FrmPerfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IconPerson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);

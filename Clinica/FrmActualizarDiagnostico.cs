@@ -13,44 +13,53 @@ using System.Windows.Forms;
 
 namespace Clinica
 {
-    public partial class FrmRealizarDiagnostico : Form
+    public partial class FrmActualizarDiagnostico : Form
     {
         Persona pacienteActual;
         Cita citaActual;
+        Diagnostico diagnosticoActual;
         ServicioDiagnostico servisDiag = new ServicioDiagnostico();
-        public FrmRealizarDiagnostico(Cita cita, Persona paciente)
+        public FrmActualizarDiagnostico(Cita cita, Persona persona, Diagnostico diagnostico)
         {
             InitializeComponent();
-            pacienteActual = paciente;
             citaActual = cita;
+            pacienteActual = persona;
+            diagnosticoActual = diagnostico;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        private void FrmRealizarDiagnostico_Load(object sender, EventArgs e)
+        private void FrmActualizarDiagnostico_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverPestaña();
+        }
+        private void FrmActualizarDiagnostico_Load(object sender, EventArgs e)
         {
             CargarDatos(citaActual, pacienteActual);
         }
-        private void btnRegistrado_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (!Verificar())
             {
                 return;
             }
-            Registrar();
-        }
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            cerrar();
+            if (Confirmar())
+            {
+                Actualizar();
+            }
         }
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             Minimizar();
         }
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Limpiar();
+            cerrar();
         }
         private void txtDescripcionDiag_Enter(object sender, EventArgs e)
         {
@@ -60,10 +69,6 @@ namespace Clinica
         {
             EventoSalir();
         }
-        private void FrmRealizarDiagnostico_MouseDown(object sender, MouseEventArgs e)
-        {
-            moverMouse();
-        }
         private void CargarDatos(Cita cita, Persona paciente)
         {
             txtCodigo.Text = servisDiag.GenerarCodigo();
@@ -71,34 +76,15 @@ namespace Clinica
             txtCodigoCita.Text = cita.Codigo;
             txtCedula.Text = paciente.Cedula;
         }
-        public void Registrar()
+        void MoverPestaña()
         {
-            Diagnostico diagnostico = new Diagnostico();
-            diagnostico.Codigo = txtCodigo.Text;
-            diagnostico.Fecha_Diagnostico = DateTime.Today.Date;
-            diagnostico.CodigoCita = citaActual.Codigo;
-            diagnostico.CedulaPaciente = pacienteActual.Cedula;
-            diagnostico.Descripcion = txtDescripcionDiag.Text;
-            servisDiag.Add(diagnostico);
-            MessageBox.Show("Proceso de registro exitoso");
-            Limpiar();
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        bool Verificar()
+
+        bool Confirmar()
         {
-            if (txtDescripcionDiag.Text == "DESCRIPCION")
-            {
-                MessageBox.Show("Por favor, rellene/complete los campos vacios");
-                return false;
-            }
-            return true;
-        }
-        void cerrar()
-        {
-            this.Close();
-        }
-        private void Limpiar()
-        {
-            BaseTextbox(txtDescripcionDiag, "DESCRIPCION");
+            return MessageBox.Show("¿Está seguro que desea actualizar dicho registro?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
         }
         void EventoEntrar()
         {
@@ -116,19 +102,38 @@ namespace Clinica
                 txtDescripcionDiag.ForeColor = Color.DimGray;
             }
         }
-        void moverMouse()
+        private void Limpiar()
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        void Minimizar()
-        {
-            this.WindowState = FormWindowState.Minimized;
+            BaseTextbox(txtDescripcionDiag, "DESCRIPCION");
         }
         void BaseTextbox(TextBox textBox, string nombre)
         {
             textBox.Text = nombre;
             textBox.ForeColor = Color.DimGray;
+        }
+        void Minimizar()
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        void cerrar()
+        {
+            this.Close();
+        }
+        bool Verificar()
+        {
+            if (txtDescripcionDiag.Text == "DESCRIPCION")
+            {
+                MessageBox.Show("Por favor, rellene/complete los campos vacios");
+                return false;
+            }
+            return true;
+        }
+        void Actualizar()
+        {
+            string nuevaDescripcion = txtDescripcionDiag.Text;
+            servisDiag.Update(diagnosticoActual, nuevaDescripcion);
+            MessageBox.Show("Proceso de modificación exitoso");
+            Limpiar();
         }
     }
 }

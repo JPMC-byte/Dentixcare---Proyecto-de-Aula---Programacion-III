@@ -56,6 +56,18 @@
     <Compile Include="FrmActualizarCita.Designer.cs">
       <DependentUpon>FrmActualizarCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmActualizarDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmActualizarDiagnostico.Designer.cs">
+      <DependentUpon>FrmActualizarDiagnostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmActualizarTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmActualizarTratamiento.Designer.cs">
+      <DependentUpon>FrmActualizarTratamiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgendarCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +228,12 @@
     </Compile>
     <EmbeddedResource Include="FrmActualizarCita.resx">
       <DependentUpon>FrmActualizarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmActualizarDiagnostico.resx">
+      <DependentUpon>FrmActualizarDiagnostico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmActualizarTratamiento.resx">
+      <DependentUpon>FrmActualizarTratamiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgendarCita.resx">
       <DependentUpon>FrmAgendarCita.cs</DependentUpon>

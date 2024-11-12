@@ -18,6 +18,9 @@ namespace Clinica
         {
             InitializeComponent();
             UsuarioActual = persona;
+        }
+        private void FrmPerfil_Load(object sender, EventArgs e)
+        {
             CargarDatos(UsuarioActual);
         }
         private void CargarDatos(Persona persona)

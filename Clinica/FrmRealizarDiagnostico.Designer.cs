@@ -259,6 +259,7 @@
             this.Name = "FrmRealizarDiagnostico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRealizarDiagnostico";
+            this.Load += new System.EventHandler(this.FrmRealizarDiagnostico_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmRealizarDiagnostico_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -1,5 +1,6 @@
 ﻿using BLL;
 using ENTITY;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace Clinica
     {
         Persona UsuarioActual;
         ServicioDiagnostico servisDiag = new ServicioDiagnostico();
+        ServicioCita servisCita = new ServicioCita();
+        ServicioPaciente servisPaciente = new ServicioPaciente();
         Validaciones vali = new Validaciones();
         public FrmGestionAntecedentes(Persona persona)
         {
@@ -48,6 +51,35 @@ namespace Clinica
         {
             if (!Verificar()) { return; }
             AbrirInformacion();
+        }
+        private void btnAsignarTratamiento_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            AsignarTratamiento();
+        }
+        private void btnTratamientosRelacion_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            verTratamientosRelacionados();
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !validarExistenteRelacion())
+            {
+                return;
+            }
+            if (Confirmar())
+            {
+                CancelarDiagnostico();
+            }
+        }
+        private void btnActualizarDiagnostico_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !validarExistenteRelacion())
+            {
+                return;
+            }
+            actualizarDiagnostico();
         }
         private void btnActualizarRegistro_Click(object sender, EventArgs e)
         {
@@ -177,6 +209,20 @@ namespace Clinica
                 txtCedulaPaciente.Enabled = false;
             }
         }
+        public Paciente PacienteSeleccionado()
+        {
+            var cedulaPaciente = DGVDiagnostico.SelectedRows[0].Cells["CedulaPaciente"].Value.ToString();
+
+            Paciente pacienteSeleccionado = servisPaciente.GetByID(cedulaPaciente);
+            return pacienteSeleccionado;
+        }
+        public Cita CitaSeleccionada()
+        {
+            var codigoCita = DGVDiagnostico.SelectedRows[0].Cells["CodigoCita"].Value.ToString();
+
+            Cita citaSeleccionada = servisCita.GetByID(codigoCita);
+            return citaSeleccionada;
+        }
         public Diagnostico DiagnosticoSeleccionado()
         {
             var codigoDiag = DGVDiagnostico.SelectedRows[0].Cells["Codigo"].Value.ToString();
@@ -209,42 +255,17 @@ namespace Clinica
         {
             this.Close();
         }
-
-        private void btnAsignarTratamiento_Click(object sender, EventArgs e)
-        {
-            if (!Verificar()) { return; }
-            AsignarTratamiento();
-        }
-
         void AsignarTratamiento()
         {
             Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
             FrmSeleccionTratamiento F = new FrmSeleccionTratamiento(diagnosticoSeleccionado);
             F.Show();
         }
-
-        private void btnTratamientosRelacion_Click(object sender, EventArgs e)
-        {
-            if (!Verificar()) { return; }
-            verTratamientosRelacionados();
-        }
         void verTratamientosRelacionados()
         {
             Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
             FrmGestionTratamientos F = new FrmGestionTratamientos(diagnosticoSeleccionado);
             F.Show();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (!Verificar() || !validarExistenteRelacion())
-            {
-                return;
-            }
-            if (Confirmar())
-            {
-                CancelarDiagnostico();
-            }
         }
         void CancelarDiagnostico()
         {
@@ -261,10 +282,18 @@ namespace Clinica
             Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
             if (vali.ValidarExistenteFactura(diagnosticoSeleccionado.Codigo))
             {
-                MessageBox.Show("Error - No es posible eliminar un diagnostico con tratamientos asignados", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error - No es posible alterar un diagnostico con tratamientos asignados", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
+        }
+        void actualizarDiagnostico()
+        {
+            Paciente pacienteSeleccionado = PacienteSeleccionado();
+            Cita citaSeleccionada = CitaSeleccionada();
+            Diagnostico diagnosticoSeleccionado = DiagnosticoSeleccionado();
+            FrmActualizarDiagnostico F = new FrmActualizarDiagnostico(citaSeleccionada, pacienteSeleccionado, diagnosticoSeleccionado);
+            F.Show();
         }
     }
 }

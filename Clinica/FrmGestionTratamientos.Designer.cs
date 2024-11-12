@@ -105,6 +105,7 @@
             this.btnActualizarTratamiento.TabIndex = 103;
             this.btnActualizarTratamiento.Text = "Actualizar tratamiento";
             this.btnActualizarTratamiento.UseVisualStyleBackColor = false;
+            this.btnActualizarTratamiento.Click += new System.EventHandler(this.btnActualizarTratamiento_Click);
             // 
             // btnCerrar
             // 

@@ -46,6 +46,18 @@ namespace BLL
             facturaAModificar.Total += monto;
             return reposFactura.Update(facturaAModificar);
         }
+        public string SumarMontoAPagado(Factura factura, double monto)
+        {
+            Factura facturaAModificar = GetByID(factura.ID_Factura);
+            facturaAModificar.Total_Pagado += monto;
+            return reposFactura.Update(facturaAModificar);
+        }
+        public string SumarCambio(Factura factura, double monto)
+        {
+            Factura facturaAModificar = GetByID(factura.ID_Factura);
+            facturaAModificar.Cambio += monto;
+            return reposFactura.Update(facturaAModificar);
+        }
         public string RestarMonto(Factura factura, double monto)
         {
             Factura facturaAModificar = GetByID(factura.ID_Factura);
