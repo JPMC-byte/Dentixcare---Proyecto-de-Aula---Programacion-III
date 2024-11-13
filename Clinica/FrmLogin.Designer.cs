@@ -118,6 +118,7 @@
             this.txtCedula.TabIndex = 34;
             this.txtCedula.Text = "CEDULA";
             this.txtCedula.Enter += new System.EventHandler(this.txtCedula_Enter);
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // lineShape4

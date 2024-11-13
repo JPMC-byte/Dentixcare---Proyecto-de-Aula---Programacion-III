@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ENTITY;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -17,16 +18,27 @@ namespace BLL
         ServicioConsultorio servicioConsultorio = new ServicioConsultorio();
         ServicioTratamiento servicioTratamiento = new ServicioTratamiento();
         public Validaciones() { }
-        public bool ValidarLetras(string Texto)
+        public bool ValidarTeclasControl(KeyPressEventArgs e)
         {
-            string Patron = @"^[a-zA-ZñÑ\s]+$";
-            return Regex.IsMatch(Texto, Patron);
+            if (char.IsControl(e.KeyChar))
+            {
+                return true;
+            }
+            return false;
         }
-
-        public bool ValidarNumeros(string Texto)
+        public bool ValidarLetras(KeyPressEventArgs e)
         {
-            string Patron = @"^[0-9]+$";
-            return Regex.IsMatch(Texto, Patron);
+            if (ValidarTeclasControl(e)) return true;
+            string Patron = @"^[a-zA-ZñÑ\s]$";
+            bool esValido = Regex.IsMatch(e.KeyChar.ToString(), Patron);
+            return esValido;
+        }
+        public bool ValidarNumeros(KeyPressEventArgs e)
+        {
+            if (ValidarTeclasControl(e)) return true;
+            string Patron = @"^[0-9]$";
+            bool esValido = Regex.IsMatch(e.KeyChar.ToString(), Patron);
+            return esValido;
         }
         public bool ValidarExistentePaciente(string Texto)
         {

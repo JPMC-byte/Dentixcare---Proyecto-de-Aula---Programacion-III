@@ -91,6 +91,7 @@
             this.txtMonto.TabIndex = 122;
             this.txtMonto.Text = "MONTO";
             this.txtMonto.Enter += new System.EventHandler(this.txtMonto_Enter);
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             this.txtMonto.Leave += new System.EventHandler(this.txtMonto_Leave);
             // 
             // txtFecha

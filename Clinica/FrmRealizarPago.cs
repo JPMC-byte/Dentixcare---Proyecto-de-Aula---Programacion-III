@@ -86,11 +86,10 @@ namespace GUI
             }
             return true;
         }
-        bool ValidarNumeros()
+        bool ValidarNumeros(KeyPressEventArgs e)
         {
-            if (!vali.ValidarNumeros(txtMonto.Text) )
+            if (!vali.ValidarNumeros(e))
             {
-                MessageBox.Show("Error - El monto solo puede contener numeros", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -107,7 +106,7 @@ namespace GUI
 
         private void btnRealizarPago_Click(object sender, EventArgs e)
         {
-            if (!Verificar() ||  !ValidarNumeros() || !validarMonto() || !validarMetodoPago() ) { return; }
+            if (!Verificar() || !validarMonto() || !validarMetodoPago() ) { return; }
             if (Confirmar()) 
             {
                 realizarPago();
@@ -159,5 +158,6 @@ namespace GUI
         private void txtMonto_Enter(object sender, EventArgs e) { EventoEntrarTextbox(txtMonto, "MONTO"); }
         private void txtMonto_Leave(object sender, EventArgs e) { EventoDejarTextbox(txtMonto, "MONTO"); }
 
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarNumeros(e)) e.Handled = true; }
     }
 }

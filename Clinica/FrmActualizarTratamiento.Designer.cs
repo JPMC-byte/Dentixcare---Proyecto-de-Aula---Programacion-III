@@ -142,6 +142,7 @@
             this.txtCosto.TabIndex = 78;
             this.txtCosto.Text = "COSTO";
             this.txtCosto.Enter += new System.EventHandler(this.txtCosto_Enter);
+            this.txtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCosto_KeyPress);
             this.txtCosto.Leave += new System.EventHandler(this.txtCosto_Leave);
             // 
             // txtDuracion

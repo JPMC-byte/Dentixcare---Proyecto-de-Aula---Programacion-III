@@ -31,7 +31,7 @@ namespace GUI
             txtSegundoApellido.Text = persona.SegundoNombre;
             txtTelefono.Text = persona.Telefono;
             txtCedula.Text = persona.Cedula;
-            txtEdad.Text = persona.CalcularEdad(persona.Fecha_De_Nacimiento).ToString();
+            txtEdad.Text = persona.CalcularEdad(persona.Fecha_De_Nacimiento);
             txtIDConsultorio.Text = persona.CodigoConsultorio;
             txtFechaNacimiento.Text = persona.Fecha_De_Nacimiento.ToString("dd/MM/yyyy");
 

@@ -71,6 +71,7 @@
             this.txtSegundoNombre.TabIndex = 18;
             this.txtSegundoNombre.Text = "SEGUNDO NOMBRE";
             this.txtSegundoNombre.Enter += new System.EventHandler(this.txtSegundoNombre_Enter);
+            this.txtSegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombre_KeyPress);
             this.txtSegundoNombre.Leave += new System.EventHandler(this.txtSegundoNombre_Leave);
             // 
             // txtPrimerApellido
@@ -84,6 +85,7 @@
             this.txtPrimerApellido.TabIndex = 20;
             this.txtPrimerApellido.Text = "PRIMER APELLIDO";
             this.txtPrimerApellido.Enter += new System.EventHandler(this.txtPrimerApellido_Enter);
+            this.txtPrimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerApellido_KeyPress);
             this.txtPrimerApellido.Leave += new System.EventHandler(this.txtPrimerApellido_Leave);
             // 
             // txtCedula
@@ -97,6 +99,7 @@
             this.txtCedula.TabIndex = 22;
             this.txtCedula.Text = "CEDULA";
             this.txtCedula.Enter += new System.EventHandler(this.txtCedula_Enter);
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // btnRegistrado
@@ -148,6 +151,7 @@
             this.txtTelefono.TabIndex = 30;
             this.txtTelefono.Text = "TELEFONO";
             this.txtTelefono.Enter += new System.EventHandler(this.txtTelefono_Enter);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             this.txtTelefono.Leave += new System.EventHandler(this.txtTelefono_Leave);
             // 
             // panel1
@@ -344,6 +348,7 @@
             this.txtPrimerNombre.TabIndex = 37;
             this.txtPrimerNombre.Text = "PRIMER NOMBRE";
             this.txtPrimerNombre.Enter += new System.EventHandler(this.txtPrimerNombre_Enter);
+            this.txtPrimerNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombre_KeyPress);
             this.txtPrimerNombre.Leave += new System.EventHandler(this.txtPrimerNombre_Leave);
             // 
             // txtSegundoApellido
@@ -357,6 +362,7 @@
             this.txtSegundoApellido.TabIndex = 38;
             this.txtSegundoApellido.Text = "SEGUNDO APELLIDO";
             this.txtSegundoApellido.Enter += new System.EventHandler(this.txtSegundoApellido_Enter);
+            this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellido_KeyPress);
             this.txtSegundoApellido.Leave += new System.EventHandler(this.txtSegundoApellido_Leave);
             // 
             // FrmRegistrar

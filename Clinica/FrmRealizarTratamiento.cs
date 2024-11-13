@@ -26,7 +26,7 @@ namespace GUI
         }
         private void btnRegistrado_Click(object sender, EventArgs e)
         {
-            if (!Verificar() ||!ValidarNumeros() || !validarMonto())
+            if (!Verificar() || !validarMonto())
             {
                 return;
             }
@@ -54,11 +54,10 @@ namespace GUI
             }
             return true;
         }
-        bool ValidarNumeros()
+        bool ValidarNumeros(KeyPressEventArgs e)
         {
-            if (!vali.ValidarNumeros(txtCosto.Text))
+            if (!vali.ValidarNumeros(e))
             {
-                MessageBox.Show("El costo solo puede incluir numeros");
                 return false;
             }
             return true;
@@ -114,5 +113,7 @@ namespace GUI
         private void txtDuracion_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtDuracion, "DURACION");
         private void txtDescripcion_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtDescripcion, "DESCRIPCION");
         private void txtDescripcion_Leave(object sender, EventArgs e) => EventoDejarTextbox(txtDescripcion, "DESCRIPCION");
+
+        private void txtCosto_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarNumeros(e)) e.Handled = true; }
     }
 }

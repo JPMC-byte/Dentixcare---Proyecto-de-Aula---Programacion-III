@@ -49,7 +49,7 @@ namespace GUI
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (!Verificar() || !validarNumeros() || !validarMonto() )
+            if (!Verificar() || !validarMonto() )
             {
                 return;
             }
@@ -97,11 +97,10 @@ namespace GUI
             }
             return true;
         }
-        bool validarNumeros()
+        bool ValidarNumeros(KeyPressEventArgs e)
         {
-            if (!vali.ValidarNumeros(txtCosto.Text))
+            if (!vali.ValidarNumeros(e))
             {
-                MessageBox.Show("Error - El monto solo puede contener numeros", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -152,5 +151,6 @@ namespace GUI
         private void txtDescripcion_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtDescripcion, "DESCRIPCION");
         private void txtDescripcion_Leave(object sender, EventArgs e) => EventoSalirTextbox(txtDescripcion, "DESCRIPCION");
 
+        private void txtCosto_KeyPress(object sender, KeyPressEventArgs e) { if(!ValidarNumeros(e)) e.Handled = true; }
     }
 }

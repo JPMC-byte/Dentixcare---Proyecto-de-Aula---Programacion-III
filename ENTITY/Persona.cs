@@ -31,12 +31,19 @@ namespace ENTITY
             Contrasena = contrasena;
         }
 
-        public int CalcularEdad(DateTime Fecha_Nacimiento)
+        public string CalcularEdad(DateTime Fecha_Nacimiento)
         {
             DateTime Hoy = DateTime.Today;
-            int edad = Hoy.Year - Fecha_Nacimiento.Year;
-            if (Fecha_Nacimiento.Date > Hoy.AddYears(-edad)) edad--;
-            return edad;
+            int años = Hoy.Year - Fecha_Nacimiento.Year;
+            int meses = Hoy.Month - Fecha_Nacimiento.Month;
+
+            if (Fecha_Nacimiento.Date > Hoy.AddYears(-años))
+            {
+                años--;
+                meses += 12;
+            }
+
+            return $"{años} Años, {meses} Meses";
         }
 
         public override string ToString()

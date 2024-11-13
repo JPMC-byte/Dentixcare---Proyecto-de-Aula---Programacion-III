@@ -33,7 +33,7 @@ namespace GUI
         }
         private void Ingreso()
         {
-            if (!Verificar() || !Validar())
+            if (!Verificar())
             {
                 return;
             }
@@ -61,11 +61,10 @@ namespace GUI
             }
             return true;
         }
-        bool Validar()
+        bool Validar(KeyPressEventArgs e)
         {
-            if (!vali.ValidarNumeros(txtCedula.Text))
+            if (!vali.ValidarLetras(e))
             {
-                MessageBox.Show("La cédula solo pueden contener números.");
                 return false;
             }
             return true;
@@ -153,5 +152,6 @@ namespace GUI
                 txtContraseña.PasswordChar = '*';
             }
         }
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e) { if (!Validar(e)) e.Handled = true; }
     }
 }

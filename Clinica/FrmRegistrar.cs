@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
 using ENTITY;
@@ -36,7 +30,7 @@ namespace GUI
 
         private void Registrar()
         {
-            if (!Verificar() || !ValidarLetras() || !ValidarNumeros() || !ValidarExistente() || !VerificarCamposOpcionales())
+            if (!Verificar() || !ValidarExistente() || !VerificarCamposOpcionales())
             {
                 return;
             }
@@ -94,22 +88,18 @@ namespace GUI
             }
             return true;
         }
-        bool ValidarLetras()
+        bool ValidarLetras(KeyPressEventArgs e)
         {
-            if (!vali.ValidarLetras(txtPrimerNombre.Text) || !vali.ValidarLetras(txtSegundoNombre.Text) ||
-                !vali.ValidarLetras(txtPrimerApellido.Text) || !vali.ValidarLetras(txtSegundoApellido.Text))
+            if (!vali.ValidarLetras(e))
             {
-                MessageBox.Show("Los nombres y apellidos solo pueden contener letras.");
                 return false;
             }
             return true;
         }
-
-        bool ValidarNumeros()
+        bool ValidarNumeros(KeyPressEventArgs e)
         {
-            if (!vali.ValidarNumeros(txtTelefono.Text) || !vali.ValidarNumeros(txtCedula.Text))
+            if (!vali.ValidarNumeros(e))
             {
-                MessageBox.Show("El teléfono y la cédula solo pueden contener números.");
                 return false;
             }
             return true;
@@ -204,5 +194,12 @@ namespace GUI
         {
             Limpiar();
         }
+
+        private void txtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarLetras(e)) e.Handled = true; }
+        private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarLetras(e)) e.Handled = true; }
+        private void txtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarLetras(e)) e.Handled = true; }
+        private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarLetras(e)) e.Handled = true; }
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarNumeros(e)) e.Handled = true; }
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e) { if (!ValidarNumeros(e)) e.Handled = true; }
     }
 }
