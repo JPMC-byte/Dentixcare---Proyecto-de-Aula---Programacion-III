@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Clinica
+namespace GUI
 {
     public partial class FrmGestionCita : Form
     {

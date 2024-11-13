@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmPerfil
     {
@@ -249,7 +249,7 @@
             // 
             this.IconPerson.BackColor = System.Drawing.Color.Transparent;
             this.IconPerson.Enabled = false;
-            this.IconPerson.Image = global::Clinica.Properties.Resources.IconPerson;
+            this.IconPerson.Image = global::GUI.Properties.Resources.IconPerson;
             this.IconPerson.Location = new System.Drawing.Point(19, 149);
             this.IconPerson.Name = "IconPerson";
             this.IconPerson.Size = new System.Drawing.Size(251, 402);
@@ -260,7 +260,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Image = global::GUI.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(745, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);

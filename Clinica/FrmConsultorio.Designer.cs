@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmConsultorio
     {
@@ -67,7 +67,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconConsultorio;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.IconConsultorio;
             this.pictureBox1.Location = new System.Drawing.Point(491, 146);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(255, 410);
@@ -78,7 +78,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Image = global::GUI.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(745, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);

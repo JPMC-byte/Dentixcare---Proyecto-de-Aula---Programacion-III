@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clinica
+namespace GUI
 {
     public partial class FrmLogin : Form
     {

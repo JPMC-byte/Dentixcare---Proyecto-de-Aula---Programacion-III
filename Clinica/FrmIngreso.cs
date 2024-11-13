@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace Clinica
+namespace GUI
 {
    
     public partial class FrmIngreso : Form

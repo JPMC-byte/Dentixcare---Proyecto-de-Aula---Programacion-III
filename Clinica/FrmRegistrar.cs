@@ -12,7 +12,7 @@ using ENTITY;
 using BLL;
 using System.Runtime.InteropServices;
 
-namespace Clinica
+namespace GUI
 {
     public partial class FrmRegistrar : Form
     {

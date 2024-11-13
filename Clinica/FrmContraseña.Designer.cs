@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmContraseña
     {
@@ -76,7 +76,7 @@
             // btnVolver
             // 
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.Image = global::Clinica.Properties.Resources.Volver;
+            this.btnVolver.Image = global::GUI.Properties.Resources.Volver;
             this.btnVolver.Location = new System.Drawing.Point(269, 184);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(20, 20);
@@ -88,7 +88,7 @@
             // BtnMinimizar
             // 
             this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
+            this.BtnMinimizar.Image = global::GUI.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(243, 184);
             this.BtnMinimizar.Name = "BtnMinimizar";
             this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);

@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmActualizarCita
     {
@@ -67,7 +67,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconPapeles;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.IconPapeles;
             this.pictureBox1.Location = new System.Drawing.Point(495, 134);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(255, 345);
@@ -166,7 +166,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Image = global::GUI.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(745, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);

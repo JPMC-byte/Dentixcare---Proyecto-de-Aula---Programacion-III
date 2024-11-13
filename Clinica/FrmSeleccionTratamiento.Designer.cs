@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmSeleccionTratamiento
     {
@@ -58,7 +58,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Image = global::GUI.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(745, 16);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);

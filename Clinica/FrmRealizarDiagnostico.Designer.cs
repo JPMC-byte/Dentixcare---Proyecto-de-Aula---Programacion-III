@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmRealizarDiagnostico
     {
@@ -202,7 +202,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Image = global::GUI.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(745, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);
@@ -213,7 +213,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDiagnostico;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.IconDiagnostico;
             this.pictureBox1.Location = new System.Drawing.Point(480, 168);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(285, 345);
@@ -224,7 +224,7 @@
             // BtnMinimizar
             // 
             this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
+            this.BtnMinimizar.Image = global::GUI.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(719, 12);
             this.BtnMinimizar.Name = "BtnMinimizar";
             this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);

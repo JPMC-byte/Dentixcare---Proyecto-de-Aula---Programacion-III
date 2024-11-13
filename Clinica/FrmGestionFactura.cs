@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clinica
+namespace GUI
 {
     public partial class FrmGestionFactura : Form
     {
@@ -80,6 +80,16 @@ namespace Clinica
             Factura factura = FacturaSeleccionada();
             FrmGestionTratamientos F = new FrmGestionTratamientos(factura);
             F.Show();
+        }
+
+        private void btnRealizarPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void AbrirRealizarPago()
+        {
+
         }
     }
 }

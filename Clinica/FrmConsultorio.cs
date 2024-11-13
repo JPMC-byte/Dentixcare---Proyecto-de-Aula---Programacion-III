@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ENTITY;
 
-namespace Clinica
+namespace GUI
 {
     public partial class FrmConsultorio : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmPaciente
     {
@@ -270,7 +270,7 @@
             // BtnMinimizar
             // 
             this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
+            this.BtnMinimizar.Image = global::GUI.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(12, 12);
             this.BtnMinimizar.Name = "BtnMinimizar";
             this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);
@@ -282,7 +282,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconDentixcare;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.IconDentixcare;
             this.pictureBox1.Location = new System.Drawing.Point(50, 61);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(139, 135);
@@ -339,7 +339,7 @@
             // PCFondo
             // 
             this.PCFondo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PCFondo.Image = global::Clinica.Properties.Resources.Fondo;
+            this.PCFondo.Image = global::GUI.Properties.Resources.Fondo;
             this.PCFondo.Location = new System.Drawing.Point(0, 0);
             this.PCFondo.Name = "PCFondo";
             this.PCFondo.Size = new System.Drawing.Size(777, 699);

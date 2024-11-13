@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmInfoFactura
     {
@@ -185,7 +185,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Clinica.Properties.Resources.IconDolar;
+            this.pictureBox2.Image = global::GUI.Properties.Resources.IconDolar;
             this.pictureBox2.Location = new System.Drawing.Point(538, 455);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 23);
@@ -195,7 +195,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Clinica.Properties.Resources.IconFactura;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.IconFactura;
             this.pictureBox1.Location = new System.Drawing.Point(13, 174);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(285, 345);
@@ -206,7 +206,7 @@
             // BtnMinimizar
             // 
             this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnMinimizar.Image = global::Clinica.Properties.Resources.Minimizar;
+            this.BtnMinimizar.Image = global::GUI.Properties.Resources.Minimizar;
             this.BtnMinimizar.Location = new System.Drawing.Point(721, 15);
             this.BtnMinimizar.Name = "BtnMinimizar";
             this.BtnMinimizar.Size = new System.Drawing.Size(20, 20);
@@ -218,7 +218,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
+            this.btnCerrar.Image = global::GUI.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(747, 15);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);
@@ -252,7 +252,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Clinica.Properties.Resources.IconDolar;
+            this.pictureBox3.Image = global::GUI.Properties.Resources.IconDolar;
             this.pictureBox3.Location = new System.Drawing.Point(538, 314);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 23);
@@ -262,7 +262,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Clinica.Properties.Resources.IconDolar;
+            this.pictureBox4.Image = global::GUI.Properties.Resources.IconDolar;
             this.pictureBox4.Location = new System.Drawing.Point(275, 452);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(27, 23);

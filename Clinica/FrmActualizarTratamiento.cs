@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clinica
+namespace GUI
 {
     public partial class FrmActualizarTratamiento : Form
     {
@@ -94,6 +94,10 @@ namespace Clinica
         {
             this.Close();
         }
+        void Minimizar()
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
         private void Limpiar()
         {
             BaseTextbox(txtDuracion, "DURACION");
@@ -127,9 +131,6 @@ namespace Clinica
         private void txtDuracion_Leave(object sender, EventArgs e) => EventoSalirTextbox(txtDuracion, "DURACION");
         private void txtDescripcion_Enter(object sender, EventArgs e) => EventoEntrarTextbox(txtDescripcion, "DESCRIPCION");
         private void txtDescripcion_Leave(object sender, EventArgs e) => EventoSalirTextbox(txtDescripcion, "DESCRIPCION");
-        void Minimizar()
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+
     }
 }

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2B08358B-A408-436D-9D3B-B80E0D01D942}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Clinica</RootNamespace>
+    <RootNamespace>GUI</RootNamespace>
     <AssemblyName>Proyecto de Aula - Programacion III</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -194,6 +194,12 @@
     <Compile Include="FrmRealizarDiagnostico.Designer.cs">
       <DependentUpon>FrmRealizarDiagnostico.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRealizarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRealizarPago.Designer.cs">
+      <DependentUpon>FrmRealizarPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRealizarTratamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     <EmbeddedResource Include="FrmRealizarDiagnostico.resx">
       <DependentUpon>FrmRealizarDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRealizarPago.resx">
+      <DependentUpon>FrmRealizarPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRealizarTratamiento.resx">
       <DependentUpon>FrmRealizarTratamiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +394,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\IconFactura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\IconPago.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

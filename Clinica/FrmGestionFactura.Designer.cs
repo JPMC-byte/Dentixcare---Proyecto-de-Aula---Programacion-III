@@ -1,4 +1,4 @@
-﻿namespace Clinica
+﻿namespace GUI
 {
     partial class FrmGestionFactura
     {
@@ -37,8 +37,8 @@
             this.btnTratamientosRelacionados = new System.Windows.Forms.Button();
             this.LBTitulo = new System.Windows.Forms.Label();
             this.DGVFacturas = new System.Windows.Forms.DataGridView();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnVerPagos = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +89,7 @@
             this.btnRealizarPago.TabIndex = 118;
             this.btnRealizarPago.Text = "Realizar pago";
             this.btnRealizarPago.UseVisualStyleBackColor = false;
+            this.btnRealizarPago.Click += new System.EventHandler(this.btnRealizarPago_Click);
             // 
             // btnTratamientosRelacionados
             // 
@@ -159,18 +160,6 @@
             this.DGVFacturas.Size = new System.Drawing.Size(709, 535);
             this.DGVFacturas.TabIndex = 115;
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::Clinica.Properties.Resources.Cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(745, 22);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 117;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // btnVerPagos
             // 
             this.btnVerPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -185,6 +174,18 @@
             this.btnVerPagos.TabIndex = 122;
             this.btnVerPagos.Text = "Ver pagos relacionados";
             this.btnVerPagos.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::GUI.Properties.Resources.Cerrar;
+            this.btnCerrar.Location = new System.Drawing.Point(745, 22);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 117;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmGestionFactura
             // 
