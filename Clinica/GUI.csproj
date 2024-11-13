@@ -416,5 +416,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\IconPago.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\IconQuestion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

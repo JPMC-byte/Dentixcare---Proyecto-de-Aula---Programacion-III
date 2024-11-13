@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -25,11 +26,30 @@ namespace GUI
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-
         private void btnResgistrar_Click(object sender, EventArgs e)
         {
             EntrarAlRegistro();
         }
+        private void btnIngreso_Click(object sender, EventArgs e)
+        {
+            Ingreso();
+        }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (cerrarPrograma())
+            {
+                cerrar();
+            }
+        }
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            minimizar();
+        }
+        private void IconDudas_Click(object sender, EventArgs e)
+        {
+            abrirManualUsuario();
+        }
+
 
         private void EntrarAlRegistro()
         {
@@ -37,25 +57,11 @@ namespace GUI
             F.Show();
             this.Hide();
         }
-
-        private void btnIngreso_Click(object sender, EventArgs e)
-        {
-            Ingreso(); 
-        }
-
         private void Ingreso()
         {
             var F = new FrmInicioSesion();
             F.Show();
             this.Hide();
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            if (cerrarPrograma())
-            {
-                cerrar();
-            }
         }
         bool cerrarPrograma()
         {
@@ -68,10 +74,6 @@ namespace GUI
             Application.Exit();
         }
 
-        private void BtnMinimizar_Click(object sender, EventArgs e)
-        {
-            minimizar();
-        }
         void minimizar()
         {
             this.WindowState = FormWindowState.Minimized;
@@ -90,6 +92,11 @@ namespace GUI
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        void abrirManualUsuario()
+        {
+            string url = "https://drive.google.com/file/d/1QDFioJMIvTSw3bOG08TABiwbdn1fU-Fs/view?usp=drive_link";
+            Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true });
         }
     }
 }
