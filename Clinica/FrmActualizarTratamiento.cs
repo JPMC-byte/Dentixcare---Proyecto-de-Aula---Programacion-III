@@ -17,6 +17,7 @@ namespace GUI
     {
         Tratamiento tratamientoActual;
         ServicioTratamiento servisTrat = new ServicioTratamiento();
+        Validaciones vali = new Validaciones();
         public FrmActualizarTratamiento(Tratamiento tratamiento)
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace GUI
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (!Verificar())
+            if (!Verificar() || !validarNumeros() || !validarMonto() )
             {
                 return;
             }
@@ -82,6 +83,25 @@ namespace GUI
             if (txtDuracion.Text == "DURACION" || txtCosto.Text == "COSTO" || txtDescripcion.Text == "DESCRIPCION")
             {
                 MessageBox.Show("Por favor, rellene/complete los campos vacios");
+                return false;
+            }
+            return true;
+        }
+        bool validarMonto()
+        {
+            double monto = Convert.ToDouble(txtCosto.Text);
+            if (!vali.ValidarMonto(monto))
+            {
+                MessageBox.Show("Error - El monto asignado no es valido", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        bool validarNumeros()
+        {
+            if (!vali.ValidarNumeros(txtCosto.Text))
+            {
+                MessageBox.Show("Error - El monto solo puede contener numeros", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

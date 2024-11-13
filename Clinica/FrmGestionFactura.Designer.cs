@@ -174,6 +174,7 @@
             this.btnVerPagos.TabIndex = 122;
             this.btnVerPagos.Text = "Ver pagos relacionados";
             this.btnVerPagos.UseVisualStyleBackColor = false;
+            this.btnVerPagos.Click += new System.EventHandler(this.btnVerPagos_Click);
             // 
             // btnCerrar
             // 

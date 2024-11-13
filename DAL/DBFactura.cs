@@ -15,9 +15,10 @@ namespace DAL
             {
                 string query = "INSERT INTO FACTURA (ID_FACTURA, FECHA_EMISION, ESTADO, MONTO_TOTAL, TOTAL_PAGADO, CAMBIO) " +
                                "VALUES (:ID_Factura, TO_DATE(:Fecha_Emision, 'DD-MM-YYYY'), :Estado, :Total, :Total_Pagado, :Cambio)";
-
+                OracleTransaction transaction = null;
                 AbrirConexion();
 
+                transaction = conexion.BeginTransaction();
                 using (OracleCommand command = new OracleCommand(query, conexion))
                 {
                     command.Parameters.Add(new OracleParameter("ID_Factura", factura.ID_Factura));
@@ -29,7 +30,7 @@ namespace DAL
 
                     command.ExecuteNonQuery();
                 }
-
+                transaction.Commit();
                 return "Factura guardada correctamente.";
             }
             catch (Exception ex)
@@ -127,9 +128,10 @@ namespace DAL
             {
                 string query = "UPDATE FACTURA SET FECHA_EMISION = TO_DATE(:Fecha_Emision, 'DD-MM-YYYY'), ESTADO = :Estado, MONTO_TOTAL = :Total, " +
                                "TOTAL_PAGADO = :Total_Pagado, CAMBIO = :Cambio WHERE ID_FACTURA = :ID_Factura";
-
+                OracleTransaction transaction = null;
                 AbrirConexion();
 
+                transaction = conexion.BeginTransaction();
                 using (OracleCommand command = new OracleCommand(query, conexion))
                 {
                     command.Parameters.Add(new OracleParameter("Fecha_Emision", factura.Fecha_Emision.ToString("dd-MM-yyyy")));
@@ -141,7 +143,7 @@ namespace DAL
 
                     command.ExecuteNonQuery();
                 }
-
+                transaction.Commit();
                 return "Factura actualizada correctamente.";
             }
             catch (Exception ex)

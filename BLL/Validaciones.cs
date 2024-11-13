@@ -151,10 +151,33 @@ namespace BLL
             }
             return true;
         }
-
         public bool ValidarTratamientoAsignado(Tratamiento tratamiento)
         {
             if (tratamiento.CodigoDiagnostico == "" || tratamiento.CodigoFactura == "")
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarMonto(double monto)
+        {
+            if(monto <= 0)
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarFacturaPagada(Factura factura)
+        {
+            if (factura.Total_Pagado >= factura.Total || factura.Estado == "Finalizada")
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool ValidarMetodoPago(string texto)
+        {
+            if(texto == "" || texto == "N/A")
             {
                 return false;
             }

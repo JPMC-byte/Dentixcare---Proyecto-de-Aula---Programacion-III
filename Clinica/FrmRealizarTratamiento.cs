@@ -26,7 +26,7 @@ namespace GUI
         }
         private void btnRegistrado_Click(object sender, EventArgs e)
         {
-            if (!Verificar() ||!ValidarNumeros())
+            if (!Verificar() ||!ValidarNumeros() || !validarMonto())
             {
                 return;
             }
@@ -59,6 +59,16 @@ namespace GUI
             if (!vali.ValidarNumeros(txtCosto.Text))
             {
                 MessageBox.Show("El costo solo puede incluir numeros");
+                return false;
+            }
+            return true;
+        }
+        bool validarMonto()
+        {
+            double monto = Convert.ToDouble(txtCosto.Text);
+            if (!vali.ValidarMonto(monto))
+            {
+                MessageBox.Show("Error - El monto asignado no es valido", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

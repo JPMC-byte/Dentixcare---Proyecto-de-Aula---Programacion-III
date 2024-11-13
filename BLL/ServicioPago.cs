@@ -23,12 +23,10 @@ namespace BLL
         {
             return reposPago.GetAll();
         }
-
         public Pago GetByID(string id)
         {
             return reposPago.GetById(id);
         }
-
         public List<Pago> LoadByFactura(string codigoFactura) 
         {
             return reposPago.LoadByFactura(codigoFactura);

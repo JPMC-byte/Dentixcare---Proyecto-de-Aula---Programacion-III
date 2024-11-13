@@ -47,7 +47,7 @@ namespace DAL
                 ID_Pago = Convert.ToString(reader["ID_PAGO"]),
                 Fecha_Pago = Convert.ToDateTime(reader["FECHA_PAGO"]),
                 Metodo_Pago = Convert.ToString(reader["METODO_PAGO"]),
-                Monto = Convert.ToDouble(reader["MONTO_TOTAL"]),
+                Monto = Convert.ToDouble(reader["MONTO"]),
                 CodigoFactura = Convert.ToString(reader["ID_FACTURA"]),
                 CodigoPaciente = Convert.ToString(reader["CEDULA_P"])
             };

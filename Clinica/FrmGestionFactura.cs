@@ -14,10 +14,13 @@ namespace GUI
 {
     public partial class FrmGestionFactura : Form
     {
+        Persona usuarioActual = new Paciente();
         ServicioFactura servisFactu = new ServicioFactura();
-        public FrmGestionFactura()
+        Validaciones vali = new Validaciones();
+        public FrmGestionFactura(Persona persona)
         {
             InitializeComponent();
+            usuarioActual = persona;
         }
         private void FrmGestionFactura_Load(object sender, EventArgs e)
         {
@@ -40,6 +43,19 @@ namespace GUI
         {
             if (!Verificar()) { return; }
             verTratamientosRelacionados();
+        }
+        private void btnVerPagos_Click(object sender, EventArgs e)
+        {
+            if (!Verificar()) { return; }
+            abrirGestionPagos();
+        }
+        private void btnRealizarPago_Click(object sender, EventArgs e)
+        {
+            if (!Verificar() || !validarFacturaPagada())
+            {
+                return;
+            }
+            AbrirRealizarPago();
         }
         void cerrar()
         {
@@ -81,15 +97,27 @@ namespace GUI
             FrmGestionTratamientos F = new FrmGestionTratamientos(factura);
             F.Show();
         }
-
-        private void btnRealizarPago_Click(object sender, EventArgs e)
+        bool validarFacturaPagada()
         {
-
+            Factura factura = FacturaSeleccionada();
+            if (vali.ValidarFacturaPagada(factura))
+            {
+                MessageBox.Show("Error - Dicha factura ya ha sido pagada", "Acción no realizada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
-
         void AbrirRealizarPago()
         {
-
+            Factura facturaSeleccionada = FacturaSeleccionada();
+            FrmRealizarPago F = new FrmRealizarPago(facturaSeleccionada, usuarioActual);
+            F.Show();
+        }
+        void abrirGestionPagos()
+        {
+            Factura factura = FacturaSeleccionada();
+            FrmGestionPago F = new FrmGestionPago(factura);
+            F.Show();
         }
     }
 }

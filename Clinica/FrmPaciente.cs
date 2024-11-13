@@ -90,7 +90,7 @@ namespace GUI
         }
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmGestionFactura());
+            AbrirFormulario(new FrmGestionFactura(UsuarioActual));
             OcultarSubmenu();
         }
         private void btnPerfil_Click(object sender, EventArgs e)
@@ -113,12 +113,6 @@ namespace GUI
         private void btnRegistroCitas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmRegistroCita(UsuarioActual));
-            OcultarSubmenu();
-        }
-        private void btnCancelarCita_Click(object sender, EventArgs e)
-        {
-
-
             OcultarSubmenu();
         }
         private void btnDatosConsultorio_Click(object sender, EventArgs e)

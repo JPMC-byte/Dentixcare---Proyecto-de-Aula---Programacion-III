@@ -52,10 +52,10 @@ namespace BLL
             facturaAModificar.Total_Pagado += monto;
             return reposFactura.Update(facturaAModificar);
         }
-        public string SumarCambio(Factura factura, double monto)
+        public string SumarCambio(Factura factura)
         {
             Factura facturaAModificar = GetByID(factura.ID_Factura);
-            facturaAModificar.Cambio += monto;
+            facturaAModificar.Cambio = facturaAModificar.Total_Pagado - facturaAModificar.Total;
             return reposFactura.Update(facturaAModificar);
         }
         public string RestarMonto(Factura factura, double monto)

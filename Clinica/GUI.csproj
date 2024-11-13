@@ -116,6 +116,12 @@
     <Compile Include="FrmGestionPaciente.Designer.cs">
       <DependentUpon>FrmGestionPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionPago.Designer.cs">
+      <DependentUpon>FrmGestionPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionTratamientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,12 @@
     </Compile>
     <Compile Include="FrmMedico.Designer.cs">
       <DependentUpon>FrmMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPagoRelacionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPagoRelacionado.Designer.cs">
+      <DependentUpon>FrmPagoRelacionado.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPerfil.cs">
       <SubType>Form</SubType>
@@ -265,6 +277,9 @@
     <EmbeddedResource Include="FrmGestionPaciente.resx">
       <DependentUpon>FrmGestionPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionPago.resx">
+      <DependentUpon>FrmGestionPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionTratamientos.resx">
       <DependentUpon>FrmGestionTratamientos.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPaciente.resx">
       <DependentUpon>FrmPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPagoRelacionado.resx">
+      <DependentUpon>FrmPagoRelacionado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPerfil.resx">
       <DependentUpon>FrmPerfil.cs</DependentUpon>
