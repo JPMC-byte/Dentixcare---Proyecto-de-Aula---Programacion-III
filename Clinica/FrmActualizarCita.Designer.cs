@@ -192,12 +192,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRazonCita);
             this.Controls.Add(this.label2);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmActualizarCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmActualizarCita";
             this.Load += new System.EventHandler(this.FrmActualizarCita_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmActualizarCita_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);

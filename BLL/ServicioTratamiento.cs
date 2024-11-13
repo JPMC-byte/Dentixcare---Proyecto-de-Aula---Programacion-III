@@ -73,7 +73,7 @@ namespace BLL
             {
                 Tratamiento ultimoTratamiento = tratamientosExistentes.Last();
                 int ultimoCodigoNumerico = int.Parse(ultimoTratamiento.ID_Tratamiento.Substring(1));
-                nuevoCodigo = "T" + (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
+                nuevoCodigo = 'T' + (ultimoCodigoNumerico + 1).ToString().PadLeft(3, '0');
             }
             return nuevoCodigo;
         }

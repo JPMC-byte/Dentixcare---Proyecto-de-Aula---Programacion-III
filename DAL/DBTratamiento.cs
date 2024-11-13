@@ -9,7 +9,6 @@ namespace DAL
     public class DBTratamiento : ConexionOracle
     {
         private List<Tratamiento> listaTratamientos;
-
         public DBTratamiento() { }
 
         public string SaveData(Tratamiento tratamiento)
@@ -28,7 +27,7 @@ namespace DAL
                     command.Parameters.Add(new OracleParameter("ID_Tratamiento", tratamiento.ID_Tratamiento));
                     command.Parameters.Add(new OracleParameter("Descripcion", tratamiento.Descripcion));
                     command.Parameters.Add(new OracleParameter("Duracion", tratamiento.Duracion));
-                    command.Parameters.Add(new OracleParameter("Costo", tratamiento.Costo));
+                    command.Parameters.Add(new OracleParameter("Costo", (float)tratamiento.Costo));
                     command.Parameters.Add(new OracleParameter("CodigoDiagnostico", tratamiento.CodigoDiagnostico ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("CodigoFactura", tratamiento.CodigoFactura ?? (object)DBNull.Value));
 
@@ -153,7 +152,7 @@ namespace DAL
                 {
                     command.Parameters.Add(new OracleParameter("Descripcion", tratamiento.Descripcion));
                     command.Parameters.Add(new OracleParameter("Duracion", tratamiento.Duracion));
-                    command.Parameters.Add(new OracleParameter("Costo", tratamiento.Costo));
+                    command.Parameters.Add(new OracleParameter("Costo", (float)tratamiento.Costo));
                     command.Parameters.Add(new OracleParameter("CodigoDiagnostico", tratamiento.CodigoDiagnostico ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("CodigoFactura", tratamiento.CodigoFactura ?? (object)DBNull.Value));
                     command.Parameters.Add(new OracleParameter("ID_Tratamiento", tratamiento.ID_Tratamiento));

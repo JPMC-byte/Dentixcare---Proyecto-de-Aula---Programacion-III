@@ -22,7 +22,7 @@ namespace DAL
                     command.Parameters.Add(new OracleParameter("ID_Pago", pago.ID_Pago));
                     command.Parameters.Add(new OracleParameter("Fecha_Pago", pago.Fecha_Pago.ToString("dd-MM-yyyy")));
                     command.Parameters.Add(new OracleParameter("Metodo_Pago", pago.Metodo_Pago));
-                    command.Parameters.Add(new OracleParameter("Monto", pago.Monto));
+                    command.Parameters.Add(new OracleParameter("Monto", (float)pago.Monto));
                     command.Parameters.Add(new OracleParameter("ID_Factura", pago.CodigoFactura));
                     command.Parameters.Add(new OracleParameter("Cedula_P", pago.CodigoPaciente));
 
