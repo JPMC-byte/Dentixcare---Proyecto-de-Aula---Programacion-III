@@ -63,7 +63,7 @@ namespace GUI
         }
         bool Validar(KeyPressEventArgs e)
         {
-            if (!vali.ValidarLetras(e))
+            if (!vali.ValidarNumeros(e))
             {
                 return false;
             }
