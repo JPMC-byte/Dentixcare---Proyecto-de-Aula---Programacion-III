@@ -36,9 +36,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // EntrarSistema
@@ -59,6 +61,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.IconDudas);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Controls.Add(this.BtnMinimizar);
             this.panel1.Controls.Add(this.txtContraseña);
@@ -144,6 +147,18 @@
             this.lineShape5.Y1 = 121;
             this.lineShape5.Y2 = 121;
             // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(216, 184);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 11;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
+            // 
             // FrmContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +173,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,5 +187,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
         private System.Windows.Forms.PictureBox btnVolver;
         private System.Windows.Forms.PictureBox BtnMinimizar;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

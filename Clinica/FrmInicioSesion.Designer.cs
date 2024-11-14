@@ -39,12 +39,14 @@
             this.btnVolver = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPaciente
@@ -181,12 +183,25 @@
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(256, 9);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 12;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
+            // 
             // FrmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(650, 437);
+            this.Controls.Add(this.IconDudas);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnVolver);
@@ -209,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +242,6 @@
         private System.Windows.Forms.PictureBox btnVolver;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

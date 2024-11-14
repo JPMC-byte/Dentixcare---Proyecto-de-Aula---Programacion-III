@@ -39,8 +39,10 @@
             this.DGVFacturas = new System.Windows.Forms.DataGridView();
             this.btnVerPagos = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizarRegistro
@@ -188,12 +190,25 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(719, 22);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 123;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
+            // 
             // FrmGestionFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.IconDudas);
             this.Controls.Add(this.btnVerPagos);
             this.Controls.Add(this.btnActualizarRegistro);
             this.Controls.Add(this.btnInformacion);
@@ -208,6 +223,7 @@
             this.Load += new System.EventHandler(this.FrmGestionFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +238,6 @@
         private System.Windows.Forms.Label LBTitulo;
         private System.Windows.Forms.DataGridView DGVFacturas;
         private System.Windows.Forms.Button btnVerPagos;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

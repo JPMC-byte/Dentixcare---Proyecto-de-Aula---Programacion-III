@@ -44,8 +44,10 @@
             this.CBFiltrarEstado = new System.Windows.Forms.CheckBox();
             this.CBFiltrarPorPaciente = new System.Windows.Forms.CheckBox();
             this.btnInformacion = new System.Windows.Forms.Button();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // LBFiltro
@@ -250,12 +252,25 @@
             this.btnInformacion.UseVisualStyleBackColor = false;
             this.btnInformacion.Click += new System.EventHandler(this.btnInformacion_Click);
             // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(719, 20);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 82;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
+            // 
             // FrmGestionCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.IconDudas);
             this.Controls.Add(this.btnInformacion);
             this.Controls.Add(this.CBFiltrarPorPaciente);
             this.Controls.Add(this.CBFiltrarEstado);
@@ -274,6 +289,7 @@
             this.Text = "FrmGestionCita";
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +310,6 @@
         private System.Windows.Forms.CheckBox CBFiltrarEstado;
         private System.Windows.Forms.CheckBox CBFiltrarPorPaciente;
         private System.Windows.Forms.Button btnInformacion;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

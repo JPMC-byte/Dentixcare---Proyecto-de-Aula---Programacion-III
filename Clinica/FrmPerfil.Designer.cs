@@ -51,8 +51,10 @@
             this.txtPrimerApellido = new System.Windows.Forms.TextBox();
             this.LBPrimerNombre = new System.Windows.Forms.Label();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.IconPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // LBPerfil
@@ -314,6 +316,18 @@
             this.txtPrimerNombre.TabIndex = 64;
             this.txtPrimerNombre.Text = "PRIMER NOMBRE";
             // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(719, 12);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 67;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
+            // 
             // FrmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +335,7 @@
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.IconDudas);
             this.Controls.Add(this.LBPrimerApellido);
             this.Controls.Add(this.txtPrimerApellido);
             this.Controls.Add(this.LBPrimerNombre);
@@ -352,6 +367,7 @@
             this.Load += new System.EventHandler(this.FrmPerfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IconPerson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +398,6 @@
         private System.Windows.Forms.TextBox txtPrimerApellido;
         private System.Windows.Forms.Label LBPrimerNombre;
         private System.Windows.Forms.TextBox txtPrimerNombre;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

@@ -48,6 +48,7 @@
             this.PanelDia = new System.Windows.Forms.Panel();
             this.PanelHijo = new System.Windows.Forms.Panel();
             this.PCFondo = new System.Windows.Forms.PictureBox();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.PanelSubmenuCitas.SuspendLayout();
             this.PanelSubmenuDatos.SuspendLayout();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelHijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCFondo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -329,6 +331,7 @@
             // 
             // PanelHijo
             // 
+            this.PanelHijo.Controls.Add(this.IconDudas);
             this.PanelHijo.Controls.Add(this.PCFondo);
             this.PanelHijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelHijo.Location = new System.Drawing.Point(250, 0);
@@ -347,6 +350,18 @@
             this.PCFondo.TabIndex = 0;
             this.PCFondo.TabStop = false;
             this.PCFondo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PCFondo_MouseDown);
+            // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(745, 12);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 36;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
             // 
             // FrmPaciente
             // 
@@ -370,6 +385,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelHijo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PCFondo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -396,5 +412,6 @@
         private System.Windows.Forms.Button btnDatosConsultorio;
         private System.Windows.Forms.Button btnGestionFacturas;
         private System.Windows.Forms.PictureBox PCFondo;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

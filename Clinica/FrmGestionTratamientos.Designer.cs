@@ -39,8 +39,10 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.LBTitulo = new System.Windows.Forms.Label();
             this.DGVTratamiento = new System.Windows.Forms.DataGridView();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTratamiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFacturaRelacionada
@@ -188,12 +190,25 @@
             this.DGVTratamiento.Size = new System.Drawing.Size(709, 535);
             this.DGVTratamiento.TabIndex = 100;
             // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(719, 22);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 114;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
+            // 
             // FrmGestionTratamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.IconDudas);
             this.Controls.Add(this.btnFacturaRelacionada);
             this.Controls.Add(this.btnActualizarRegistro);
             this.Controls.Add(this.btnInformacion);
@@ -210,6 +225,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmGestionTratamientos_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTratamiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +241,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label LBTitulo;
         private System.Windows.Forms.DataGridView DGVTratamiento;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

@@ -40,8 +40,10 @@
             this.CBFiltrarPorPaciente = new System.Windows.Forms.CheckBox();
             this.txtCedulaPaciente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.IconDudas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPaciente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -192,12 +194,25 @@
             this.label1.TabIndex = 96;
             this.label1.Text = "Filtrar por paciente";
             // 
+            // IconDudas
+            // 
+            this.IconDudas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconDudas.Image = global::GUI.Properties.Resources.IconQuestion;
+            this.IconDudas.Location = new System.Drawing.Point(719, 22);
+            this.IconDudas.Name = "IconDudas";
+            this.IconDudas.Size = new System.Drawing.Size(20, 20);
+            this.IconDudas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconDudas.TabIndex = 99;
+            this.IconDudas.TabStop = false;
+            this.IconDudas.Click += new System.EventHandler(this.IconDudas_Click);
+            // 
             // FrmGestionPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(777, 699);
+            this.Controls.Add(this.IconDudas);
             this.Controls.Add(this.CBFiltrarPorPaciente);
             this.Controls.Add(this.txtCedulaPaciente);
             this.Controls.Add(this.label1);
@@ -213,6 +228,7 @@
             this.Load += new System.EventHandler(this.FrmGestionPaciente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPaciente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconDudas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +244,6 @@
         private System.Windows.Forms.CheckBox CBFiltrarPorPaciente;
         private System.Windows.Forms.TextBox txtCedulaPaciente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox IconDudas;
     }
 }

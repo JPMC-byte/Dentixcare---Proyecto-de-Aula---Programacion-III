@@ -359,6 +359,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Recursos\ManualDeUsuario.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

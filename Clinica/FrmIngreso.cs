@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace GUI
 {
@@ -47,10 +49,8 @@ namespace GUI
         }
         private void IconDudas_Click(object sender, EventArgs e)
         {
-            abrirManualUsuario();
+            abrirManualUsuario(4);
         }
-
-
         private void EntrarAlRegistro()
         {
             var F = new FrmAcceso();
@@ -93,10 +93,39 @@ namespace GUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        void abrirManualUsuario()
+        void abrirManualUsuario(int pagina)
         {
-            string url = "https://drive.google.com/file/d/1QDFioJMIvTSw3bOG08TABiwbdn1fU-Fs/view?usp=drive_link";
-            Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true });
+            string tempPath = Path.GetTempPath();
+            string pdfPath = Path.Combine(tempPath, "ManualDeUsuario.pdf");
+            using (var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("GUI.Recursos.ManualDeUsuario.pdf"))
+            {
+                if (resourceStream != null)
+                {
+                    using (var fileStream = new FileStream(pdfPath, FileMode.Create, FileAccess.Write))
+                    {
+                        resourceStream.CopyTo(fileStream);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el archivo PDF incrustado.");
+                    return;
+                }
+            }
+            Process pdfProcess = new Process();
+            pdfProcess.StartInfo.FileName = "Acrobat.exe"; 
+            pdfProcess.StartInfo.Arguments = $"/A \"page={pagina}\" \"{pdfPath}\"";
+            pdfProcess.Start();
+
+            pdfProcess.Exited += (s, e) =>
+            {
+                if (File.Exists(pdfPath))
+                {
+                    File.Delete(pdfPath);
+                }
+            };
+            pdfProcess.EnableRaisingEvents = true;
         }
+
     }
 }
